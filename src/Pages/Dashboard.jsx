@@ -120,7 +120,7 @@ function Dashboard() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
           <button
             onClick={() => window.location.href = '/open-trading-account'}
             className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center"
@@ -148,7 +148,7 @@ function Dashboard() {
             </svg>
             Withdraw Funds
           </button>
-        </div>
+        </div> */}
 
         {/* Enhanced Summary Cards */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-8">
@@ -178,7 +178,7 @@ function Dashboard() {
                 <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd"/>
               </svg>
             </div>
-            <p className="text-sm text-gray-600 mb-2 font-medium">Total Wins</p>
+            <p className="text-sm text-gray-600 mb-2 font-medium">Total Deposits</p>
             <h5 className="font-bold text-2xl text-green-600" id="summaryWins">0</h5>
           </div>
 
@@ -188,7 +188,7 @@ function Dashboard() {
                 <path fillRule="evenodd" d="M12 13a1 1 0 100-2h5a1 1 0 001-1V5a1 1 0 10-2 0v5.586l-4.293-4.293a1 1 0 00-1.414 0L8 9.586 3.707 5.293a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0L11 9.414 14.586 13H12z" clipRule="evenodd"/>
               </svg>
             </div>
-            <p className="text-sm text-gray-600 mb-2 font-medium">Total Losses</p>
+            <p className="text-sm text-gray-600 mb-2 font-medium">Total Withdrawls</p>
             <h5 className="font-bold text-2xl text-red-600" id="summaryLosses">0</h5>
           </div>
 
@@ -203,115 +203,6 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* Top Metrics */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Balance */}
-          <div className="bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.02] group">
-            <div className="p-6 border-b border-gray-700/50 flex justify-between items-center bg-gradient-to-r from-blue-600/20 to-purple-600/20">
-              <h6 className="font-bold text-lg flex items-center">
-                <div className="p-2 bg-blue-500 rounded-lg mr-3 group-hover:rotate-12 transition-transform duration-300">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"/>
-                  </svg>
-                </div>
-                Balance
-              </h6>
-              <span className="bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">0</span>
-            </div>
-            <div className="p-8 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-black">
-              <div className="text-center">
-                <div id="accountBalance" className="text-4xl font-black mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">$0.00</div>
-                <div className="text-sm text-gray-400 mb-4 font-medium">Current Balance</div>
-                <span className="bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-2 rounded-full text-sm flex items-center font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                  +0.00%
-                  <svg className="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd"/>
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* PNL */}
-          <div className="bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.02] group">
-            <div className="p-6 border-b border-gray-700/50 flex justify-between items-center bg-gradient-to-r from-orange-600/20 to-red-600/20">
-              <h6 className="font-bold text-lg flex items-center">
-                <div className="p-2 bg-orange-500 rounded-lg mr-3 group-hover:rotate-12 transition-transform duration-300">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd"/>
-                  </svg>
-                </div>
-                PNL
-              </h6>
-            </div>
-            <div className="p-8 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-black">
-              <div className="text-center">
-                <div id="pnlAmount" className="text-4xl font-black mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">$0.00</div>
-                <div className="text-sm text-gray-400 mb-4 font-medium">Since last month</div>
-                <span className="bg-gradient-to-r from-gray-600 to-gray-700 text-white px-4 py-2 rounded-full text-sm flex items-center font-semibold shadow-lg">
-                  <svg className="w-4 h-4 mr-2 animate-spin" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clipRule="evenodd"/>
-                  </svg>
-                  Loading
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Total Deposit */}
-          <div className="bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.02] group">
-            <div className="p-6 border-b border-gray-700/50 flex justify-between items-center bg-gradient-to-r from-green-600/20 to-teal-600/20">
-              <h6 className="font-bold text-lg flex items-center">
-                <div className="p-2 bg-green-500 rounded-lg mr-3 group-hover:rotate-12 transition-transform duration-300">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                </div>
-                Total Deposit
-              </h6>
-              <a href="/transaction-history" className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-lg text-xs font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">View</a>
-            </div>
-            <div className="p-8 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-black">
-              <div className="text-center">
-                <div className="text-4xl font-black mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">$0.00</div>
-                <div className="text-sm text-gray-400 mb-4 font-medium">All time deposits</div>
-                <span className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-full text-sm flex items-center font-semibold shadow-lg">
-                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  Processed
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Total Withdrawal */}
-          <div className="bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.02] group">
-            <div className="p-6 border-b border-gray-700/50 flex justify-between items-center bg-gradient-to-r from-red-600/20 to-pink-600/20">
-              <h6 className="font-bold text-lg flex items-center">
-                <div className="p-2 bg-red-500 rounded-lg mr-3 group-hover:rotate-12 transition-transform duration-300">
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l1.293-1.293a1 1 0 101.414 1.414L10 15.414l-2.293 2.293a1 1 0 001.414 1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                </div>
-                Total Withdrawal
-              </h6>
-              <a href="/transaction-history" className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-lg text-xs font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">View</a>
-            </div>
-            <div className="p-8 flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 to-black">
-              <div className="text-center">
-                <div className="text-4xl font-black mb-3 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">$0.00</div>
-                <div className="text-sm text-gray-400 mb-4 font-medium">All time withdrawals</div>
-                <span className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-full text-sm flex items-center font-semibold shadow-lg">
-                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                  </svg>
-                  Processed
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
 
         {/* Getting Started Section */}
         <div className="bg-gradient-to-br from-white via-gray-50 to-blue-50 rounded-3xl shadow-2xl p-8 mb-8 border border-white/50 backdrop-blur-sm hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.01]">
@@ -377,34 +268,6 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* Profit & Loss Analysis */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-          {/* Profit vs Loss Breakdown */}
-          <div className="bg-white rounded-lg shadow-sm p-6">
-            <div className="mb-4">
-              <h4 className="text-lg font-semibold text-gray-900">Profit vs Loss Breakdown</h4>
-            </div>
-            <div id="profit-loss-chart" className="h-80 mb-4"></div>
-            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200">
-              <div className="text-center">
-                <div className="text-sm text-green-600 mb-1">Total Wins</div>
-                <div className="text-xl font-bold text-green-600" id="totalWins">0</div>
-              </div>
-              <div className="text-center">
-                <div className="text-sm text-red-600 mb-1">Total Losses</div>
-                <div className="text-xl font-bold text-red-600" id="totalLosses">0</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Daily Profit/Loss Chart */}
-          <div className="bg-white rounded-lg shadow-sm p-6">
-            <div className="mb-4">
-              <h4 className="text-lg font-semibold text-gray-900">Daily Profit/Loss Trend</h4>
-            </div>
-            <div id="daily-pnl-chart" className="h-80"></div>
-          </div>
-        </div>
 
         {/* Earnings Overview */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
@@ -450,6 +313,12 @@ function Dashboard() {
         </div>
 
         {/* Monthly Performance Heatmap */}
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+          <div className="mb-4">
+            <h4 className="text-lg font-semibold text-gray-900">Transection History Table</h4>
+          </div>
+          <div id="monthly-heatmap-chart" className="h-56"></div>
+        </div>
         <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
           <div className="mb-4">
             <h4 className="text-lg font-semibold text-gray-900">Monthly Performance Heatmap</h4>

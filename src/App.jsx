@@ -2,6 +2,20 @@ import './App.css'
 import Navbar from './Components/Navbar'
 import Sidebar from './Components/Sidebar'
 import Dashboard from './Pages/Dashboard'
+import OpenTradingAccount from './Pages/OpenTradingAccount'
+import MyAccounts from './Pages/MyAccounts'
+import AccountOverview from './Pages/AccountOverview'
+import MyWallet from './Pages/MyWallet'
+import AccountAnalytics from './Pages/AccountAnalytics'
+import PaymentDetails from './Pages/PaymentDetails'
+import DepositFunds from './Pages/DepositFunds'
+import WithdrawFunds from './Pages/WithdrawFunds'
+import InternalTransfer from './Pages/InternalTransfer'
+import TransactionHistory from './Pages/TransactionHistory'
+import KYC from './Pages/KYC'
+import AdvancedIBDashboard from './Pages/AdvancedIBDashboard'
+import TradingAnalysis from './Pages/TradingAnalysis'
+import Profile from './Pages/Profile'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
@@ -67,6 +81,20 @@ function App() {
           <div className="flex-1 overflow-y-auto pt-16">
             <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/my-account/open-trading-account" element={<OpenTradingAccount />} />
+            <Route path="/my-account/accounts" element={<MyAccounts />} />
+            <Route path="/my-account/overview" element={<AccountOverview />} />
+            <Route path="/my-wallet" element={<MyWallet />} />
+            <Route path="/account-analytics" element={<AccountAnalytics />} />
+            <Route path="/kyc" element={<KYC />} />
+            <Route path="/ib-dashboard/advanced" element={<AdvancedIBDashboard />} />
+            <Route path="/analytics/trading" element={<TradingAnalysis />} />
+            <Route path="/settings/profile" element={<Profile />} />
+            <Route path="/payment-details" element={<PaymentDetails />} />
+            <Route path="/funds/deposit" element={<DepositFunds />} />
+            <Route path="/funds/withdrawal" element={<WithdrawFunds />} />
+            <Route path="/funds/internal-transfer" element={<InternalTransfer />} />
+            <Route path="/funds/transaction-history" element={<TransactionHistory />} />
             <Route path="/messages" element={<Placeholder title="Messages" />} />
             <Route path="/analytics/revenue" element={<Placeholder title="Revenue" />} />
             <Route path="/analytics/refunds" element={<Placeholder title="Refunds" />} />
