@@ -156,13 +156,62 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick }) => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>}
                 </button>
-                <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${ibOpen ? 'max-h-60' : 'max-h-0'}`}>
-                  {/* <li>
+                <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${ibOpen ? 'max-h-96' : 'max-h-0'}`}>
+                  
+                  <li>
                     <Link to="/ib-dashboard/advanced" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Advanced IB Dashboard'}
                     </Link>
-                  </li> */}
+                  </li>
+                  <li>
+                    <Link to="/ib-dashboard/account-overview" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
+                      {!collapsed && 'Account Overview'}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/ib-dashboard/commission-analytics" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
+                      {!collapsed && 'Commission Analytics'}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/ib-dashboard/pip-calculator" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
+                      {!collapsed && 'Pip Calculator'}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/ib-dashboard/my-clients" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
+                      {!collapsed && 'My IB Clients'}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/ib-dashboard/my-structure" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
+                      {!collapsed && 'My IB Structure'}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/ib-dashboard/my-commission" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
+                      {!collapsed && 'My Commission'}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/ib-dashboard/withdrawals" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
+                      {!collapsed && 'IB Withdrawals'}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/dashboard" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
+                      {!collapsed && 'Back to Main Dashboard'}
+                    </Link>
+                  </li>
                   {/* <li>
                     <Link to="/ib-dashboard/apply" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>

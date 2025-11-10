@@ -13,7 +13,14 @@ import WithdrawFunds from './Pages/WithdrawFunds'
 import InternalTransfer from './Pages/InternalTransfer'
 import TransactionHistory from './Pages/TransactionHistory'
 import KYC from './Pages/KYC'
-import AdvancedIBDashboard from './Pages/AdvancedIBDashboard'
+import AdvancedIBDashboard from './Pages/IB dashboard/AdvancedIBDashboard'
+import IBAccountOverview from './Pages/IB dashboard/AccountOverview'
+import CommissionAnalytics from './Pages/IB dashboard/CommissionAnalytics'
+import PipCalculator from './Pages/IB dashboard/PipCalculator'
+import MyIBClients from './Pages/IB dashboard/MyIBClients'
+import MyIBStructure from './Pages/IB dashboard/MyIBStructure'
+import MyCommission from './Pages/IB dashboard/MyCommission'
+import IBWithdrawals from './Pages/IB dashboard/IBWithdrawals'
 import TradingAnalysis from './Pages/TradingAnalysis'
 import Profile from './Pages/Profile'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
@@ -96,10 +103,17 @@ function App() {
             <Route path="/my-account/open-trading-account" element={<OpenTradingAccount />} />
             <Route path="/my-account/accounts" element={<MyAccounts />} />
             <Route path="/my-account/overview" element={<AccountOverview />} />
+            <Route path="/ib-dashboard/account-overview" element={<IBAccountOverview />} />
+            <Route path="/ib-dashboard/commission-analytics" element={<CommissionAnalytics />} />
+            <Route path="/ib-dashboard/pip-calculator" element={<PipCalculator />} />
+            <Route path="/ib-dashboard/my-clients" element={<MyIBClients />} />
+            <Route path="/ib-dashboard/my-structure" element={<MyIBStructure />} />
+            <Route path="/ib-dashboard/my-commission" element={<MyCommission />} />
+            <Route path="/ib-dashboard/withdrawals" element={<IBWithdrawals />} />
             <Route path="/my-wallet" element={<MyWallet />} />
             <Route path="/account-analytics" element={<AccountAnalytics />} />
             <Route path="/kyc" element={<KYC />} />
-            {/* <Route path="/ib-dashboard/advanced" element={<AdvancedIBDashboard />} /> */}
+            <Route path="/ib-dashboard/advanced" element={<AdvancedIBDashboard />} />
             {/* <Route path="/analytics/trading" element={<TradingAnalysis />} /> */}
             <Route path="/settings/profile" element={<Profile />} />
             <Route path="/payment-details" element={<PaymentDetails />} />
