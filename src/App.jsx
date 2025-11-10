@@ -16,7 +16,7 @@ import KYC from './Pages/KYC'
 import AdvancedIBDashboard from './Pages/AdvancedIBDashboard'
 import TradingAnalysis from './Pages/TradingAnalysis'
 import Profile from './Pages/Profile'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 function Placeholder({ title }) {
@@ -26,6 +26,16 @@ function Placeholder({ title }) {
       <p className="mt-2 text-gray-600">This is a placeholder page for {title}.</p>
     </div>
   )
+}
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
 }
 
 function App() {
@@ -64,6 +74,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="h-screen flex relative overflow-hidden">
         {(sidebarOpen || !isMobile) && (
           <div className="fixed left-0 top-0 h-full z-40">
