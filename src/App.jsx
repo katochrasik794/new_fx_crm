@@ -82,6 +82,7 @@ function App() {
               collapsed={sidebarCollapsed && !isMobile}
               isMobile={isMobile}
               onClose={closeSidebar}
+              onNavItemClick={closeSidebar}
             />
           </div>
         )}
@@ -98,8 +99,8 @@ function App() {
             <Route path="/my-wallet" element={<MyWallet />} />
             <Route path="/account-analytics" element={<AccountAnalytics />} />
             <Route path="/kyc" element={<KYC />} />
-            <Route path="/ib-dashboard/advanced" element={<AdvancedIBDashboard />} />
-            <Route path="/analytics/trading" element={<TradingAnalysis />} />
+            {/* <Route path="/ib-dashboard/advanced" element={<AdvancedIBDashboard />} /> */}
+            {/* <Route path="/analytics/trading" element={<TradingAnalysis />} /> */}
             <Route path="/settings/profile" element={<Profile />} />
             <Route path="/payment-details" element={<PaymentDetails />} />
             <Route path="/funds/deposit" element={<DepositFunds />} />

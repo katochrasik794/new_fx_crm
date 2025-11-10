@@ -20,7 +20,7 @@ function Dashboard() {
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <img src="/assets/images/icons/mt5.png" alt="MT5" className="w-6 h-6" />
+              <img src="https://portal.oxomarkets.com/client/assets/images/icons/mt5.png" alt="MT5" className="w-6 h-6" />
               <select className="bg-white text-black border-2 border-white px-3 py-1 rounded text-sm min-w-[150px]">
                 <option value="">No MT5 Account</option>
               </select>

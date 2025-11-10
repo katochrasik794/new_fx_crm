@@ -238,10 +238,10 @@ const AccountAnalytics = () => {
                   <option value="">All Accounts</option>
                 </select>
                 <select className="bg-white/10 border border-white/20 text-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-white/50">
-                  <option value="today" selected>Today</option>
-                  <option value="7">Last 7 Days</option>
-                  <option value="30">Last 30 Days</option>
-                  <option value="90">Last 90 Days</option>
+                  <option className='text-blue-600' value="today" selected>Today</option>
+                  <option className='text-blue-600' value="7">Last 7 Days</option>
+                  <option className='text-blue-600' value="30">Last 30 Days</option>
+                  <option className='text-blue-600' value="90">Last 90 Days</option>
                 </select>
               </div>
             </div>

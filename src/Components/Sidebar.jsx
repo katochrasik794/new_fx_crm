@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const Sidebar = ({ collapsed, isMobile, onClose }) => {
+const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick }) => {
   const [accountOpen, setAccountOpen] = useState(false);
   const [fundsOpen, setFundsOpen] = useState(false);
   const [ibOpen, setIbOpen] = useState(false);
@@ -11,9 +11,10 @@ const Sidebar = ({ collapsed, isMobile, onClose }) => {
 
   const isActive = (path) => location.pathname === path;
 
-  const NavItem = ({ to, icon, children, badge }) => (
+  const NavItem = ({ to, icon, children, badge, onClick }) => (
     <Link
       to={to}
+      onClick={onClick}
       className={`flex items-center py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
         isActive(to)
           ? "border-l-4 border-l-rose-600 text-rose-600 bg-rose-50"
@@ -27,8 +28,8 @@ const Sidebar = ({ collapsed, isMobile, onClose }) => {
   );
 
   return (
-    <div className={`${isMobile ? 'fixed inset-0 z-50 bg-black bg-opacity-50' : 'bg-gray-100 h-screen'}`}>
-      <div className={`h-full transition-all duration-300 ${collapsed ? 'w-16' : 'w-64'} ${isMobile ? 'relative' : ''}`}>
+    <div className={`${isMobile ? 'fixed inset-0 z-50' : 'bg-gray-100 h-screen'}`} onClick={isMobile ? onClose : undefined}>
+      <div className={`h-full transition-all duration-300 ${collapsed ? 'w-16' : 'w-64'} ${isMobile ? 'relative bg-white shadow-xl' : ''}`} onClick={e => e.stopPropagation()}>
    <div className={`flex h-full flex-col overflow-y-auto ${isMobile ? 'bg-white shadow-xl' : 'rounded-br-lg rounded-tr-lg bg-white shadow-md'}`}>
            {isMobile && (
              <div className="flex justify-end p-4">
@@ -41,16 +42,18 @@ const Sidebar = ({ collapsed, isMobile, onClose }) => {
              </div>
            )}
            <div className={`flex items-center justify-center px-4 ${collapsed ? 'py-4' : 'py-6'}`}>
-             <img
-               className={`w-auto max-w-full align-middle ${collapsed ? 'h-8' : 'h-12'}`}
-               src="https://cdn-icons-png.flaticon.com/512/7021/7021246.png"
-               alt="Profile"
-             />
-           </div>
+              {!isMobile && (
+                <img
+                  className={`w-auto max-w-full align-middle ${collapsed ? 'h-8' : 'h-12'}`}
+                  src="https://cdn-icons-png.flaticon.com/512/7021/7021246.png"
+                  alt="Profile"
+                />
+              )}
+            </div>
 
           <div className="flex flex-1 flex-col">
             <nav className="flex-1">
-              <NavItem to="/dashboard" icon="/icons/dashboard.svg">Dashboard</NavItem>
+              <NavItem to="/dashboard" icon="/icons/dashboard.svg" onClick={onNavItemClick}>Dashboard</NavItem>
 
               {/* My Account dropdown */}
               <div className="relative">
@@ -69,19 +72,19 @@ const Sidebar = ({ collapsed, isMobile, onClose }) => {
                 </button>
                 <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${accountOpen ? 'max-h-60' : 'max-h-0'}`}>
                   <li>
-                    <Link to="/my-account/open-trading-account" className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/my-account/open-trading-account" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Open Trading Account'}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/my-account/accounts" className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/my-account/accounts" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'My Accounts'}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/my-account/overview" className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/my-account/overview" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Account Overview'}
                     </Link>
@@ -89,9 +92,9 @@ const Sidebar = ({ collapsed, isMobile, onClose }) => {
                 </ul>
               </div>
 
-              <NavItem to="/my-wallet" icon="/icons/wallet.svg">My Wallet</NavItem>
-              <NavItem to="/account-analytics" icon="/icons/analytics.svg">Account Analytics</NavItem>
-              <NavItem to="/payment-details" icon="/icons/payment.svg">Payment Details</NavItem>
+              <NavItem to="/my-wallet" icon="/icons/wallet.svg" onClick={onNavItemClick}>My Wallet</NavItem>
+              <NavItem to="/account-analytics" icon="/icons/analytics.svg" onClick={onNavItemClick}>Account Analytics</NavItem>
+              <NavItem to="/payment-details" icon="/icons/payment.svg" onClick={onNavItemClick}>Payment Details</NavItem>
 
               {/* Funds dropdown */}
               <div className="relative">
@@ -110,25 +113,25 @@ const Sidebar = ({ collapsed, isMobile, onClose }) => {
                 </button>
                 <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${fundsOpen ? 'max-h-60' : 'max-h-0'}`}>
                   <li>
-                    <Link to="/funds/deposit" className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/funds/deposit" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Deposit'}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/funds/withdrawal" className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/funds/withdrawal" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Withdrawal'}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/funds/internal-transfer" className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/funds/internal-transfer" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Internal Transfer'}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/funds/transaction-history" className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/funds/transaction-history" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Transaction History'}
                     </Link>
@@ -136,7 +139,7 @@ const Sidebar = ({ collapsed, isMobile, onClose }) => {
                 </ul>
               </div>
 
-              <NavItem to="/kyc" icon="/icons/kyc.svg">KYC</NavItem>
+              <NavItem to="/kyc" icon="/icons/kyc.svg" onClick={onNavItemClick}>KYC</NavItem>
 
               {/* IB Dashboard dropdown */}
               <div className="relative">
@@ -154,18 +157,18 @@ const Sidebar = ({ collapsed, isMobile, onClose }) => {
                   </svg>}
                 </button>
                 <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${ibOpen ? 'max-h-60' : 'max-h-0'}`}>
-                  <li>
-                    <Link to="/ib-dashboard/advanced" className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                  {/* <li>
+                    <Link to="/ib-dashboard/advanced" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Advanced IB Dashboard'}
                     </Link>
-                  </li>
-                  <li>
-                    <Link to="/ib-dashboard/apply" className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                  </li> */}
+                  {/* <li>
+                    <Link to="/ib-dashboard/apply" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Apply As an IB'}
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
 
@@ -186,7 +189,7 @@ const Sidebar = ({ collapsed, isMobile, onClose }) => {
                 </button>
                 <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${analyticsOpen ? 'max-h-60' : 'max-h-0'}`}>
                   <li>
-                    <Link to="/analytics/trading" className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/analytics/trading" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Trading Analysis'}
                     </Link>
@@ -211,7 +214,7 @@ const Sidebar = ({ collapsed, isMobile, onClose }) => {
                 </button>
                 <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${settingsOpen ? 'max-h-60' : 'max-h-0'}`}>
                   <li>
-                    <Link to="/settings/profile" className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/settings/profile" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Profile'}
                     </Link>
@@ -219,7 +222,7 @@ const Sidebar = ({ collapsed, isMobile, onClose }) => {
                 </ul>
               </div>
 
-              <NavItem to="/logout" icon="/icons/logout.svg">Logout</NavItem>
+              <NavItem to="/logout" icon="/icons/logout.svg" onClick={onNavItemClick}>Logout</NavItem>
             </nav>
           </div>
         </div>
