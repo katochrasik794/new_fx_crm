@@ -1,1 +1,72 @@
 @import "tailwindcss";
+
+/* Dark mode styles
+.dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+.dark .bg-white {
+  background-color: rgb(31 41 55);
+}
+
+.dark .bg-gray-100 {
+  background-color: rgb(17 24 39);
+}
+
+.dark .text-gray-800 {
+  color: rgb(243 244 246);
+}
+
+.dark .text-gray-700 {
+  color: rgb(209 213 219);
+}
+
+.dark .text-gray-600 {
+  color: rgb(156 163 175);
+}
+
+.dark .text-gray-500 {
+  color: rgb(107 114 128);
+}
+
+.dark .text-gray-400 {
+  color: rgb(156 163 175);
+}
+
+.dark .text-gray-300 {
+  color: rgb(209 213 219);
+}
+
+.dark .border-gray-200 {
+  border-color: rgb(55 65 81);
+}
+
+.dark .bg-gray-50 {
+  background-color: rgb(31 41 55);
+}
+
+.dark .bg-gray-700 {
+  background-color: rgb(55 65 81);
+}
+
+.dark .bg-gray-800 {
+  background-color: rgb(31 41 55);
+}
+
+.dark .bg-gray-900 {
+  background-color: rgb(17 24 39);
+}
+
+.dark .hover\:bg-gray-100:hover {
+  background-color: rgb(55 65 81);
+}
+
+.dark .hover\:text-gray-700:hover {
+  color: rgb(209 213 219);
+}
+
+.dark .hover\:text-gray-800:hover {
+  color: rgb(243 244 246);
+} */

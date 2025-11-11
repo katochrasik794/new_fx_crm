@@ -23,6 +23,7 @@ import MyCommission from './Pages/IB dashboard/MyCommission'
 import IBWithdrawals from './Pages/IB dashboard/IBWithdrawals'
 import TradingAnalysis from './Pages/TradingAnalysis'
 import Profile from './Pages/Profile'
+import AdminApp from './Admin/AdminApp'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
@@ -99,36 +100,40 @@ function App() {
           </div>
           <div className="flex-1 overflow-y-auto pt-16">
             <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/my-account/open-trading-account" element={<OpenTradingAccount />} />
-            <Route path="/my-account/accounts" element={<MyAccounts />} />
-            <Route path="/my-account/overview" element={<AccountOverview />} />
-            <Route path="/ib-dashboard/account-overview" element={<IBAccountOverview />} />
-            <Route path="/ib-dashboard/commission-analytics" element={<CommissionAnalytics />} />
-            <Route path="/ib-dashboard/pip-calculator" element={<PipCalculator />} />
-            <Route path="/ib-dashboard/my-clients" element={<MyIBClients />} />
-            <Route path="/ib-dashboard/my-structure" element={<MyIBStructure />} />
-            <Route path="/ib-dashboard/my-commission" element={<MyCommission />} />
-            <Route path="/ib-dashboard/withdrawals" element={<IBWithdrawals />} />
-            <Route path="/my-wallet" element={<MyWallet />} />
-            <Route path="/account-analytics" element={<AccountAnalytics />} />
-            <Route path="/kyc" element={<KYC />} />
-            <Route path="/ib-dashboard/advanced" element={<AdvancedIBDashboard />} />
-            {/* <Route path="/analytics/trading" element={<TradingAnalysis />} /> */}
-            <Route path="/settings/profile" element={<Profile />} />
-            <Route path="/payment-details" element={<PaymentDetails />} />
-            <Route path="/funds/deposit" element={<DepositFunds />} />
-            <Route path="/funds/withdrawal" element={<WithdrawFunds />} />
-            <Route path="/funds/internal-transfer" element={<InternalTransfer />} />
-            <Route path="/funds/transaction-history" element={<TransactionHistory />} />
-            <Route path="/messages" element={<Placeholder title="Messages" />} />
-            <Route path="/analytics/revenue" element={<Placeholder title="Revenue" />} />
-            <Route path="/analytics/refunds" element={<Placeholder title="Refunds" />} />
-            <Route path="/products" element={<Placeholder title="Products" />} />
-            <Route path="/orders" element={<Placeholder title="Orders" />} />
-            <Route path="/suppliers" element={<Placeholder title="Suppliers" />} />
-            <Route path="/blogs" element={<Placeholder title="Blogs" />} />
-            <Route path="/" element={<Dashboard />} />
+              {/* Admin Routes */}
+              <Route path="/admin/*" element={<AdminApp />} />
+
+              {/* User Routes */}
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/my-account/open-trading-account" element={<OpenTradingAccount />} />
+              <Route path="/my-account/accounts" element={<MyAccounts />} />
+              <Route path="/my-account/overview" element={<AccountOverview />} />
+              <Route path="/ib-dashboard/account-overview" element={<IBAccountOverview />} />
+              <Route path="/ib-dashboard/commission-analytics" element={<CommissionAnalytics />} />
+              <Route path="/ib-dashboard/pip-calculator" element={<PipCalculator />} />
+              <Route path="/ib-dashboard/my-clients" element={<MyIBClients />} />
+              <Route path="/ib-dashboard/my-structure" element={<MyIBStructure />} />
+              <Route path="/ib-dashboard/my-commission" element={<MyCommission />} />
+              <Route path="/ib-dashboard/withdrawals" element={<IBWithdrawals />} />
+              <Route path="/my-wallet" element={<MyWallet />} />
+              <Route path="/account-analytics" element={<AccountAnalytics />} />
+              <Route path="/kyc" element={<KYC />} />
+              <Route path="/ib-dashboard/advanced" element={<AdvancedIBDashboard />} />
+              {/* <Route path="/analytics/trading" element={<TradingAnalysis />} /> */}
+              <Route path="/settings/profile" element={<Profile />} />
+              <Route path="/payment-details" element={<PaymentDetails />} />
+              <Route path="/funds/deposit" element={<DepositFunds />} />
+              <Route path="/funds/withdrawal" element={<WithdrawFunds />} />
+              <Route path="/funds/internal-transfer" element={<InternalTransfer />} />
+              <Route path="/funds/transaction-history" element={<TransactionHistory />} />
+              <Route path="/messages" element={<Placeholder title="Messages" />} />
+              <Route path="/analytics/revenue" element={<Placeholder title="Revenue" />} />
+              <Route path="/analytics/refunds" element={<Placeholder title="Refunds" />} />
+              <Route path="/products" element={<Placeholder title="Products" />} />
+              <Route path="/orders" element={<Placeholder title="Orders" />} />
+              <Route path="/suppliers" element={<Placeholder title="Suppliers" />} />
+              <Route path="/blogs" element={<Placeholder title="Blogs" />} />
+              <Route path="/" element={<Dashboard />} />
             </Routes>
           </div>
         </div>
