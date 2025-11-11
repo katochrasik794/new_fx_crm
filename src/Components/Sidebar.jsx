@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick }) => {
@@ -8,14 +8,6 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick }) => {
   const [analyticsOpen, setAnalyticsOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    setAccountOpen(location.pathname.startsWith('/my-account'));
-    setFundsOpen(location.pathname.startsWith('/funds'));
-    setIbOpen(location.pathname.startsWith('/ib-dashboard'));
-    setAnalyticsOpen(location.pathname.startsWith('/analytics'));
-    setSettingsOpen(location.pathname.startsWith('/settings'));
-  }, [location.pathname]);
 
   const isActive = (path) => location.pathname === path;
 

@@ -40,11 +40,6 @@ function ScrollToTop() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    // Reset scroll position of main content area
-    const mainContent = document.getElementById('main-content')
-    if (mainContent) {
-      mainContent.scrollTop = 0
-    }
   }, [pathname])
 
   return null
@@ -102,7 +97,7 @@ function App() {
           <div className={`fixed top-0 z-50 ${!isMobile && !sidebarCollapsed ? 'left-64 right-0' : !isMobile && sidebarCollapsed ? 'left-16 right-0' : 'left-0 right-0'} transition-all duration-300`}>
             <Navbar toggleSidebar={toggleSidebar} />
           </div>
-          <div className="flex-1 overflow-y-auto pt-16" id="main-content">
+          <div className="flex-1 overflow-y-auto pt-16">
             <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/my-account/open-trading-account" element={<OpenTradingAccount />} />
