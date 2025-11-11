@@ -39,33 +39,7 @@ function ScrollToTop() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    // Disable browser scroll restoration so we control it manually
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual'
-    }
-
-    // Scroll the main app scroll container (if present) and the window to top.
-    // The app uses an inner scrollable div for page content, so we must reset that
-    // otherwise window.scrollTo won't affect it.
-    const scrollToTop = () => {
-      const container = document.getElementById('main-scrollable')
-        if (container && typeof container.scrollTo === 'function') {
-        try {
-          container.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-        } catch {
-          container.scrollTop = 0
-        }
-      }
-      try {
-        window.scrollTo(0, 0)
-      } catch {
-        /* ignore */
-      }
-    }
-
-    // Use a micro task delay to ensure the new route's DOM is painted
-    const timer = setTimeout(scrollToTop, 0)
-    return () => clearTimeout(timer)
+    window.scrollTo(0, 0)
   }, [pathname])
 
   return null
@@ -123,7 +97,7 @@ function App() {
           <div className={`fixed top-0 z-50 ${!isMobile && !sidebarCollapsed ? 'left-64 right-0' : !isMobile && sidebarCollapsed ? 'left-16 right-0' : 'left-0 right-0'} transition-all duration-300`}>
             <Navbar toggleSidebar={toggleSidebar} />
           </div>
-          <div id="main-scrollable" className="flex-1 overflow-y-auto pt-16">
+          <div className="flex-1 overflow-y-auto pt-16">
             <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/my-account/open-trading-account" element={<OpenTradingAccount />} />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick }) => {
@@ -9,33 +9,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick }) => {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const location = useLocation();
 
-  const isActive = (path) => {
-    if (path === '/my-account') {
-      return location.pathname.startsWith('/my-account');
-    }
-    if (path === '/funds') {
-      return location.pathname.startsWith('/funds');
-    }
-    if (path === '/ib-dashboard') {
-      return location.pathname.startsWith('/ib-dashboard');
-    }
-    if (path === '/analytics') {
-      return location.pathname.startsWith('/analytics');
-    }
-    if (path === '/settings') {
-      return location.pathname.startsWith('/settings');
-    }
-    return location.pathname === path;
-  };
-
-  // Close all dropdowns when navigating to a new page
-  useEffect(() => {
-    setAccountOpen(false);
-    setFundsOpen(false);
-    setIbOpen(false);
-    setAnalyticsOpen(false);
-    setSettingsOpen(false);
-  }, [location.pathname]);
+  const isActive = (path) => location.pathname === path;
 
   const NavItem = ({ to, icon, children, badge, onClick }) => (
     <Link

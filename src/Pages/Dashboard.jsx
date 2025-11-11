@@ -153,7 +153,7 @@ function Dashboard() {
         {/* Enhanced Summary Cards */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-8">
           <div className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-2xl hover:scale-105 transition-all duration-500 transform border border-gray-100 group">
-            <div className="mb-4 p-3 bg-linear-to-r from-blue-500 to-blue-600 rounded-full w-fit mx-auto group-hover:scale-110 transition-transform duration-300">
+            <div className="mb-4 p-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full w-fit mx-auto group-hover:scale-110 transition-transform duration-300">
               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"/>
               </svg>
