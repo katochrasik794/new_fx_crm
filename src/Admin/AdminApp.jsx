@@ -5,18 +5,48 @@ import AdminTopbar from './AdminTopbar';
 import AdminDashboard from './AdminDashboard';
 import SystemSettings from './SystemSettings';
 import RolesManagement from './RolesManagement';
-import AddUser from './AddUser';
-import AllUsers from './AllUsers';
-import ActiveUsers from './ActiveUsers';
-import BannedUsers from './BannedUsers';
-import EmailUnverified from './EmailUnverified';
-import KycUnverified from './KycUnverified';
-import KycPending from './KycPending';
-import ProfitLossReport from './ProfitLossReport';
-import SendNotification from './SendNotification';
-import Mt5Accounts from './Mt5Accounts';
-import PaymentDetailsReview from './PaymentDetailsReview';
+import AddUser from './User Management/AddUser';
+import AllUsers from './User Management/AllUsers';
+import ActiveUsers from './User Management/ActiveUsers';
+import BannedUsers from './User Management/BannedUsers';
+import EmailUnverified from './User Management/EmailUnverified';
+import KycUnverified from './User Management/KycUnverified';
+import KycPending from './User Management/KycPending';
+import ProfitLossReport from './User Management/ProfitLossReport';
+import SendNotification from './User Management/SendNotification';
+import SendEmails from './SendEmails';
+import SendAnalysis from './SendAnalysis';
+import Mt5Accounts from './User Management/Mt5Accounts';
+import PaymentDetailsReview from './User Management/ManageFinance';
 import KycVerification from './KycVerification';
+import Mt5Users from './MT5 Management/Mt5Users';
+import AssignMt5Account from './MT5 Management/AssignMt5Account';
+import ChangeMt5Password from './MT5 Management/ChangeMt5Password';
+import AutomaticGateways from './Payment Gateways/AutomaticGateways';
+import ManualGateways from './Payment Gateways/ManualGateways';
+import PendingDeposits from './Manage Deposits/PendingDeposits';
+import ApprovedDeposits from './Manage Deposits/ApprovedDeposits';
+import RejectedDeposits from './Manage Deposits/RejectedDeposits';
+import AllDeposits from './Manage Deposits/AllDeposits';
+import PendingWithdrawals from './Manage Withdrawls/PendingWithdrawals';
+import ApprovedWithdrawals from './Manage Withdrawls/ApprovedWithdrawals';
+import RejectedWithdrawals from './Manage Withdrawls/RejectedWithdrawals';
+import AllWithdrawals from './Manage Withdrawls/AllWithdrawals';
+import IBDistributionManagement from './IB Management/IBDistributionManagement';
+import ManageManagers from './PAMM Management/ManageManagers';
+import RequestsApplications from './PAMM Management/RequestsApplications';
+import Investments from './PAMM Management/Investments';
+import Deposits from './PAMM Management/Deposits';
+import Withdrawals from './PAMM Management/Withdrawals';
+import PerformanceReports from './PAMM Management/PerformanceReports';
+import PammUsers from './PAMM Management/PammUsers';
+import PammSettings from './PAMM Management/PammSettings';
+import CopierArea from './Copy Trading/CopierArea';
+import MasterArea from './Copy Trading/MasterArea';
+import MapCopierMaster from './Copy Trading/MapCopierMaster';
+import ManagePrizeLots from './Set Prize Lots/ManagePrizeLots';
+import SetLotPricing from './Set Prize Lots/SetLotPricing';
+import PrizeDistributionHistory from './Set Prize Lots/PrizeDistributionHistory';
 
 function Placeholder({ title }) {
   return (
@@ -112,52 +142,52 @@ function AdminApp() {
               <Route path="/kyc-verifications" element={<KycVerification />} />
 
               {/* MT5 Management Routes */}
-              <Route path="/mt5-users-list" element={<Placeholder title="MT5 Users List" />} />
-              <Route path="/assign-mt5-to-email" element={<Placeholder title="Assign MT5 to Email" />} />
-              <Route path="/change-mt5-password" element={<Placeholder title="Change MT5 Password" />} />
+              <Route path="/mt5-users-list" element={<Mt5Users />} />
+              <Route path="/assign-mt5-to-email" element={<AssignMt5Account />} />
+              <Route path="/change-mt5-password" element={<ChangeMt5Password />} />
 
               {/* Payment Gateways Routes */}
-              <Route path="/automatic-gateways" element={<Placeholder title="Automatic Gateways" />} />
-              <Route path="/manual-gateways" element={<Placeholder title="Manual Gateways" />} />
+              <Route path="/automatic-gateways" element={<AutomaticGateways />} />
+              <Route path="/manual-gateways" element={<ManualGateways />} />
 
               {/* Deposits Routes */}
-              <Route path="/pending-deposits" element={<Placeholder title="Pending Deposits" />} />
-              <Route path="/approved-deposits" element={<Placeholder title="Approved Deposits" />} />
-              <Route path="/rejected-deposits" element={<Placeholder title="Rejected Deposits" />} />
-              <Route path="/all-deposits" element={<Placeholder title="All Deposits" />} />
+              <Route path="/pending-deposits" element={<PendingDeposits />} />
+              <Route path="/approved-deposits" element={<ApprovedDeposits />} />
+              <Route path="/rejected-deposits" element={<RejectedDeposits />} />
+              <Route path="/all-deposits" element={<AllDeposits />} />
 
               {/* Withdrawals Routes */}
-              <Route path="/pending-withdrawals" element={<Placeholder title="Pending Withdrawals" />} />
-              <Route path="/approved-withdrawals" element={<Placeholder title="Approved Withdrawals" />} />
-              <Route path="/rejected-withdrawals" element={<Placeholder title="Rejected Withdrawals" />} />
-              <Route path="/all-withdrawals" element={<Placeholder title="All Withdrawals" />} />
+              <Route path="/pending-withdrawals" element={<PendingWithdrawals />} />
+              <Route path="/approved-withdrawals" element={<ApprovedWithdrawals />} />
+              <Route path="/rejected-withdrawals" element={<RejectedWithdrawals />} />
+              <Route path="/all-withdrawals" element={<AllWithdrawals />} />
 
               {/* IB Management Routes */}
-              <Route path="/ib-distribution" element={<Placeholder title="IB Distribution" />} />
+              <Route path="/ib-distribution" element={<IBDistributionManagement />} />
               <Route path="/ib-admin-portal" element={<Placeholder title="IB Admin Portal" />} />
 
               {/* PAMM Management Routes */}
-              <Route path="/manage-managers" element={<Placeholder title="Manage Managers" />} />
-              <Route path="/requests-applications" element={<Placeholder title="Requests & Applications" />} />
-              <Route path="/investments" element={<Placeholder title="Investments" />} />
-              <Route path="/deposits" element={<Placeholder title="Deposits" />} />
-              <Route path="/withdrawals" element={<Placeholder title="Withdrawals" />} />
-              <Route path="/performance-reports" element={<Placeholder title="Performance Reports" />} />
-              <Route path="/pamm-users" element={<Placeholder title="PAMM Users" />} />
-              <Route path="/pamm-settings" element={<Placeholder title="PAMM Settings" />} />
+              <Route path="/manage-managers" element={<ManageManagers />} />
+              <Route path="/requests-applications" element={<RequestsApplications />} />
+              <Route path="/investments" element={<Investments />} />
+              <Route path="/deposits" element={<Deposits />} />
+              <Route path="/withdrawals" element={<Withdrawals />} />
+              <Route path="/performance-reports" element={<PerformanceReports />} />
+              <Route path="/pamm-users" element={<PammUsers />} />
+              <Route path="/pamm-settings" element={<PammSettings />} />
 
               {/* Copy Trading Routes */}
-              <Route path="/copier-area" element={<Placeholder title="Copier Area" />} />
-              <Route path="/master-area" element={<Placeholder title="Master Area" />} />
-              <Route path="/map-copier-master" element={<Placeholder title="Map Copier & Master" />} />
+              <Route path="/copier-area" element={<CopierArea />} />
+              <Route path="/master-area" element={<MasterArea />} />
+              <Route path="/map-copier-master" element={<MapCopierMaster />} />
 
               {/* Prize Lots Routes */}
-              <Route path="/manage-prize-lots" element={<Placeholder title="Manage Prize Lots" />} />
-              <Route path="/set-lot-pricing" element={<Placeholder title="Set Lot Pricing" />} />
-              <Route path="/prize-distribution-history" element={<Placeholder title="Prize Distribution History" />} />
+              <Route path="/manage-prize-lots" element={<ManagePrizeLots />} />
+              <Route path="/set-lot-pricing" element={<SetLotPricing />} />
+              <Route path="/prize-distribution-history" element={<PrizeDistributionHistory />} />
 
-              <Route path="/send-emails" element={<Placeholder title="Send Emails" />} />
-              <Route path="/send-analysis" element={<Placeholder title="Send Analysis" />} />
+              <Route path="/send-emails" element={<SendEmails />} />
+              <Route path="/send-analysis" element={<SendAnalysis />} />
               <Route path="/logout" element={<Placeholder title="Logout" />} />
             </Routes>
           </div>
