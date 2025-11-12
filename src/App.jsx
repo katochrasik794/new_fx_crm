@@ -23,7 +23,6 @@ import MyCommission from './Pages/IB dashboard/MyCommission'
 import IBWithdrawals from './Pages/IB dashboard/IBWithdrawals'
 import TradingAnalysis from './Pages/TradingAnalysis'
 import Profile from './Pages/Profile'
-import AdminApp from './Admin/AdminApp'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
@@ -100,9 +99,6 @@ function App() {
           </div>
           <div className="flex-1 overflow-y-auto pt-16">
             <Routes>
-              {/* Admin Routes */}
-              <Route path="/admin/*" element={<AdminApp />} />
-
               {/* User Routes */}
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/my-account/open-trading-account" element={<OpenTradingAccount />} />
