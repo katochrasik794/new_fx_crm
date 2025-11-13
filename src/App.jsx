@@ -36,6 +36,7 @@ import MoveUser from './Admin/IB Management/IB Admin Panel/IB Management/MoveUse
 import TradingGroups from './Admin/IB Management/IB Admin Panel/Group Management/TradingGroups'
 import CommissionDistribution from './Admin/IB Management/IB Admin Panel/Group Management/CommissionDistribution'
 import PortalSettings from './Admin/IB Management/IB Admin Panel/PortalSettings'
+import AdminApp from './Admin/AdminApp'
 
 function Placeholder({ title }) {
   return (
@@ -110,6 +111,9 @@ function App() {
           </div>
           <div className="flex-1 overflow-y-auto pt-16">
             <Routes>
+              {/* Admin Routes */}
+              <Route path="/admin/*" element={<AdminApp />} />
+              
               {/* User Routes */}
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/my-account/open-trading-account" element={<OpenTradingAccount />} />
@@ -141,18 +145,6 @@ function App() {
               <Route path="/suppliers" element={<Placeholder title="Suppliers" />} />
               <Route path="/blogs" element={<Placeholder title="Blogs" />} />
               <Route path="/" element={<Dashboard />} />
-              <Route path="/ib-admin" element={<IbAdminDashboard /> } />
-              <Route path="/ib-admin/symbols-pip-values" element={<SymbolsPipValues />} />
-              <Route path="/ib-admin/overview" element={<IbOverview />} />
-              <Route path="/ib-admin/requests" element={<IbRequests />} />
-              <Route path="/ib-admin/profile" element={<IBProfile />} />
-              <Route path="/ib-admin/commission-distribution" element={<IBCommissionDistribution />} />
-              <Route path="/ib-admin/client-linking" element={<ClientLinking />} />
-              <Route path="/ib-admin/withdrawal-management" element={<IBWithdrawalManagement />} />
-              <Route path="/ib-admin/move-user" element={<MoveUser />} />
-              <Route path="/ib-admin/trading-groups" element={<TradingGroups />} />
-              <Route path="/ib-admin/group-commission-distribution" element={<CommissionDistribution />} />
-              <Route path="/ib-admin/portal-settings" element={<PortalSettings />} />
             </Routes>
           </div>
         </div>

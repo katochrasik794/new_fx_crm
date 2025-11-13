@@ -47,6 +47,18 @@ import MapCopierMaster from './Copy Trading/MapCopierMaster';
 import ManagePrizeLots from './Set Prize Lots/ManagePrizeLots';
 import SetLotPricing from './Set Prize Lots/SetLotPricing';
 import PrizeDistributionHistory from './Set Prize Lots/PrizeDistributionHistory';
+import IbAdminDashboard from './IB Management/IB Admin Panel/IbAdminDashboard';
+import SymbolsPipValues from './IB Management/IB Admin Panel/SymbolsPipValues';
+import IbOverview from './IB Management/IB Admin Panel/IbOverview';
+import IbRequests from './IB Management/IB Admin Panel/IbRequests';
+import IBProfile from './IB Management/IB Admin Panel/IBProfile';
+import IBCommissionDistribution from './IB Management/IB Admin Panel/IBCommissionDistribution';
+import ClientLinking from './IB Management/IB Admin Panel/IB Management/ClientLinking';
+import IBWithdrawalManagement from './IB Management/IB Admin Panel/IB Management/IBWithdrawalManagement';
+import MoveUser from './IB Management/IB Admin Panel/IB Management/MoveUser';
+import TradingGroups from './IB Management/IB Admin Panel/Group Management/TradingGroups';
+import CommissionDistribution from './IB Management/IB Admin Panel/Group Management/CommissionDistribution';
+import PortalSettings from './IB Management/IB Admin Panel/PortalSettings';
 
 function Placeholder({ title }) {
   return (
@@ -164,7 +176,18 @@ function AdminApp() {
 
               {/* IB Management Routes */}
               <Route path="/ib-distribution" element={<IBDistributionManagement />} />
-              <Route path="/ib-admin-portal" element={<Placeholder title="IB Admin Portal" />} />
+              <Route path="/ib-admin-portal" element={<IbAdminDashboard />} />
+              <Route path="/ib-admin-portal/symbols-pip-values" element={<SymbolsPipValues />} />
+              <Route path="/ib-admin-portal/overview" element={<IbOverview />} />
+              <Route path="/ib-admin-portal/requests" element={<IbRequests />} />
+              <Route path="/ib-admin-portal/profile" element={<IBProfile />} />
+              <Route path="/ib-admin-portal/commission-distribution" element={<IBCommissionDistribution />} />
+              <Route path="/ib-admin-portal/client-linking" element={<ClientLinking />} />
+              <Route path="/ib-admin-portal/withdrawal-management" element={<IBWithdrawalManagement />} />
+              <Route path="/ib-admin-portal/move-user" element={<MoveUser />} />
+              <Route path="/ib-admin-portal/trading-groups" element={<TradingGroups />} />
+              <Route path="/ib-admin-portal/group-commission-distribution" element={<CommissionDistribution />} />
+              <Route path="/ib-admin-portal/portal-settings" element={<PortalSettings />} />
 
               {/* PAMM Management Routes */}
               <Route path="/manage-managers" element={<ManageManagers />} />

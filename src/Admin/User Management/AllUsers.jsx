@@ -147,7 +147,7 @@ const AllUsers = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 p-6">
+    <div className="bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -163,7 +163,7 @@ const AllUsers = () => {
         </div>
 
         {/* Filters */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-6 mb-6">
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 mb-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
@@ -254,7 +254,7 @@ const AllUsers = () => {
         </div>
 
         {/* Global Search */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 p-4 mb-6">
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 mb-6">
           <div className="flex items-center gap-3">
             <FaSearch className="text-gray-400 text-lg" />
             <input
@@ -268,7 +268,7 @@ const AllUsers = () => {
         </div>
 
         {/* Table */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20 overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
@@ -618,3 +618,4 @@ const AllUsers = () => {
 };
 
 export default AllUsers;
+

@@ -157,10 +157,10 @@ const RolesManagement = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white p-6">
+    <div className="min-h-screen bg-gray-50 text-gray-900 p-6">
       <div className="max-w-7xl mx-auto space-y-8">
         {/* Add/Edit Role Form */}
-        <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
           <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-4">
             <h3 className="text-xl font-bold text-white flex items-center">
               <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -173,32 +173,32 @@ const RolesManagement = () => {
           <form onSubmit={handleSubmit} className="p-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">Role Name</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Role Name</label>
                 <input
                   type="text"
                   value={formData.role_name}
                   onChange={(e) => setFormData({...formData, role_name: e.target.value})}
-                  className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">Email</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                 <input
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">Password</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Password</label>
                 <input
                   type="password"
                   value={formData.password}
                   onChange={(e) => setFormData({...formData, password: e.target.value})}
-                  className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                   placeholder="Leave blank to keep existing"
                 />
               </div>
@@ -207,14 +207,14 @@ const RolesManagement = () => {
             {/* Permissions Section */}
             <div className="mb-6">
               <div className="flex items-center justify-between mb-4">
-                <h4 className="text-lg font-semibold text-slate-200">Permissions</h4>
-                <span className="text-sm text-slate-400">{formData.permissions.length} selected</span>
+                <h4 className="text-lg font-semibold text-gray-900">Permissions</h4>
+                <span className="text-sm text-gray-500">{formData.permissions.length} selected</span>
               </div>
 
               {/* Search and Filter */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div className="relative">
-                  <svg className="absolute left-3 top-3 w-4 h-4 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="absolute left-3 top-3 w-4 h-4 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"/>
                   </svg>
                   <input
@@ -222,13 +222,13 @@ const RolesManagement = () => {
                     placeholder="Search permissions..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-2 bg-white border border-gray-300 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                   />
                 </div>
                 <select
                   value={selectedGroup}
                   onChange={(e) => setSelectedGroup(e.target.value)}
-                  className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-white focus:ring-2 focus:ring-purple-500 focus:border-transparent"
                 >
                   <option value="">All Groups</option>
                   {Object.keys(permissionGroups).map(group => (
@@ -247,7 +247,7 @@ const RolesManagement = () => {
                     className={`flex items-center p-3 rounded-lg border cursor-pointer transition-all ${
                       formData.permissions.includes(permission)
                         ? 'bg-purple-600 border-purple-500 text-white'
-                        : 'bg-slate-700 border-slate-600 text-slate-300 hover:bg-slate-600'
+                        : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50'
                     }`}
                   >
                     <input
@@ -286,7 +286,7 @@ const RolesManagement = () => {
         </div>
 
         {/* All Roles Table */}
-        <div className="bg-slate-800 rounded-xl border border-slate-700 overflow-hidden">
+        <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
           <div className="bg-gradient-to-r from-cyan-600 to-blue-600 p-4">
             <h3 className="text-xl font-bold text-white flex items-center">
               <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -298,45 +298,45 @@ const RolesManagement = () => {
 
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-slate-700">
+              <thead className="bg-white">
                 <tr>
-                  <th className="px-6 py-4 text-left text-xs font-medium text-slate-300 uppercase tracking-wider">#</th>
-                  <th className="px-6 py-4 text-left text-xs font-medium text-slate-300 uppercase tracking-wider">Role</th>
-                  <th className="px-6 py-4 text-left text-xs font-medium text-slate-300 uppercase tracking-wider">Email</th>
-                  <th className="px-6 py-4 text-left text-xs font-medium text-slate-300 uppercase tracking-wider">Permissions</th>
-                  <th className="px-6 py-4 text-left text-xs font-medium text-slate-300 uppercase tracking-wider">Actions</th>
+                  <th className="px-6 py-4 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">#</th>
+                  <th className="px-6 py-4 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Role</th>
+                  <th className="px-6 py-4 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Email</th>
+                  <th className="px-6 py-4 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Permissions</th>
+                  <th className="px-6 py-4 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-700">
+              <tbody className="divide-y divide-gray-200">
                 {roles.map((role) => (
-                  <tr key={role.id} className="hover:bg-slate-700/50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-slate-200">
+                  <tr key={role.id} className="hover:bg-white/50">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       {role.id}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-200">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       {role.name}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-200">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       <div className="flex items-center">
-                        <svg className="w-4 h-4 mr-2 text-slate-400" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-4 h-4 mr-2 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                           <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                         </svg>
                         {role.email}
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-sm text-slate-200">
+                    <td className="px-6 py-4 text-sm text-gray-900">
                       <div className="flex flex-wrap gap-1 max-w-md">
                         {role.permissions.slice(0, 5).map((perm, index) => (
                           <span
                             key={index}
-                            className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-slate-600 text-slate-300"
+                            className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-slate-600 text-gray-700"
                           >
                             {perm}
                           </span>
                         ))}
                         {role.permissions.length > 5 && (
-                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-slate-500 text-slate-200">
+                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-slate-500 text-gray-900">
                             +{role.permissions.length - 5} more
                           </span>
                         )}
@@ -376,3 +376,6 @@ const RolesManagement = () => {
 };
 
 export default RolesManagement;
+
+
+
