@@ -4,7 +4,7 @@ import { HiOutlineWallet } from "react-icons/hi2";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { FaUser, FaCog, FaSignOutAlt } from "react-icons/fa";
 
-export default function Navbar({ toggleSidebar }) {
+export default function Navbar({ toggleSidebar, isAdminRoute }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -24,12 +24,15 @@ export default function Navbar({ toggleSidebar }) {
   return (
     <div className="w-full bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between relative">
 
-      {/* LEFT SECTION - Only Menu Icon */}
-      <div className="flex items-center">
+      {/* LEFT SECTION - Menu Icon and Title */}
+      <div className="flex items-center gap-4">
         <FiMenu
           className="text-[22px] cursor-pointer text-gray-600 hover:text-black transition"
           onClick={toggleSidebar}
         />
+        {isAdminRoute && (
+          <span className="text-lg font-semibold text-gray-800">Admin Panel</span>
+        )}
       </div>
 
       {/* RIGHT SECTION - All Other Content */}
