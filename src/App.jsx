@@ -21,11 +21,21 @@ import MyIBClients from './Pages/IB dashboard/MyIBClients'
 import MyIBStructure from './Pages/IB dashboard/MyIBStructure'
 import MyCommission from './Pages/IB dashboard/MyCommission'
 import IBWithdrawals from './Pages/IB dashboard/IBWithdrawals'
-import TradingAnalysis from './Pages/TradingAnalysis'
 import Profile from './Pages/Profile'
-import AdminApp from './Admin/AdminApp'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import IbAdminDashboard from './Admin/IB Management/IB Admin Panel/IbAdminDashboard'
+import SymbolsPipValues from './Admin/IB Management/IB Admin Panel/SymbolsPipValues'
+import IbOverview from './Admin/IB Management/IB Admin Panel/IbOverview'
+import IbRequests from './Admin/IB Management/IB Admin Panel/IbRequests'
+import IBProfile from './Admin/IB Management/IB Admin Panel/IBProfile'
+import IBCommissionDistribution from './Admin/IB Management/IB Admin Panel/IBCommissionDistribution'
+import ClientLinking from './Admin/IB Management/IB Admin Panel/IB Management/ClientLinking'
+import IBWithdrawalManagement from './Admin/IB Management/IB Admin Panel/IB Management/IBWithdrawalManagement'
+import MoveUser from './Admin/IB Management/IB Admin Panel/IB Management/MoveUser'
+import TradingGroups from './Admin/IB Management/IB Admin Panel/Group Management/TradingGroups'
+import CommissionDistribution from './Admin/IB Management/IB Admin Panel/Group Management/CommissionDistribution'
+import PortalSettings from './Admin/IB Management/IB Admin Panel/PortalSettings'
 
 function Placeholder({ title }) {
   return (
@@ -100,9 +110,6 @@ function App() {
           </div>
           <div className="flex-1 overflow-y-auto pt-16">
             <Routes>
-              {/* Admin Routes */}
-              <Route path="/admin/*" element={<AdminApp />} />
-
               {/* User Routes */}
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/my-account/open-trading-account" element={<OpenTradingAccount />} />
@@ -134,6 +141,18 @@ function App() {
               <Route path="/suppliers" element={<Placeholder title="Suppliers" />} />
               <Route path="/blogs" element={<Placeholder title="Blogs" />} />
               <Route path="/" element={<Dashboard />} />
+              <Route path="/ib-admin" element={<IbAdminDashboard /> } />
+              <Route path="/ib-admin/symbols-pip-values" element={<SymbolsPipValues />} />
+              <Route path="/ib-admin/overview" element={<IbOverview />} />
+              <Route path="/ib-admin/requests" element={<IbRequests />} />
+              <Route path="/ib-admin/profile" element={<IBProfile />} />
+              <Route path="/ib-admin/commission-distribution" element={<IBCommissionDistribution />} />
+              <Route path="/ib-admin/client-linking" element={<ClientLinking />} />
+              <Route path="/ib-admin/withdrawal-management" element={<IBWithdrawalManagement />} />
+              <Route path="/ib-admin/move-user" element={<MoveUser />} />
+              <Route path="/ib-admin/trading-groups" element={<TradingGroups />} />
+              <Route path="/ib-admin/group-commission-distribution" element={<CommissionDistribution />} />
+              <Route path="/ib-admin/portal-settings" element={<PortalSettings />} />
             </Routes>
           </div>
         </div>
