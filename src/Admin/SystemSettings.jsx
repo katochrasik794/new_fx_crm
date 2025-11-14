@@ -9,7 +9,7 @@ function SystemSettings() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen bg-violet-100 p-6">
       <div className="max-w-6xl">
         <h1 className="text-3xl font-bold text-gray-800  mb-8 flex items-center">
           <i className="ti ti-settings mr-3 text-blue-600"></i>

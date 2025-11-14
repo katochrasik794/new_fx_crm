@@ -33,7 +33,7 @@ const WithdrawFunds = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 p-4 md:p-6">
+    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="bg-gradient-to-r from-black via-gray-900 to-black text-white rounded-3xl p-6 md:p-8 mb-6 md:mb-8 shadow-2xl">

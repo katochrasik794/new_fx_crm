@@ -34,7 +34,7 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 p-6">
+    <div className="min-h-screen bg-violet-100 text-gray-900 p-6">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>

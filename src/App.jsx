@@ -1,6 +1,8 @@
 import './App.css'
 import Navbar from './Components/Navbar'
 import Sidebar from './Components/Sidebar'
+import IBAdminSidebar from './Components/IBAdminSidebar'
+import UserIBSidebar from './Components/UserIBSidebar'
 import Dashboard from './Pages/Dashboard'
 import OpenTradingAccount from './Pages/OpenTradingAccount'
 import MyAccounts from './Pages/MyAccounts'
@@ -127,6 +129,8 @@ function AppContent() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const location = useLocation()
   const isAdminRoute = location.pathname.startsWith('/admin')
+  const isIBAdminRoute = location.pathname.startsWith('/ib-admin')
+  const isUserIBRoute = location.pathname.startsWith('/ib-dashboard')
 
   useEffect(() => {
     const checkMobile = () => {
@@ -163,20 +167,36 @@ function AppContent() {
       <div className="h-screen flex relative overflow-hidden">
         {(sidebarOpen || !isMobile) && (
           <div className="fixed left-0 top-0 h-full z-40">
-            <Sidebar
-              collapsed={sidebarCollapsed && !isMobile}
-              isMobile={isMobile}
-              onClose={closeSidebar}
-              onNavItemClick={closeSidebar}
-              isAdminRoute={isAdminRoute}
-            />
+            {isIBAdminRoute ? (
+              <IBAdminSidebar
+                collapsed={sidebarCollapsed && !isMobile}
+                isMobile={isMobile}
+                onClose={closeSidebar}
+                onNavItemClick={closeSidebar}
+              />
+            ) : isUserIBRoute ? (
+              <UserIBSidebar
+                collapsed={sidebarCollapsed && !isMobile}
+                isMobile={isMobile}
+                onClose={closeSidebar}
+                onNavItemClick={closeSidebar}
+              />
+            ) : (
+              <Sidebar
+                collapsed={sidebarCollapsed && !isMobile}
+                isMobile={isMobile}
+                onClose={closeSidebar}
+                onNavItemClick={closeSidebar}
+                isAdminRoute={isAdminRoute}
+              />
+            )}
           </div>
         )}
-        <div className={`flex-1 flex flex-col ${!isMobile && !sidebarCollapsed ? 'ml-80' : !isMobile && sidebarCollapsed ? 'ml-16' : ''} transition-all duration-300`}>
-          <div className={`fixed top-0 z-50 ${!isMobile && !sidebarCollapsed ? 'left-80 right-0' : !isMobile && sidebarCollapsed ? 'left-16 right-0' : 'left-0 right-0'} transition-all duration-300`}>
+        <div className={`flex-1 flex flex-col ${!isMobile && !sidebarCollapsed ? 'ml-76' : !isMobile && sidebarCollapsed ? 'ml-20' : ''} transition-all duration-300`}>
+          <div className={`fixed top-0 z-50 ${!isMobile && !sidebarCollapsed ? 'left-76 right-0' : !isMobile && sidebarCollapsed ? 'left-20 right-0' : 'left-0 right-0'} transition-all duration-300`}>
             <Navbar toggleSidebar={toggleSidebar} isAdminRoute={isAdminRoute} />
           </div>
-          <div className="flex-1 overflow-y-auto pt-16">
+          <div className="flex-1 overflow-y-auto bg-violet-100" style={{ marginTop: '60px' }}>
             <Routes>
               {/* Admin Routes */}
               <Route path="/admin/" element={<AdminDashboard />} />
@@ -221,19 +241,21 @@ function AppContent() {
               <Route path="/admin/payment-gateways/manual" element={<ManualGateways />} />
               
               {/* IB Management */}
-              <Route path="/admin/ib/dashboard" element={<IbAdminDashboard />} />
-              <Route path="/admin/ib/overview" element={<IbOverview />} />
-              <Route path="/admin/ib/requests" element={<IbRequests />} />
-              <Route path="/admin/ib/profile" element={<IBProfile />} />
-              <Route path="/admin/ib/commission-distribution" element={<IBCommissionDistribution />} />
-              <Route path="/admin/ib/portal-settings" element={<PortalSettings />} />
-              <Route path="/admin/ib/symbols-pip-values" element={<SymbolsPipValues />} />
-              <Route path="/admin/ib/trading-groups" element={<TradingGroups />} />
-              <Route path="/admin/ib/group-commission" element={<CommissionDistribution />} />
-              <Route path="/admin/ib/client-linking" element={<ClientLinking />} />
-              <Route path="/admin/ib/move-user" element={<MoveUser />} />
-              <Route path="/admin/ib/withdrawal-management" element={<IBWithdrawalManagement />} />
               <Route path="/admin/ib/distribution-management" element={<IBDistributionManagement />} />
+              
+              {/* IB Admin Portal Routes */}
+              <Route path="/ib-admin/dashboard" element={<IbAdminDashboard />} />
+              <Route path="/ib-admin/overview" element={<IbOverview />} />
+              <Route path="/ib-admin/requests" element={<IbRequests />} />
+              <Route path="/ib-admin/profile" element={<IBProfile />} />
+              <Route path="/ib-admin/commission-distribution" element={<IBCommissionDistribution />} />
+              <Route path="/ib-admin/portal-settings" element={<PortalSettings />} />
+              <Route path="/ib-admin/symbols-pip-values" element={<SymbolsPipValues />} />
+              <Route path="/ib-admin/trading-groups" element={<TradingGroups />} />
+              <Route path="/ib-admin/group-commission" element={<CommissionDistribution />} />
+              <Route path="/ib-admin/client-linking" element={<ClientLinking />} />
+              <Route path="/ib-admin/move-user" element={<MoveUser />} />
+              <Route path="/ib-admin/withdrawal-management" element={<IBWithdrawalManagement />} />
               
               {/* Copy Trading */}
               <Route path="/admin/copy-trading/master" element={<MasterArea />} />

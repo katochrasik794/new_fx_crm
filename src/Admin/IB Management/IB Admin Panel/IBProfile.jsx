@@ -85,7 +85,7 @@ const IBProfile = () => {
   const displayedIBs = entriesPerPage === -1 ? filteredIBs : filteredIBs.slice((currentPage - 1) * entriesPerPage, currentPage * entriesPerPage)
 
   return (
-    <div className="min-h-screen bg-white  p-6">
+    <div className="min-h-screen bg-violet-100  p-6">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         {stats.map((stat, idx) => (
           <div key={idx} className={`relative overflow-hidden rounded-2xl p-8 text-center shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-3xl ${

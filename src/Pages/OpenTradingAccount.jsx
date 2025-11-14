@@ -25,7 +25,7 @@ function OpenTradingAccount() {
   }
 
   return (
-    <div className="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 p-6">
+    <div className="bg-violet-100 p-6">
       <div className="max-w-6.5xl mx-auto space-y-8">
 
         {/* Page Header */}

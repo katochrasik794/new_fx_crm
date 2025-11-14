@@ -33,9 +33,9 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
   );
 
   return (
-    <div className={`${isMobile ? 'fixed inset-0 z-50' : 'bg-gray-100 h-screen'}`} onClick={isMobile ? onClose : undefined}>
+    <div className={`${isMobile ? 'fixed inset-0 z-50' : 'h-screen'}`} onClick={isMobile ? onClose : undefined}>
       <div className={`h-full transition-all duration-300 ${collapsed ? 'w-20' : 'w-76'} ${isMobile ? 'relative bg-white shadow-xl' : ''}`} onClick={e => e.stopPropagation()}>
-   <div className={`flex h-full flex-col overflow-y-auto ${isMobile ? 'bg-white shadow-xl' : 'rounded-br-lg rounded-tr-lg bg-white shadow-md'}`}>
+   <div className={`flex h-full flex-col overflow-y-auto bg-gray-100 ${isMobile ? 'shadow-xl' : 'shadow-md'}`}>
            {isMobile && (
              <div className="flex justify-end p-4">
                <button
@@ -191,20 +191,9 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                       </svg>}
                     </button>
-                    <ul className={`flex flex-col overflow-hidden transition-all duration-300 ${analyticsOpen ? 'max-h-[600px]' : 'max-h-0'}`}>
-                      <li><Link to="/admin/ib/dashboard" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">IB Dashboard</span></>}</Link></li>
-                      <li><Link to="/admin/ib/overview" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Overview</span></>}</Link></li>
-                      <li><Link to="/admin/ib/requests" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">IB Requests</span></>}</Link></li>
-                      <li><Link to="/admin/ib/profile" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">IB Profile</span></>}</Link></li>
-                      <li><Link to="/admin/ib/commission-distribution" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Commission Distribution</span></>}</Link></li>
-                      <li><Link to="/admin/ib/portal-settings" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Portal Settings</span></>}</Link></li>
-                      <li><Link to="/admin/ib/symbols-pip-values" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Symbols Pip Values</span></>}</Link></li>
-                      <li><Link to="/admin/ib/trading-groups" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Trading Groups</span></>}</Link></li>
-                      <li><Link to="/admin/ib/group-commission" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Group Commission</span></>}</Link></li>
-                      <li><Link to="/admin/ib/client-linking" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Client Linking</span></>}</Link></li>
-                      <li><Link to="/admin/ib/move-user" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Move User</span></>}</Link></li>
-                      <li><Link to="/admin/ib/withdrawal-management" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Withdrawal Management</span></>}</Link></li>
-                      <li><Link to="/admin/ib/distribution-management" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Distribution Management</span></>}</Link></li>
+                    <ul className={`flex flex-col overflow-hidden transition-all duration-300 ${analyticsOpen ? 'max-h-60' : 'max-h-0'}`}>
+                      <li><Link to="/admin/ib/distribution-management" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">IB Distribution</span></>}</Link></li>
+                      <li><Link to="/ib-admin/dashboard" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">IB Admin Portal</span></>}</Link></li>
                     </ul>
                   </div>
 
@@ -387,67 +376,12 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   </svg>}
                 </button>
                 <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${ibOpen ? 'max-h-96' : 'max-h-0'}`}>
-                  
                   <li>
                     <Link to="/ib-dashboard/advanced" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Advanced IB Dashboard'}
                     </Link>
                   </li>
-                  <li>
-                    <Link to="/ib-dashboard/account-overview" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
-                      {!collapsed && 'Account Overview'}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/ib-dashboard/commission-analytics" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
-                      {!collapsed && 'Commission Analytics'}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/ib-dashboard/pip-calculator" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
-                      {!collapsed && 'Pip Calculator'}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/ib-dashboard/my-clients" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
-                      {!collapsed && 'My IB Clients'}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/ib-dashboard/my-structure" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
-                      {!collapsed && 'My IB Structure'}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/ib-dashboard/my-commission" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
-                      {!collapsed && 'My Commission'}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/ib-dashboard/withdrawals" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
-                      {!collapsed && 'IB Withdrawals'}
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/dashboard" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
-                      {!collapsed && 'Back to Main Dashboard'}
-                    </Link>
-                  </li>
-                  {/* <li>
-                    <Link to="/ib-dashboard/apply" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
-                      <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
-                      {!collapsed && 'Apply As an IB'}
-                    </Link>
-                  </li> */}
                 </ul>
               </div>
 
