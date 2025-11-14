@@ -92,7 +92,7 @@ function Dashboard() {
 
   return (
     <div className="bg-violet-100 p-3 sm:p-4 md:p-6">
-      <div className="max-w-7xl mx-auto space-y-8">
+      <div className="w-full max-w-[1800px] mx-auto space-y-8">
 
         {/* Enhanced Page Header with Global MT5 Selector */}
         <div className="bg-gradient-to-r from-violet-900 via-purple-900 to-indigo-900 text-white p-6 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02] border border-purple-500/20">
@@ -518,9 +518,9 @@ function Dashboard() {
         </div>
 
         {/* Footer */}
-        <div className="text-center py-4">
+        <div className="text-center py-2">
           <p className="text-sm text-gray-600">
-            {new Date().getFullYear()} © FINCRM MARKETS Limited
+            {new Date().getFullYear()} © FINCRM
           </p>
         </div>
 

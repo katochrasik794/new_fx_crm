@@ -152,7 +152,7 @@ const MapCopierMaster = () => {
 
   return (
     <div className="min-h-screen bg-violet-100 p-4 md:p-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="w-full max-w-[1800px] mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-amber-600 rounded-full mb-6">

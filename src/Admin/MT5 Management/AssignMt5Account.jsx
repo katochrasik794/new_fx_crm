@@ -146,7 +146,7 @@ const AssignMt5Account = () => {
 
   return (
     <div className="min-h-screen bg-violet-100 p-6">
-      <div className="max-w-6.5xl mx-auto">
+      <div className="w-full max-w-[1800px] mx-auto">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center mb-3">

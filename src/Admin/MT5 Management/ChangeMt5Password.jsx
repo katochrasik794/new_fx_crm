@@ -151,7 +151,7 @@ const ChangeMt5Password = () => {
 
   return (
     <div className="min-h-screen bg-violet-100 p-6">
-      <div className="max-w-6.5xl mx-auto space-y-6">
+      <div className="w-full max-w-[1800px] mx-auto space-y-6">
         {/* Header */}
         <div className="text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-600 rounded-full mb-4">

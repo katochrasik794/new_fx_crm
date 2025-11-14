@@ -10,7 +10,7 @@ const PrizeDistributionHistory = () => {
 
   return (
     <div className="min-h-screen bg-violet-100 p-6">
-      <div className="max-w-6xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="w-full max-w-[1800px] mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="bg-gradient-to-r from-orange-600 to-yellow-600 text-white p-4">
           <h2 className="text-2xl font-bold">Prize Distribution History</h2>
         </div>

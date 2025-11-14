@@ -13,7 +13,7 @@ const SendEmails = () => {
 
   return (
     <div className="min-h-screen bg-violet-100 p-6">
-      <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="w-full max-w-[1800px] mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="bg-gradient-to-r from-pink-600 to-purple-600 text-white p-4">
           <h2 className="text-2xl font-bold flex items-center">
             <svg className="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">

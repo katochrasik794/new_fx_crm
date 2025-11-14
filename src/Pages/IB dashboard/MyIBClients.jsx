@@ -104,7 +104,7 @@ const MyIBClients = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100 p-4 md:p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
+      <div className="w-full max-w-[1800px] mx-auto space-y-6">
 
         {/* Page Header */}
         <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-cyan-100 p-6">

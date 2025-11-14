@@ -11,7 +11,7 @@ const SetLotPricing = () => {
 
   return (
     <div className="min-h-screen bg-violet-100 p-6">
-      <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="w-full max-w-[1800px] mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white p-4">
           <h2 className="text-2xl font-bold">Set Lot Pricing</h2>
         </div>

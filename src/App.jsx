@@ -198,8 +198,8 @@ function AppContent() {
             )}
           </div>
         )}
-        <div className={`flex-1 flex flex-col ${!isMobile && !sidebarCollapsed ? 'ml-76' : !isMobile && sidebarCollapsed ? 'ml-20' : ''} transition-all duration-300`}>
-          <div className={`fixed top-0 z-50 ${!isMobile && !sidebarCollapsed ? 'left-76 right-0' : !isMobile && sidebarCollapsed ? 'left-20 right-0' : 'left-0 right-0'} transition-all duration-300`}>
+        <div className={`flex-1 flex flex-col transition-all duration-300 ${!isMobile ? (sidebarCollapsed ? 'ml-20' : 'ml-76') : ''}`}>
+          <div className={`fixed top-0 z-50 transition-all duration-300 ${!isMobile ? (sidebarCollapsed ? 'left-20' : 'left-76') : 'left-0'} right-0`}>
             <Navbar toggleSidebar={toggleSidebar} isAdminRoute={isAdminRoute} />
           </div>
           <div className="flex-1 overflow-y-auto bg-violet-100" style={{ marginTop: '60px' }}>

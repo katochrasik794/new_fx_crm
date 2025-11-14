@@ -14,7 +14,7 @@ const SendAnalysis = () => {
 
   return (
     <div className="min-h-screen bg-violet-100 p-6">
-      <div className="max-w-4xl mx-auto space-y-6">
+      <div className="w-full max-w-[1800px] mx-auto space-y-6">
         {/* Upload Form */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white p-4">

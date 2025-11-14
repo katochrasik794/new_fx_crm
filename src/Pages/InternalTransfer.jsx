@@ -24,7 +24,7 @@ const InternalTransfer = () => {
 
   return (
     <div className="min-h-screen bg-violet-100 p-4 md:p-6">
-      <div className="max-w-6.5xl mx-auto">
+      <div className="w-full max-w-[1800px] mx-auto">
         {/* Enhanced Page Header */}
         <div className="bg-gradient-to-r from-black via-gray-900 to-black text-white rounded-3xl p-6 md:p-8 mb-6 md:mb-8 shadow-2xl">
           <h1 className="text-3xl md:text-4xl font-bold mb-2 flex items-center">
