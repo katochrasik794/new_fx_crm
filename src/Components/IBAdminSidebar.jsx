@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const IBAdminSidebar = ({ collapsed, isMobile, onClose, onNavItemClick, logo }) => {
+const IBAdminSidebar = ({ collapsed, isMobile, onClose, onNavItemClick, logo, smallLogo }) => {
   const [groupManagementOpen, setGroupManagementOpen] = useState(false);
   const [ibManagementOpen, setIbManagementOpen] = useState(false);
   const location = useLocation();
@@ -12,6 +12,12 @@ const IBAdminSidebar = ({ collapsed, isMobile, onClose, onNavItemClick, logo }) 
     setGroupManagementOpen(false);
     setIbManagementOpen(false);
   };
+
+  useEffect(() => {
+    if (collapsed) {
+      closeAllDropdowns();
+    }
+  }, [collapsed]);
 
   const NavItem = ({ to, icon, children, onClick }) => (
     <Link
@@ -46,10 +52,10 @@ const IBAdminSidebar = ({ collapsed, isMobile, onClose, onNavItemClick, logo }) 
             </div>
           )}
           <div className="flex items-center justify-center px-4 h-[60px]">
-            {!isMobile && logo && (
+            {!isMobile && (
               <img
                 className="w-auto max-w-full h-full object-contain py-2"
-                src={logo}
+                src={collapsed ? smallLogo : logo}
                 alt="Logo"
               />
             )}

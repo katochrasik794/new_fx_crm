@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const UserIBSidebar = ({ collapsed, isMobile, onClose, onNavItemClick, logo }) => {
+const UserIBSidebar = ({ collapsed, isMobile, onClose, onNavItemClick, logo, smallLogo }) => {
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
@@ -30,11 +30,11 @@ const UserIBSidebar = ({ collapsed, isMobile, onClose, onNavItemClick, logo }) =
               <button onClick={onClose} className="text-gray-500 hover:text-gray-700 text-2xl">×</button>
             </div>
           )}
-          <div className="flex items-center justify-center px-4 h-[60px]">
-            {!isMobile && logo && (
+          <div className="flex items-center justify-center px-2 h-[60px]">
+            {!isMobile && (
               <img
-                className="w-auto max-w-full align-middle h-10"
-                src={logo}
+                className={`${collapsed ? 'w-12 h-12' : 'w-auto max-w-full h-full'} object-contain`}
+                src={collapsed ? smallLogo : logo}
                 alt="Logo"
               />
             )}
