@@ -331,23 +331,23 @@ const AllDeposits = () => {
   );
 
   return (
-    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
+    <div className="min-h-screen bg-violet-100 p-3 sm:p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6">
           <div className="flex items-center justify-center mb-4">
             <div className="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center mr-3">
               <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
               </svg>
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">All Deposits</h1>
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">All Deposits</h1>
           </div>
           <p className="text-center text-gray-600">Complete overview of all deposit transactions</p>
         </div>
 
         {/* Search */}
-        <div className="mb-6">
+        <div className="mb-4 sm:mb-6">
           <div className="max-w-md mx-auto">
             <div className="relative">
               <input

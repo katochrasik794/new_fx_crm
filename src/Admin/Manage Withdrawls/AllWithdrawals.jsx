@@ -283,10 +283,10 @@ const AllWithdrawals = () => {
   );
 
   return (
-    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
+    <div className="min-h-screen bg-violet-100 p-3 sm:p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <div className="flex items-center justify-center mb-4">
             <div className="w-14 h-14 bg-slate-600 rounded-2xl flex items-center justify-center mr-4 shadow-lg">
               <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -294,14 +294,14 @@ const AllWithdrawals = () => {
               </svg>
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900">All Withdrawals</h1>
-              <p className="text-lg text-gray-600 mt-1">View all withdrawal requests with status</p>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">All Withdrawals</h1>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 mt-1">View all withdrawal requests with status</p>
             </div>
           </div>
         </div>
 
         {/* Summary Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 mb-6 sm:mb-8">
           <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
             <div className="flex items-center">
               <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center mr-4">

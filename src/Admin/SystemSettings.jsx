@@ -9,23 +9,23 @@ function SystemSettings() {
   ];
 
   return (
-    <div className="min-h-screen bg-violet-100 p-6">
+    <div className="min-h-screen bg-violet-100 p-3 sm:p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-800  mb-8 flex items-center">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4 sm:mb-6 md:mb-8 flex items-center">
           <i className="ti ti-settings mr-3 text-blue-600"></i>
           System Settings
         </h1>
 
-        <div className="flex flex-col lg:flex-row gap-6">
+        <div className="flex flex-col lg:flex-row gap-4 sm:gap-6">
           {/* Sidebar Navigation */}
           <div className="lg:w-1/4">
-            <div className="bg-white  rounded-xl shadow-lg p-4">
+            <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4">
               <nav className="space-y-2">
                 {tabs.map((tab) => (
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 flex items-center ${
+                    className={`w-full text-left px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-all duration-200 flex items-center text-sm sm:text-base ${
                       activeTab === tab.id
                         ? 'bg-blue-500 text-white shadow-md'
                         : 'text-gray-700  hover:bg-gray-100 '
@@ -160,16 +160,16 @@ function MT5Tab() {
       </div>
 
       {/* MT5 List */}
-      <div className="bg-white  rounded-xl shadow-lg overflow-hidden border-l-4 border-blue-500">
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4">
-          <h3 className="text-lg font-semibold text-white flex items-center">
+      <div className="bg-white rounded-xl shadow-lg overflow-hidden border-l-4 border-blue-500">
+        <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-3 sm:p-4">
+          <h3 className="text-base sm:text-lg font-semibold text-white flex items-center">
             <i className="ti ti-list-details mr-2"></i>
             Saved MT5 Connections
           </h3>
         </div>
-        <div className="p-6">
-          <div className="overflow-x-auto">
-            <table className="w-full table-auto">
+        <div className="p-3 sm:p-4 md:p-6">
+          <div className="overflow-x-auto -mx-3 sm:-mx-4 md:-mx-6 px-3 sm:px-4 md:px-6">
+            <table className="w-full table-auto min-w-[900px]">
               <thead>
                 <tr className="border-b border-gray-200 ">
                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500  uppercase tracking-wider">ID</th>
@@ -213,7 +213,7 @@ function MT5Tab() {
       </div>
 
       {/* MT5 Usage Note */}
-      <div className="bg-gradient-to-r from-yellow-50 to-orange-50   border border-yellow-200  rounded-xl p-6">
+      <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-xl p-4 sm:p-6">
         <h4 className="text-lg font-semibold text-yellow-800  mb-3 flex items-center">
           <i className="ti ti-info-circle mr-2"></i>
           MT5 Connection — what to enter
@@ -237,10 +237,10 @@ function MT5Tab() {
 
 function SMTPTab() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* SMTP Form */}
-      <div className="bg-white  rounded-xl shadow-lg p-6 border-l-4 border-purple-500">
-        <h3 className="text-xl font-semibold text-gray-800  mb-4 flex items-center">
+      <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 border-l-4 border-purple-500">
+        <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-3 sm:mb-4 flex items-center">
           <i className="ti ti-plus mr-2 text-purple-500"></i>
           Configure SMTP Settings
         </h3>
@@ -248,7 +248,7 @@ function SMTPTab() {
           <input type="hidden" name="action" value="save_smtp" />
           <input type="hidden" name="smtp_id" value="0" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700  mb-1">
                 SMTP Host
@@ -360,7 +360,7 @@ function SMTPTab() {
           </div>
 
           <div className="flex justify-end">
-            <button className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-lg transition-colors duration-200 flex items-center">
+            <button className="w-full sm:w-auto bg-purple-500 hover:bg-purple-600 text-white px-4 sm:px-6 py-2 rounded-lg transition-colors duration-200 flex items-center justify-center">
               <i className="ti ti-device-floppy mr-2"></i>
               Save SMTP
             </button>
@@ -369,16 +369,16 @@ function SMTPTab() {
       </div>
 
       {/* SMTP List */}
-      <div className="bg-white  rounded-xl shadow-lg overflow-hidden border-l-4 border-indigo-500">
-        <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 p-4">
-          <h3 className="text-lg font-semibold text-white flex items-center">
+      <div className="bg-white rounded-xl shadow-lg overflow-hidden border-l-4 border-indigo-500">
+        <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 p-3 sm:p-4">
+          <h3 className="text-base sm:text-lg font-semibold text-white flex items-center">
             <i className="ti ti-list-details mr-2"></i>
             Saved SMTP Profiles
           </h3>
         </div>
-        <div className="p-6">
-          <div className="overflow-x-auto">
-            <table className="w-full table-auto">
+        <div className="p-3 sm:p-4 md:p-6">
+          <div className="overflow-x-auto -mx-3 sm:-mx-4 md:-mx-6 px-3 sm:px-4 md:px-6">
+            <table className="w-full table-auto min-w-[1000px]">
               <thead>
                 <tr className="border-b border-gray-200 ">
                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500  uppercase tracking-wider">ID</th>
@@ -432,7 +432,7 @@ function SMTPTab() {
       </div>
 
       {/* SMTP Usage Note */}
-      <div className="bg-gradient-to-r from-green-50 to-teal-50   border border-green-200  rounded-xl p-6">
+      <div className="bg-gradient-to-r from-green-50 to-teal-50 border border-green-200 rounded-xl p-4 sm:p-6">
         <h4 className="text-lg font-semibold text-green-800  mb-3 flex items-center">
           <i className="ti ti-info-circle mr-2"></i>
           What to enter for SMTP
