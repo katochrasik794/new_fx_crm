@@ -1,8 +1,97 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Line } from 'react-chartjs-2'
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+} from 'chart.js'
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  Filler
+)
 
 function Dashboard() {
+  useEffect(() => {
+    // Update stats
+    document.getElementById('summaryBalance').textContent = '$6,300.00';
+    document.getElementById('summaryEquity').textContent = '$6,450.00';
+    document.getElementById('summaryWins').textContent = '12';
+    document.getElementById('summaryLosses').textContent = '5';
+    document.getElementById('summaryPnl').textContent = '$1,850.00';
+    document.getElementById('statsProfit').textContent = '$2,450.00';
+    document.getElementById('statsLoss').textContent = '$600.00';
+    document.getElementById('statsNet').textContent = '$1,850.00';
+  }, []);
+
+  const chartData = {
+    labels: ['Jan 1', 'Jan 5', 'Jan 10', 'Jan 15', 'Jan 20', 'Jan 25', 'Jan 30'],
+    datasets: [
+      {
+        label: 'Cumulative Earnings',
+        data: [1200, 2400, 3100, 2800, 4200, 5100, 6300],
+        borderColor: 'rgb(59, 130, 246)',
+        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+        fill: true,
+        tension: 0.4,
+        pointRadius: 5,
+        pointHoverRadius: 7,
+        pointBackgroundColor: 'rgb(59, 130, 246)',
+        pointBorderColor: '#fff',
+        pointBorderWidth: 2
+      }
+    ]
+  };
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false
+      },
+      tooltip: {
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        padding: 12,
+        titleColor: '#fff',
+        bodyColor: '#fff',
+        callbacks: {
+          label: (context) => `Earnings: $${context.parsed.y.toLocaleString()}`
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: {
+          callback: (value) => '$' + value.toLocaleString()
+        },
+        grid: {
+          color: 'rgba(0, 0, 0, 0.05)'
+        }
+      },
+      x: {
+        grid: {
+          display: false
+        }
+      }
+    }
+  };
+
   return (
-    <div className="bg-violet-100 p-6">
+    <div className="bg-violet-100 p-3 sm:p-4 md:p-6">
       <div className="max-w-7xl mx-auto space-y-8">
 
         {/* Enhanced Page Header with Global MT5 Selector */}
@@ -20,7 +109,7 @@ function Dashboard() {
               </p>
             </div>
             <div className="flex items-center gap-3">
-              <img src="https://portal.oxomarkets.com/client/assets/images/icons/mt5.png" alt="MT5" className="w-6 h-6" />
+              <img src="https://portal.fincrmmarkets.com/client/assets/images/icons/mt5.png" alt="MT5" className="w-6 h-6" />
               <select className="bg-white text-black border-2 border-white px-3 py-1 rounded text-sm min-w-[150px]">
                 <option value="">No MT5 Account</option>
               </select>
@@ -151,7 +240,7 @@ function Dashboard() {
         </div> */}
 
         {/* Enhanced Summary Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6 mb-8">
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 mb-6 sm:mb-8">
           <div className="bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-2xl hover:scale-105 transition-all duration-500 transform border border-gray-100 group">
             <div className="mb-4 p-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full w-fit mx-auto group-hover:scale-110 transition-transform duration-300">
               <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -205,12 +294,12 @@ function Dashboard() {
 
 
         {/* Getting Started Section */}
-        <div className="bg-gradient-to-br from-white via-gray-50 to-blue-50 rounded-3xl shadow-2xl p-8 mb-8 border border-white/50 backdrop-blur-sm hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.01]">
+        <div className="bg-gradient-to-br from-white via-gray-50 to-blue-50 rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 border border-white/50 backdrop-blur-sm hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.01]">
           <div className="mb-6">
             <h6 className="text-2xl font-bold text-gray-900 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Getting Started</h6>
             <p className="text-gray-600 mt-2">Follow these simple steps to begin your trading journey</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             <div className="group text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl hover:shadow-xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
               <div className="relative mb-4">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:rotate-6">
@@ -270,9 +359,9 @@ function Dashboard() {
 
 
         {/* Earnings Overview */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-6">
           {/* Cumulative Earnings */}
-          <div className="bg-white rounded-lg shadow-sm p-6 lg:col-span-2">
+          <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 lg:col-span-2">
             <div className="flex justify-between items-center mb-4">
               <h4 className="text-lg font-semibold text-gray-900">Cumulative Earnings</h4>
               <select className="bg-white border border-gray-300 px-3 py-1 rounded text-sm">
@@ -282,11 +371,13 @@ function Dashboard() {
                 <option value="365">Last 365 days</option>
               </select>
             </div>
-            <div id="cumulative-earnings-chart" className="h-80"></div>
+            <div className="h-80 w-full">
+              <Line data={chartData} options={chartOptions} />
+            </div>
           </div>
 
           {/* Earnings Stats */}
-          <div className="bg-white rounded-lg shadow-sm p-6">
+          <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6">
             <div className="mb-4">
               <h4 className="text-lg font-semibold text-gray-900">Earnings Stats</h4>
             </div>
@@ -312,24 +403,124 @@ function Dashboard() {
           </div>
         </div>
 
+        {/* Transaction History Table */}
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
+          <div className="mb-4">
+            <h4 className="text-lg font-semibold text-gray-900">Transaction History</h4>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Type</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Balance</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2024-01-30</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Deposit</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-semibold">+$1,200.00</td>
+                  <td className="px-6 py-4 whitespace-nowrap"><span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Completed</span></td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$6,300.00</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2024-01-28</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Trade Profit</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-semibold">+$450.00</td>
+                  <td className="px-6 py-4 whitespace-nowrap"><span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Completed</span></td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$5,100.00</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2024-01-25</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Withdrawal</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-semibold">-$500.00</td>
+                  <td className="px-6 py-4 whitespace-nowrap"><span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Pending</span></td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$4,650.00</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2024-01-22</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Trade Profit</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-semibold">+$850.00</td>
+                  <td className="px-6 py-4 whitespace-nowrap"><span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Completed</span></td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$5,150.00</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2024-01-20</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Trade Loss</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-red-600 font-semibold">-$200.00</td>
+                  <td className="px-6 py-4 whitespace-nowrap"><span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Completed</span></td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$4,300.00</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">2024-01-18</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Deposit</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-semibold">+$2,000.00</td>
+                  <td className="px-6 py-4 whitespace-nowrap"><span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Completed</span></td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">$4,500.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
         {/* Monthly Performance Heatmap */}
         <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
           <div className="mb-4">
-            <h4 className="text-lg font-semibold text-gray-900">Transection History Table</h4>
-          </div>
-          <div id="monthly-heatmap-chart" className="h-56"></div>
-        </div>
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-          <div className="mb-4">
             <h4 className="text-lg font-semibold text-gray-900">Monthly Performance Heatmap</h4>
+            <p className="text-sm text-gray-600 mt-1">Trading performance by day of the month</p>
           </div>
-          <div id="monthly-heatmap-chart" className="h-56"></div>
+          <div className="grid grid-cols-7 gap-2">
+            {[...Array(31)].map((_, i) => {
+              const day = i + 1;
+              const profit = Math.random() > 0.4 ? Math.floor(Math.random() * 500) : -Math.floor(Math.random() * 200);
+              const intensity = Math.abs(profit) / 500;
+              const bgColor = profit > 0 
+                ? `rgba(34, 197, 94, ${0.2 + intensity * 0.6})` 
+                : `rgba(239, 68, 68, ${0.2 + intensity * 0.6})`;
+              
+              return (
+                <div
+                  key={day}
+                  className="aspect-square rounded-lg flex flex-col items-center justify-center text-xs font-medium hover:scale-110 transition-transform cursor-pointer"
+                  style={{ backgroundColor: bgColor }}
+                  title={`Day ${day}: ${profit > 0 ? '+' : ''}$${profit}`}
+                >
+                  <div className="text-gray-700">{day}</div>
+                  <div className={`text-[10px] font-bold ${profit > 0 ? 'text-green-700' : 'text-red-700'}`}>
+                    {profit > 0 ? '+' : ''}${profit}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="flex items-center justify-center gap-4 mt-4 text-xs text-gray-600">
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded" style={{ backgroundColor: 'rgba(34, 197, 94, 0.8)' }}></div>
+              <span>High Profit</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded" style={{ backgroundColor: 'rgba(34, 197, 94, 0.3)' }}></div>
+              <span>Low Profit</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded" style={{ backgroundColor: 'rgba(239, 68, 68, 0.3)' }}></div>
+              <span>Low Loss</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded" style={{ backgroundColor: 'rgba(239, 68, 68, 0.8)' }}></div>
+              <span>High Loss</span>
+            </div>
+          </div>
         </div>
 
         {/* Footer */}
         <div className="text-center py-4">
           <p className="text-sm text-gray-600">
-            {new Date().getFullYear()} © OXO MARKETS Limited
+            {new Date().getFullYear()} © FINCRM MARKETS Limited
           </p>
         </div>
 

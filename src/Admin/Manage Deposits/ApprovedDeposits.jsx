@@ -214,7 +214,7 @@ const ApprovedDeposits = () => {
     {
       id: 18,
       srNo: 18,
-      user: 'OXO Trading tw',
+      user: 'FINCRM Trading tw',
       mt5Id: '369012',
       method: 'Admin_mt5',
       amount: '$1,000.00',
@@ -238,7 +238,7 @@ const ApprovedDeposits = () => {
     {
       id: 20,
       srNo: 20,
-      user: 'OXO MARKET TRADING',
+      user: 'FINCRM MARKET TRADING',
       mt5Id: '7100016975',
       method: 'Admin_mt5',
       amount: '$1,000.00',
@@ -300,7 +300,7 @@ const ApprovedDeposits = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-50 p-4 md:p-6">
+    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-6">

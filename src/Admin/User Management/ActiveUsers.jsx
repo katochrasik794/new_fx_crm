@@ -17,31 +17,31 @@ const ActiveUsers = () => {
   // Mock data - replace with actual API call
   useEffect(() => {
     const mockUsers = [
-      { id: 1, name: 'jagdish sonar', email: 'jagdishsonar020@gmail.com', country: 'India', phone: '7900003727', referral: 'OXO 7363', joined: '11 Nov 2025' },
-      { id: 2, name: 'Rajesh Pawar', email: 'raju.21pawar@gmail.com', country: 'India', phone: '9885582723', referral: 'OXO 8090', joined: '11 Nov 2025' },
-      { id: 3, name: 'Rushikesh kale', email: 'kale91150@gmail.com', country: 'India', phone: '9112628024', referral: 'OXO 5139', joined: '11 Nov 2025' },
-      { id: 4, name: 'Vinod Kumar', email: 'vkvinodkumar760@gmail.com', country: 'india', phone: '+91 90583 67783', referral: 'OXO220565', joined: '10 Nov 2025' },
-      { id: 5, name: 'shahbaz ilyas', email: 'shahbazilyas196@gmail.com', country: 'Pakistan', phone: '3204072575', referral: 'OXO 8307', joined: '10 Nov 2025' },
-      { id: 6, name: 'Bhura Ram', email: 'bhuraram9754@gmail.com', country: 'India', phone: '3762422038', referral: 'OXO 9230', joined: '10 Nov 2025' },
-      { id: 7, name: 'Vinod Kumar', email: 'insurancearadhanahyundai@gmail.com', country: 'india', phone: '+91 90583 67783', referral: 'OXO789795', joined: '09 Nov 2025' },
-      { id: 8, name: 'sanjay Jadhav', email: 'sj0447439@gmail.com', country: 'India', phone: '9371310517', referral: 'OXO 5517', joined: '09 Nov 2025' },
-      { id: 9, name: 'Sagar Shinde', email: 'nitin3105.shinde@gmail.com', country: 'India', phone: '9975818554', referral: 'OXO 2026', joined: '09 Nov 2025' },
-      { id: 10, name: 'Sagar Shinde', email: 'ss12421243@gmail.com', country: 'India', phone: '9975818554', referral: 'OXO 7234', joined: '09 Nov 2025' },
-      { id: 11, name: 'Swarup Kakade', email: 'swarupk298@gmail.com', country: 'India', phone: '9322432803', referral: 'OXO 1682', joined: '09 Nov 2025' },
-      { id: 12, name: 'adnan raza', email: 'adnan24raza@gmail.com', country: 'Pakistan', phone: '03204408424', referral: 'OXO 9440', joined: '07 Nov 2025' },
-      { id: 13, name: 'Tushar Warad', email: 'tusharimp13@gmail.com', country: 'India', phone: '9970433322', referral: 'OXO 6616', joined: '07 Nov 2025' },
-      { id: 14, name: 'Akash Sonmale', email: 'akashsonmale2026@gmail.com', country: 'India', phone: '9763659257', referral: 'OXO 9342', joined: '07 Nov 2025' },
-      { id: 15, name: 'Pramod Kirdat', email: 'kirdatpramod4@gmail.com', country: 'India', phone: '8421007092', referral: 'OXO 5595', joined: '07 Nov 2025' },
-      { id: 16, name: 'Sandip Kenjale', email: 'sandipkenjale@gmail.com', country: 'India', phone: '9892160284', referral: 'OXO 8182', joined: '07 Nov 2025' },
-      { id: 17, name: 'Ganesh Sutar', email: 'ganeshsutar2002@gmail.com', country: 'India', phone: '9175051059', referral: 'OXO 1761', joined: '07 Nov 2025' },
-      { id: 18, name: 'sanjay Jadhav', email: 'jsanjay1070@gmail.com', country: 'India', phone: '9011222535', referral: 'OXO 8606', joined: '07 Nov 2025' },
-      { id: 19, name: 'anku putt', email: 'parteekchawla69@gmail.com', country: 'India', phone: '7529860737', referral: 'OXO 8346', joined: '07 Nov 2025' },
-      { id: 20, name: 'Sonali sutar', email: 'sgsservices2002@gmail.com', country: 'India', phone: '9049296262', referral: 'OXO 6116', joined: '07 Nov 2025' },
-      { id: 21, name: 'Madhukar Dhonde', email: 'dhondemadhukar2999@gmail.com', country: 'India', phone: '9322522120', referral: 'OXO 4664', joined: '07 Nov 2025' },
-      { id: 22, name: 'abc cde', email: 'thomasselve7@gmail.com', country: 'India', phone: '3197010539578', referral: 'OXO 9291', joined: '07 Nov 2025' },
-      { id: 23, name: 'Candle  Story', email: 'ceo.candlestory@gmail.com', country: 'India', phone: '0000000000', referral: 'OXO924721', joined: '07 Nov 2025' },
-      { id: 24, name: 'OXO Trading tw', email: 'trading123@gmail.com', country: 'India', phone: '9191919191', referral: 'OXO 2569', joined: '07 Nov 2025' },
-      { id: 25, name: 'OXO SUB IB TWO', email: 'oxosubib2@gmail.com', country: 'India', phone: '9191919191', referral: 'OXO 8082', joined: '07 Nov 2025' }
+      { id: 1, name: 'jagdish sonar', email: 'jagdishsonar020@gmail.com', country: 'India', phone: '7900003727', referral: 'FINCRM 7363', joined: '11 Nov 2025' },
+      { id: 2, name: 'Rajesh Pawar', email: 'raju.21pawar@gmail.com', country: 'India', phone: '9885582723', referral: 'FINCRM 8090', joined: '11 Nov 2025' },
+      { id: 3, name: 'Rushikesh kale', email: 'kale91150@gmail.com', country: 'India', phone: '9112628024', referral: 'FINCRM 5139', joined: '11 Nov 2025' },
+      { id: 4, name: 'Vinod Kumar', email: 'vkvinodkumar760@gmail.com', country: 'india', phone: '+91 90583 67783', referral: 'FINCRM220565', joined: '10 Nov 2025' },
+      { id: 5, name: 'shahbaz ilyas', email: 'shahbazilyas196@gmail.com', country: 'Pakistan', phone: '3204072575', referral: 'FINCRM 8307', joined: '10 Nov 2025' },
+      { id: 6, name: 'Bhura Ram', email: 'bhuraram9754@gmail.com', country: 'India', phone: '3762422038', referral: 'FINCRM 9230', joined: '10 Nov 2025' },
+      { id: 7, name: 'Vinod Kumar', email: 'insurancearadhanahyundai@gmail.com', country: 'india', phone: '+91 90583 67783', referral: 'FINCRM789795', joined: '09 Nov 2025' },
+      { id: 8, name: 'sanjay Jadhav', email: 'sj0447439@gmail.com', country: 'India', phone: '9371310517', referral: 'FINCRM 5517', joined: '09 Nov 2025' },
+      { id: 9, name: 'Sagar Shinde', email: 'nitin3105.shinde@gmail.com', country: 'India', phone: '9975818554', referral: 'FINCRM 2026', joined: '09 Nov 2025' },
+      { id: 10, name: 'Sagar Shinde', email: 'ss12421243@gmail.com', country: 'India', phone: '9975818554', referral: 'FINCRM 7234', joined: '09 Nov 2025' },
+      { id: 11, name: 'Swarup Kakade', email: 'swarupk298@gmail.com', country: 'India', phone: '9322432803', referral: 'FINCRM 1682', joined: '09 Nov 2025' },
+      { id: 12, name: 'adnan raza', email: 'adnan24raza@gmail.com', country: 'Pakistan', phone: '03204408424', referral: 'FINCRM 9440', joined: '07 Nov 2025' },
+      { id: 13, name: 'Tushar Warad', email: 'tusharimp13@gmail.com', country: 'India', phone: '9970433322', referral: 'FINCRM 6616', joined: '07 Nov 2025' },
+      { id: 14, name: 'Akash Sonmale', email: 'akashsonmale2026@gmail.com', country: 'India', phone: '9763659257', referral: 'FINCRM 9342', joined: '07 Nov 2025' },
+      { id: 15, name: 'Pramod Kirdat', email: 'kirdatpramod4@gmail.com', country: 'India', phone: '8421007092', referral: 'FINCRM 5595', joined: '07 Nov 2025' },
+      { id: 16, name: 'Sandip Kenjale', email: 'sandipkenjale@gmail.com', country: 'India', phone: '9892160284', referral: 'FINCRM 8182', joined: '07 Nov 2025' },
+      { id: 17, name: 'Ganesh Sutar', email: 'ganeshsutar2002@gmail.com', country: 'India', phone: '9175051059', referral: 'FINCRM 1761', joined: '07 Nov 2025' },
+      { id: 18, name: 'sanjay Jadhav', email: 'jsanjay1070@gmail.com', country: 'India', phone: '9011222535', referral: 'FINCRM 8606', joined: '07 Nov 2025' },
+      { id: 19, name: 'anku putt', email: 'parteekchawla69@gmail.com', country: 'India', phone: '7529860737', referral: 'FINCRM 8346', joined: '07 Nov 2025' },
+      { id: 20, name: 'Sonali sutar', email: 'sgsservices2002@gmail.com', country: 'India', phone: '9049296262', referral: 'FINCRM 6116', joined: '07 Nov 2025' },
+      { id: 21, name: 'Madhukar Dhonde', email: 'dhondemadhukar2999@gmail.com', country: 'India', phone: '9322522120', referral: 'FINCRM 4664', joined: '07 Nov 2025' },
+      { id: 22, name: 'abc cde', email: 'thomasselve7@gmail.com', country: 'India', phone: '3197010539578', referral: 'FINCRM 9291', joined: '07 Nov 2025' },
+      { id: 23, name: 'Candle  Story', email: 'ceo.candlestory@gmail.com', country: 'India', phone: '0000000000', referral: 'FINCRM924721', joined: '07 Nov 2025' },
+      { id: 24, name: 'FINCRM Trading tw', email: 'trading123@gmail.com', country: 'India', phone: '9191919191', referral: 'FINCRM 2569', joined: '07 Nov 2025' },
+      { id: 25, name: 'FINCRM SUB IB TWO', email: 'FINCRMsubib2@gmail.com', country: 'India', phone: '9191919191', referral: 'FINCRM 8082', joined: '07 Nov 2025' }
     ];
     setUsers(mockUsers);
     setFilteredUsers(mockUsers);
@@ -94,7 +94,7 @@ const ActiveUsers = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-rose-100 p-4 md:p-6">
+    <div className="bg-violet-100 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">

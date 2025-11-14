@@ -42,18 +42,18 @@ const AdvancedIBDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 p-4 md:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 p-3 sm:p-4 md:p-6">
       <div className="max-w-7xl mx-auto space-y-6">
 
         {/* Page Title */}
-        <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-emerald-100 p-6">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 flex items-center">
-            <svg className="w-8 h-8 md:w-10 md:h-10 mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+        <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-emerald-100 p-4 sm:p-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 flex items-center">
+            <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 mr-2 sm:mr-3 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
             IB Dashboard
           </h1>
-          <p className="text-gray-600 text-lg mb-4">Real-time commission tracking • <strong>Commission = Trade Lots × Pip Rate × $10</strong></p>
+          <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-4">Real-time commission tracking • <strong>Commission = Trade Lots × Pip Rate × $10</strong></p>
           <div className="flex flex-wrap gap-2">
             <span className="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm font-medium">PLUS -- 2.00 pip/lot</span>
             <span className="px-3 py-1 bg-teal-100 text-teal-800 rounded-full text-sm font-medium">PRO -- 1.00 pip/lot</span>
@@ -63,7 +63,7 @@ const AdvancedIBDashboard = () => {
         </div>
 
         {/* Enhanced KPI Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           <div className="bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-2xl shadow-xl p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <div className="flex items-center justify-between mb-4">
               <svg className="w-12 h-12 opacity-80" fill="currentColor" viewBox="0 0 20 20">
@@ -111,7 +111,7 @@ const AdvancedIBDashboard = () => {
         </div>
 
         {/* Additional KPI Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-emerald-100 p-6 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <div className="text-center">
               <h3 className="text-3xl font-bold text-emerald-600 mb-1">0.40</h3>
@@ -149,10 +149,10 @@ const AdvancedIBDashboard = () => {
         </div>
 
         {/* Bottom Row: Withdraw + Referral Links */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
 
           {/* Withdraw Commission */}
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-emerald-100 p-6">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-emerald-100 p-4 sm:p-6">
             <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
               <svg className="w-6 h-6 mr-2 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"/>
@@ -300,12 +300,12 @@ const AdvancedIBDashboard = () => {
               <div className="flex">
                 <input
                   type="text"
-                  value="https://portal.oxomarkets.com/register.php?ref=OXO151753"
+                  value="https://portal.fincrmmarkets.com/register.php?ref=FINCRM151753"
                   className="flex-1 border border-gray-300 rounded-l-xl px-4 py-2 text-sm bg-gray-50"
                   readOnly
                 />
                 <button
-                  onClick={() => navigator.clipboard.writeText('https://portal.oxomarkets.com/register.php?ref=OXO151753')}
+                  onClick={() => navigator.clipboard.writeText('https://portal.fincrmmarkets.com/register.php?ref=FINCRM151753')}
                   className="bg-gray-100 hover:bg-gray-200 border border-l-0 border-gray-300 rounded-r-xl px-3 py-2 transition-colors"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -323,12 +323,12 @@ const AdvancedIBDashboard = () => {
               <div className="flex">
                 <input
                   type="text"
-                  value="https://portal.oxomarkets.com/register.php?ref=OXO151753"
+                  value="https://portal.fincrmmarkets.com/register.php?ref=FINCRM151753"
                   className="flex-1 border border-gray-300 rounded-l-xl px-4 py-2 text-sm bg-gray-50"
                   readOnly
                 />
                 <button
-                  onClick={() => navigator.clipboard.writeText('https://portal.oxomarkets.com/register.php?ref=OXO151753')}
+                  onClick={() => navigator.clipboard.writeText('https://portal.fincrmmarkets.com/register.php?ref=FINCRM151753')}
                   className="bg-gray-100 hover:bg-gray-200 border border-l-0 border-gray-300 rounded-r-xl px-3 py-2 transition-colors"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -379,12 +379,12 @@ const AdvancedIBDashboard = () => {
                   <div className="flex">
                     <input
                       type="text"
-                      value={`https://portal.oxomarkets.com/register.php?ref=OXO151753&data=${group.toLowerCase()}_link`}
+                      value={`https://portal.fincrmmarkets.com/register.php?ref=FINCRM151753&data=${group.toLowerCase()}_link`}
                       className="flex-1 border border-gray-300 rounded-l-lg px-3 py-2 text-sm bg-gray-50"
                       readOnly
                     />
                     <button
-                      onClick={() => navigator.clipboard.writeText(`https://portal.oxomarkets.com/register.php?ref=OXO151753&data=${group.toLowerCase()}_link`)}
+                      onClick={() => navigator.clipboard.writeText(`https://portal.fincrmmarkets.com/register.php?ref=FINCRM151753&data=${group.toLowerCase()}_link`)}
                       className="bg-gray-100 hover:bg-gray-200 border border-l-0 border-gray-300 rounded-r-lg px-3 py-2 transition-colors"
                     >
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -526,10 +526,10 @@ const AdvancedIBDashboard = () => {
             <div>
               <h4 className="text-lg font-semibold text-emerald-600 mb-4">Personal Information</h4>
               <div className="space-y-2 text-sm">
-                <p><span className="font-medium">Name:</span> OXO MARKET IB</p>
-                <p><span className="font-medium">Email:</span> OXOMARKETIB@GMAIL.COM</p>
+                <p><span className="font-medium">Name:</span> FINCRM MARKET IB</p>
+                <p><span className="font-medium">Email:</span> FINCRMMARKETIB@GMAIL.COM</p>
                 <p><span className="font-medium">Status:</span> <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">IB Approved</span></p>
-                <p><span className="font-medium">Referral Code:</span> OXO151753</p>
+                <p><span className="font-medium">Referral Code:</span> FINCRM151753</p>
               </div>
 
               <h4 className="text-lg font-semibold text-teal-600 mb-4 mt-6">Account Pip Rates</h4>

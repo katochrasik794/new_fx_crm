@@ -72,7 +72,7 @@ const IBProfile = () => {
     { id: 229, name: 'Finstep India', email: 'finstepindia@gmail.com', referredBy: null, type: 'NORMAL', pip: 1.50, referrals: 5, commission: 0, status: 'Active' },
     { id: 364, name: 'Ganesh Sutar', email: 'ganeshsutar2002@gmail.com', referredBy: { name: 'sanjay Jadhav', email: 'jsanjay1070@gmail.com' }, type: 'NORMAL', pip: 1.00, referrals: 2, commission: 0, status: 'Active' },
     { id: 383, name: 'jagdish sonar', email: 'jagdishsonar020@gmail.com', referredBy: { name: 'Candle Story', email: 'ceo.candlestory@gmail.com' }, type: 'NORMAL', pip: 1.20, referrals: 0, commission: 0, status: 'Active' },
-    { id: 347, name: 'ksm init', email: 'ksmin@gmail.com', referredBy: { name: 'OXO MARKET IB', email: 'OXOMARKETIB@GMAIL.COM' }, type: 'NORMAL', pip: 1.40, referrals: 0, commission: 0, status: 'Active' },
+    { id: 347, name: 'ksm init', email: 'ksmin@gmail.com', referredBy: { name: 'FINCRM MARKET IB', email: 'FINCRMMARKETIB@GMAIL.COM' }, type: 'NORMAL', pip: 1.40, referrals: 0, commission: 0, status: 'Active' },
     { id: 357, name: 'Madhukar Dhonde', email: 'dhondemadhukar2999@gmail.com', referredBy: { name: 'V R ENTERPRISE', email: 'vrenterprisessatara@gmail.com' }, type: 'NORMAL', pip: 1.20, referrals: 0, commission: 0, status: 'Active' }
   ]
 

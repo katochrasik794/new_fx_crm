@@ -81,7 +81,7 @@ const PendingWithdrawals = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-4 md:p-6">
+    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">

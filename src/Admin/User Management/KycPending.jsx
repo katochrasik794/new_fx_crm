@@ -11,11 +11,11 @@ const KycPending = () => {
   // Mock data - replace with actual API call
   useEffect(() => {
     const mockUsers = [
-      { id: 1, name: 'V R ENTERPRISE', email: 'vrenterprisessatara@gmail.com', phone: '7875311225', country: 'India', emailVerified: 'Verified', kycStatus: 'Pending', referral: 'OXO 1009', joined: '07 Nov 2025' },
-      { id: 2, name: 'John Smith', email: 'john.smith@example.com', phone: '+1-555-0124', country: 'United States', emailVerified: 'Verified', kycStatus: 'Pending', referral: 'OXO 2341', joined: '06 Nov 2025' },
-      { id: 3, name: 'Maria Garcia', email: 'maria.garcia@example.com', phone: '+34-912-345-678', country: 'Spain', emailVerified: 'Verified', kycStatus: 'Pending', referral: 'OXO 5678', joined: '05 Nov 2025' },
-      { id: 4, name: 'Ahmed Hassan', email: 'ahmed.hassan@example.com', phone: '+971-50-123-4567', country: 'United Arab Emirates', emailVerified: 'Unverified', kycStatus: 'Pending', referral: 'OXO 8901', joined: '04 Nov 2025' },
-      { id: 5, name: 'Lisa Chen', email: 'lisa.chen@example.com', phone: '+86-138-0013-8000', country: 'China', emailVerified: 'Verified', kycStatus: 'Pending', referral: 'OXO 3456', joined: '03 Nov 2025' }
+      { id: 1, name: 'V R ENTERPRISE', email: 'vrenterprisessatara@gmail.com', phone: '7875311225', country: 'India', emailVerified: 'Verified', kycStatus: 'Pending', referral: 'FINCRM 1009', joined: '07 Nov 2025' },
+      { id: 2, name: 'John Smith', email: 'john.smith@example.com', phone: '+1-555-0124', country: 'United States', emailVerified: 'Verified', kycStatus: 'Pending', referral: 'FINCRM 2341', joined: '06 Nov 2025' },
+      { id: 3, name: 'Maria Garcia', email: 'maria.garcia@example.com', phone: '+34-912-345-678', country: 'Spain', emailVerified: 'Verified', kycStatus: 'Pending', referral: 'FINCRM 5678', joined: '05 Nov 2025' },
+      { id: 4, name: 'Ahmed Hassan', email: 'ahmed.hassan@example.com', phone: '+971-50-123-4567', country: 'United Arab Emirates', emailVerified: 'Unverified', kycStatus: 'Pending', referral: 'FINCRM 8901', joined: '04 Nov 2025' },
+      { id: 5, name: 'Lisa Chen', email: 'lisa.chen@example.com', phone: '+86-138-0013-8000', country: 'China', emailVerified: 'Verified', kycStatus: 'Pending', referral: 'FINCRM 3456', joined: '03 Nov 2025' }
     ];
     setUsers(mockUsers);
     setFilteredUsers(mockUsers);
@@ -94,7 +94,7 @@ const KycPending = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-100 p-4 md:p-6">
+    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">

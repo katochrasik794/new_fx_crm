@@ -107,7 +107,7 @@ const Profile = () => {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="text-xs text-gray-500 font-medium">Referral Code</p>
-                    <p className="text-sm text-gray-900 font-medium">OXO 9291</p>
+                    <p className="text-sm text-gray-900 font-medium">FINCRM 9291</p>
                   </div>
                 </div>
 

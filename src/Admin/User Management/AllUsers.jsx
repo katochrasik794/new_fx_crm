@@ -30,7 +30,7 @@ const AllUsers = () => {
         email: 'jagdishsonar020@gmail.com',
         phone: '7900003727',
         country: 'India',
-        referral: 'OXO 7363',
+        referral: 'FINCRM 7363',
         referredBy: { name: 'Candle Story', email: 'ceo.candlestory@gmail.com' },
         emailVerified: true,
         kycStatus: 'verified',
@@ -44,7 +44,7 @@ const AllUsers = () => {
         email: 'raju.21pawar@gmail.com',
         phone: '9885582723',
         country: 'India',
-        referral: 'OXO 8090',
+        referral: 'FINCRM 8090',
         referredBy: { name: 'V R ENTERPRISE', email: 'vrenterprisessatara@gmail.com' },
         emailVerified: true,
         kycStatus: 'unverified',
@@ -58,7 +58,7 @@ const AllUsers = () => {
         email: 'vkvinodkumar760@gmail.com',
         phone: '+91 90583 67783',
         country: 'india',
-        referral: 'OXO220565',
+        referral: 'FINCRM220565',
         referredBy: null,
         emailVerified: true,
         kycStatus: 'verified',
@@ -147,24 +147,24 @@ const AllUsers = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="bg-gray-50 p-6">
+    <div className="bg-violet-100 p-3 sm:p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <div className="flex items-center gap-3 mb-2">
             <div className="p-3 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl shadow-lg">
               <FaUsers className="text-white text-xl" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">All Users</h1>
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">All Users</h1>
               <p className="text-gray-600">Manage and view all registered users</p>
             </div>
           </div>
         </div>
 
         {/* Filters */}
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 mb-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-4 sm:p-6 mb-4 sm:mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-4">
             <div className="space-y-2">
               <label className="text-sm font-medium text-gray-700 flex items-center gap-2">
                 <FaFilter className="text-blue-500" />
@@ -269,8 +269,8 @@ const AllUsers = () => {
 
         {/* Table */}
         <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full">
+          <div className="overflow-x-auto -mx-3 sm:-mx-0 px-3 sm:px-0">
+            <table className="w-full min-w-[1200px]">
               <thead className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
                 <tr>
                   <th className="px-6 py-4 text-left text-sm font-semibold">Sr No.</th>
@@ -359,12 +359,12 @@ const AllUsers = () => {
           </div>
 
           {/* Pagination */}
-          <div className="px-6 py-4 bg-gray-50/50 border-t border-gray-200">
-            <div className="flex items-center justify-between">
+          <div className="px-4 sm:px-6 py-4 bg-gray-50/50 border-t border-gray-200">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
               <div className="text-sm text-gray-700">
                 Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, filteredUsers.length)} of {filteredUsers.length} entries
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center flex-wrap gap-2 justify-center">
                 <button
                   onClick={() => paginate(currentPage - 1)}
                   disabled={currentPage === 1}

@@ -35,12 +35,12 @@ const ChangeMt5Password = () => {
     { id: 358, name: 'Sonali sutar', email: 'sgsservices2002@gmail.com' },
     { id: 357, name: 'Madhukar Dhonde', email: 'dhondemadhukar2999@gmail.com' },
     { id: 356, name: 'V R ENTERPRISE', email: 'vrenterprisessatara@gmail.com' },
-    { id: 352, name: 'OXO Trading tw', email: 'trading123@gmail.com' },
+    { id: 352, name: 'FINCRM Trading tw', email: 'trading123@gmail.com' },
     { id: 350, name: 'Rajendra Dudhe', email: 'kalerushikesh350@gmail.com' },
     { id: 348, name: 'Dayanand Shendarkar', email: 'daya23299@gmail.com' },
     { id: 345, name: 'AMIT UMBARKAR', email: 'umbarkaramit90@gmail.com' },
     { id: 344, name: 'PRASHANT S KAKADE', email: 'prashk456@gmail.com' },
-    { id: 340, name: 'OXO MARKET TRADING', email: 'tradings@gmail.com' },
+    { id: 340, name: 'FINCRM MARKET TRADING', email: 'tradings@gmail.com' },
     { id: 334, name: 'Naveed Naveed', email: 'mohammadnaveed84@gmail.com' },
     { id: 331, name: 'Aditya Nikam', email: 'aditya.nikam9075@gmail.com' },
     { id: 330, name: 'Aakanksha Pawar', email: 'aakankshalp@gmail.com' },
@@ -150,7 +150,7 @@ const ChangeMt5Password = () => {
                      formData.confirmPassword && Object.values(passwordRequirements).every(req => req);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-violet-50 to-fuchsia-50 p-6">
+    <div className="min-h-screen bg-violet-100 p-6">
       <div className="max-w-6.5xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center">

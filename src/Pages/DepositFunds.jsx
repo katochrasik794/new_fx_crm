@@ -28,21 +28,21 @@ const DepositFunds = () => {
   };
 
   return (
-    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
+    <div className="min-h-screen bg-violet-100 p-3 sm:p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-6 md:mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 flex items-center">
-            <svg className="w-8 h-8 md:w-10 md:h-10 mr-3 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+        <div className="mb-4 sm:mb-6 md:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 flex items-center">
+            <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 mr-2 sm:mr-3 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
             </svg>
             Deposit Funds
           </h1>
-          <p className="text-gray-600 text-lg">Deposit your funds securely into your Trading account.</p>
+          <p className="text-gray-600 text-sm sm:text-base md:text-lg">Deposit your funds securely into your Trading account.</p>
         </div>
 
         {/* Account Selector + KPIs */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/50 overflow-hidden hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.01] mb-6 md:mb-8">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 overflow-hidden hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.01] mb-4 sm:mb-6 md:mb-8">
           <div className="p-4 md:p-6">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
               <div className="min-w-0 flex-1 lg:flex-initial lg:min-w-[260px]">
@@ -86,10 +86,10 @@ const DepositFunds = () => {
         </div>
 
         {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-6">
           {/* Left Column - Categories */}
           <div className="lg:col-span-1">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/50 overflow-hidden hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.01]">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 overflow-hidden hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.01]">
               <div className="p-4 md:p-6">
                 <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4 flex items-center">
                   <svg className="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
@@ -99,7 +99,7 @@ const DepositFunds = () => {
                 </h3>
                 <div className="space-y-2">
                   {[
-                    { id: 'exclusive', label: 'OXO Payment Gateway', icon: '💳', desc: 'Credit Cards & E-Wallets' },
+                    { id: 'exclusive', label: 'FINCRM Payment Gateway', icon: '💳', desc: 'Credit Cards & E-Wallets' },
                     { id: 'crypto', label: 'Cryptocurrency', icon: '₿', desc: 'USDT & Other Crypto' },
                     { id: 'wire', label: 'Wire Transfer', icon: '🏦', desc: 'Bank Wire Transfer' },
                     { id: 'upi', label: 'UPI / UPI QR', icon: '📱', desc: 'UPI Payment' },
@@ -138,12 +138,12 @@ const DepositFunds = () => {
           {/* Right Column - Content */}
           <div className="lg:col-span-2">
             <div className="w-full">
-              {/* OXO Payment Gateway */}
+              {/* FINCRM Payment Gateway */}
               {activeTab === 'exclusive' && (
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/50 overflow-hidden hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.01]">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-2xl border border-white/50 overflow-hidden hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.01]">
               <div className="p-6">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                  <span className="text-xl font-semibold text-gray-900">OXO Payment Gateway</span>
+                  <span className="text-xl font-semibold text-gray-900">FINCRM Payment Gateway</span>
                   <div className="text-right text-sm">
                     <div><strong>Processing Time:</strong> Instant</div>
                     <div><strong>Minimum Deposit:</strong> Unlimited</div>
@@ -151,11 +151,11 @@ const DepositFunds = () => {
                 </div>
                 <div className="bg-gray-50 rounded-xl p-6 text-center mb-6">
                   <div className="flex justify-center items-center gap-2 mb-3">
-                    <img src="https://portal.oxomarkets.com/client/assets/images/icons/visa-dark-icon.svg" alt="Visa" className="h-5" />
-                    <img src="https://portal.oxomarkets.com/client/assets/images/icons/mastercard-dark-icon.svg" alt="Mastercard" className="h-5" />
-                    {/* <img src="https://portal.oxomarkets.com/client/assets/images/icons/mastercard-dark-icon.svg" alt="Skrill" className="h-5" /> */}
-                    <img src="https://portal.oxomarkets.com/client/assets/images/icons/skrill-dark-icon.svg" alt="Neteller" className="h-5" />
-                    <img src="https://portal.oxomarkets.com/client/assets/images/icons/neteller-dark-icon.svg" alt="Bank Wire" className="h-5" />
+                    <img src="https://portal.fincrmmarkets.com/client/assets/images/icons/visa-dark-icon.svg" alt="Visa" className="h-5" />
+                    <img src="https://portal.fincrmmarkets.com/client/assets/images/icons/mastercard-dark-icon.svg" alt="Mastercard" className="h-5" />
+                    {/* <img src="https://portal.fincrmmarkets.com/client/assets/images/icons/mastercard-dark-icon.svg" alt="Skrill" className="h-5" /> */}
+                    <img src="https://portal.fincrmmarkets.com/client/assets/images/icons/skrill-dark-icon.svg" alt="Neteller" className="h-5" />
+                    <img src="https://portal.fincrmmarkets.com/client/assets/images/icons/neteller-dark-icon.svg" alt="Bank Wire" className="h-5" />
                   </div>
                   <p className="text-gray-600 text-sm mb-0">and many more...</p>
                 </div>
@@ -168,7 +168,7 @@ const DepositFunds = () => {
                   </button>
                 </div>
                 <p className="text-gray-600 text-sm">
-                  <strong>Important:</strong> OXO Payment Gateway has several payment options such as Credit Card, E-Wallets and Wire Transfer.
+                  <strong>Important:</strong> FINCRM Payment Gateway has several payment options such as Credit Card, E-Wallets and Wire Transfer.
                 </p>
               </div>
             </div>

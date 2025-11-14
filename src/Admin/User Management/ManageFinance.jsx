@@ -352,7 +352,7 @@ const PaymentDetailsReview = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-rose-100 p-4 md:p-6">
+    <div className="bg-violet-100 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">

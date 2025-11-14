@@ -34,12 +34,12 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-violet-100 text-gray-900 p-6">
+    <div className="min-h-screen bg-violet-100 text-gray-900 p-3 sm:p-4 md:p-6">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3">
         <div>
-          <h1 className="text-3xl font-bold flex items-center">
-            <svg className="w-8 h-8 mr-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+          <h1 className="text-2xl sm:text-3xl font-bold flex items-center">
+            <svg className="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
               <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
             </svg>
             Dashboard
@@ -49,9 +49,9 @@ const AdminDashboard = () => {
       </div>
 
       {/* KPI Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-6 sm:mb-8">
         {/* Total Users */}
-        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+        <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 shadow-sm">
           <div className="flex items-center mb-3">
             <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center mr-4">
               <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
@@ -133,11 +133,11 @@ const AdminDashboard = () => {
       </div>
 
       {/* Money KPI Groups */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
         {/* Deposits */}
-        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <h3 className="text-xl font-bold mb-4 flex items-center">
-            <svg className="w-6 h-6 mr-2 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+        <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 shadow-sm">
+          <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-green-400" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd"/>
             </svg>
             Deposits
@@ -193,9 +193,9 @@ const AdminDashboard = () => {
         </div>
 
         {/* Withdrawals */}
-        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
-          <h3 className="text-xl font-bold mb-4 flex items-center">
-            <svg className="w-6 h-6 mr-2 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+        <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 shadow-sm">
+          <h3 className="text-lg sm:text-xl font-bold mb-4 flex items-center">
+            <svg className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-red-400" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd"/>
             </svg>
             Withdrawals
@@ -252,9 +252,9 @@ const AdminDashboard = () => {
       </div>
 
       {/* Recent Sections */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
         {/* Recent Deposits */}
-        <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-sm">
+        <div className="bg-white rounded-lg p-4 sm:p-6 border border-gray-200 shadow-sm">
           <h4 className="text-lg font-bold mb-4 flex items-center">
             <svg className="w-5 h-5 mr-2 text-green-400" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd"/>
@@ -363,41 +363,41 @@ const AdminDashboard = () => {
 
       {/* Activity Table */}
       <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
-        <div className="p-6 border-b border-gray-200">
-          <div className="flex flex-wrap items-end justify-between gap-4">
+        <div className="p-4 sm:p-6 border-b border-gray-200">
+          <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-4">
             <h3 className="text-xl font-bold">All Activity</h3>
-            <form className="flex flex-wrap items-end gap-4">
-              <div>
+            <form className="flex flex-col sm:flex-row flex-wrap items-start sm:items-end gap-3 sm:gap-4 w-full lg:w-auto">
+              <div className="w-full sm:w-auto">
                 <label className="block text-sm text-gray-600 mb-1">Type</label>
-                <select name="type" value={filters.type} onChange={handleFilterChange} className="bg-gray-700 border border-gray-600 rounded px-3 py-2 text-sm">
+                <select name="type" value={filters.type} onChange={handleFilterChange} className="w-full sm:w-auto bg-gray-700 border border-gray-600 rounded px-3 py-2 text-sm">
                   <option value="all">All</option>
                   <option value="deposit">Deposits</option>
                   <option value="withdrawal">Withdrawals</option>
                   <option value="account">Accounts</option>
                 </select>
               </div>
-              <div>
+              <div className="w-full sm:w-auto">
                 <label className="block text-sm text-gray-600 mb-1">Status</label>
-                <select name="status" value={filters.status} onChange={handleFilterChange} className="bg-gray-700 border border-gray-600 rounded px-3 py-2 text-sm">
+                <select name="status" value={filters.status} onChange={handleFilterChange} className="w-full sm:w-auto bg-gray-700 border border-gray-600 rounded px-3 py-2 text-sm">
                   <option value="all">All</option>
                   <option value="Approved">Approved</option>
                   <option value="Pending">Pending</option>
                   <option value="Rejected">Rejected</option>
                 </select>
               </div>
-              <div>
+              <div className="w-full sm:w-auto">
                 <label className="block text-sm text-gray-600 mb-1">From</label>
-                <input type="date" name="from" value={filters.from} onChange={handleFilterChange} className="bg-gray-700 border border-gray-600 rounded px-3 py-2 text-sm" />
+                <input type="date" name="from" value={filters.from} onChange={handleFilterChange} className="w-full sm:w-auto bg-gray-700 border border-gray-600 rounded px-3 py-2 text-sm" />
               </div>
-              <div>
+              <div className="w-full sm:w-auto">
                 <label className="block text-sm text-gray-600 mb-1">To</label>
-                <input type="date" name="to" value={filters.to} onChange={handleFilterChange} className="bg-gray-700 border border-gray-600 rounded px-3 py-2 text-sm" />
+                <input type="date" name="to" value={filters.to} onChange={handleFilterChange} className="w-full sm:w-auto bg-gray-700 border border-gray-600 rounded px-3 py-2 text-sm" />
               </div>
-              <div>
+              <div className="w-full sm:w-auto">
                 <label className="block text-sm text-gray-600 mb-1">Search</label>
-                <input type="text" name="q" value={filters.q} onChange={handleFilterChange} placeholder="email / mt5 / txn" className="bg-gray-700 border border-gray-600 rounded px-3 py-2 text-sm" />
+                <input type="text" name="q" value={filters.q} onChange={handleFilterChange} placeholder="email / mt5 / txn" className="w-full sm:w-auto bg-gray-700 border border-gray-600 rounded px-3 py-2 text-sm" />
               </div>
-              <button type="submit" className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm font-medium">
+              <button type="submit" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm font-medium">
                 <svg className="w-4 h-4 mr-2 inline" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"/>
                 </svg>
@@ -407,8 +407,8 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full">
+        <div className="overflow-x-auto -mx-4 sm:-mx-6 px-4 sm:px-6">
+          <table className="w-full min-w-[800px]">
             <thead className="bg-gray-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Time</th>
@@ -449,11 +449,11 @@ const AdminDashboard = () => {
         </div>
 
         {/* Pagination */}
-        <div className="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+        <div className="px-4 sm:px-6 py-4 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="text-sm text-gray-600">
             Showing {startIndex + 1} to {Math.min(endIndex, activityData.length)} of {activityData.length} transactions
           </div>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center flex-wrap gap-2 justify-center">
             <button
               onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
               disabled={currentPage === 1}

@@ -10,7 +10,7 @@ const MyWallet = () => {
             <svg className="w-8 h-8 md:w-10 md:h-10 mr-3 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
               <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"/>
             </svg>
-            OXO MARKETS Wallet Overview
+            FINCRM MARKETS Wallet Overview
           </h1>
           <p className="text-gray-600 text-lg">Let's have a look at your Wallet.</p>
         </div>
@@ -198,13 +198,13 @@ const MyWallet = () => {
             <h3 className="text-xl font-bold text-gray-700 mb-6 text-center">Several Deposit and Withdrawal Options</h3>
             <div className="flex flex-wrap justify-center gap-4">
               {[
-                { name: 'Neteller', src: 'https://portal.oxomarkets.com/client/assets/images/payments/neteller.png' },
-                { name: 'USDT', src: 'https://portal.oxomarkets.com/client/assets/images/payments/usdt.png' },
-                { name: 'Master Card', src: 'https://portal.oxomarkets.com/client/assets/images/payments/master-card.png' },
-                { name: 'Skrill', src: 'https://portal.oxomarkets.com/client/assets/images/payments/skrill.png' },
-                { name: 'Litecoin', src: 'https://portal.oxomarkets.com/client/assets/images/payments/litecoin.png' },
-                { name: 'Bitcoin', src: 'https://portal.oxomarkets.com/client/assets/images/payments/bitcoin.png' },
-                { name: 'Wire Transfer', src: 'https://portal.oxomarkets.com/client/assets/images/payments/wire.png' }
+                { name: 'Neteller', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/neteller.png' },
+                { name: 'USDT', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/usdt.png' },
+                { name: 'Master Card', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/master-card.png' },
+                { name: 'Skrill', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/skrill.png' },
+                { name: 'Litecoin', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/litecoin.png' },
+                { name: 'Bitcoin', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/bitcoin.png' },
+                { name: 'Wire Transfer', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/wire.png' }
               ].map((payment, index) => (
                 <div key={index} className="bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-blue-400 transition-all duration-300 transform hover:scale-110 cursor-pointer shadow-lg hover:shadow-xl group">
                   <div className="flex justify-center">

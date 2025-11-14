@@ -3,7 +3,7 @@ import React from 'react';
 const MyCommission = () => {
   const commissionData = [
     {
-      client: 'OXO Trading tw',
+      client: 'FINCRM Trading tw',
       email: 'trading123@gmail.com',
       ibStatus: 'Non-IB',
       mt5Account: '369012',
@@ -15,7 +15,7 @@ const MyCommission = () => {
       percentage: 47.6
     },
     {
-      client: 'OXO MARKET TRADING',
+      client: 'FINCRM MARKET TRADING',
       email: 'tradings@gmail.com',
       ibStatus: 'Non-IB',
       mt5Account: '4294967295',
@@ -27,7 +27,7 @@ const MyCommission = () => {
       percentage: 23.8
     },
     {
-      client: 'OXO MARKET TRADING',
+      client: 'FINCRM MARKET TRADING',
       email: 'tradings@gmail.com',
       ibStatus: 'Non-IB',
       mt5Account: '4294967295',
@@ -39,7 +39,7 @@ const MyCommission = () => {
       percentage: 23.8
     },
     {
-      client: 'OXO Trading tw',
+      client: 'FINCRM Trading tw',
       email: 'trading123@gmail.com',
       ibStatus: 'Non-IB',
       mt5Account: '369012',

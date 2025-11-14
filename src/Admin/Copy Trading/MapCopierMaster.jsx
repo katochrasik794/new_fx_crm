@@ -66,11 +66,11 @@ const MapCopierMaster = () => {
     { id: 273, name: 'Nitin Shah', email: 'yashcollectionpune@gmail.com' },
     { id: 271, name: 'Om Kakade', email: 'omkakade0809@gmail.com' },
     { id: 384, name: 'Om Ramagar', email: 'Omom37401@gmail.com' },
-    { id: 352, name: 'OXO Trading tw', email: 'trading123@gmail.com' },
-    { id: 338, name: 'OXO MARKET IB', email: 'OXOMARKETIB@GMAIL.COM' },
-    { id: 339, name: 'OXO MARKET SUB IB', email: 'oxomarketsubib@gmail.com' },
-    { id: 340, name: 'OXO MARKET TRADING', email: 'tradings@gmail.com' },
-    { id: 351, name: 'OXO SUB IB TWO', email: 'oxosubib2@gmail.com' },
+    { id: 352, name: 'FINCRM Trading tw', email: 'trading123@gmail.com' },
+    { id: 338, name: 'FINCRM MARKET IB', email: 'FINCRMMARKETIB@GMAIL.COM' },
+    { id: 339, name: 'FINCRM MARKET SUB IB', email: 'FINCRMmarketsubib@gmail.com' },
+    { id: 340, name: 'FINCRM MARKET TRADING', email: 'tradings@gmail.com' },
+    { id: 351, name: 'FINCRM SUB IB TWO', email: 'FINCRMsubib2@gmail.com' },
     { id: 275, name: 'Pankaj  Matere', email: 'pankajmatere08@gmail.com' },
     { id: 302, name: 'Piyush dhakan', email: 'piyush_dhakan@hotmail.com' },
     { id: 366, name: 'Pramod Kirdat', email: 'kirdatpramod4@gmail.com' },
@@ -151,7 +151,7 @@ const MapCopierMaster = () => {
   const selectedMaster = users.find(user => user.id.toString() === formData.masterId);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 p-4 md:p-6">
+    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">

@@ -10,7 +10,7 @@ function SystemSettings() {
 
   return (
     <div className="min-h-screen bg-violet-100 p-6">
-      <div className="max-w-6xl">
+      <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-800  mb-8 flex items-center">
           <i className="ti ti-settings mr-3 text-blue-600"></i>
           System Settings
@@ -185,10 +185,10 @@ function MT5Tab() {
               <tbody className="divide-y divide-gray-200 ">
                 <tr className="hover:bg-gray-50 ">
                   <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900 ">1</td>
-                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 ">Oxo markets</td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 ">FINCRM markets</td>
                   <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 ">31.14.254.213 : 443</td>
                   <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 ">1818</td>
-                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 ">OXO\AI\Classic</td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 ">FINCRM\AI\Classic</td>
                   <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 ">
                     <span title="https://31.14.254.213:443" className="truncate inline-block max-w-48">https://31.14.254.213:443</span>
                   </td>
@@ -395,17 +395,17 @@ function SMTPTab() {
               <tbody className="divide-y divide-gray-200 ">
                 <tr className="hover:bg-gray-50 ">
                   <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900 ">1</td>
-                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 ">mail.portal.oxomarkets.com</td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 ">mail.portal.fincrmmarkets.com</td>
                   <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 ">465</td>
                   <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 ">SSL</td>
-                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 ">admin@portal.oxomarkets.com</td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 ">admin@portal.fincrmmarkets.com</td>
                   <td className="px-4 py-4 whitespace-nowrap text-sm">
-                    <div className="font-semibold text-gray-900 ">OXO MARKETS</div>
-                    <div className="text-gray-500  text-xs">admin@portal.oxomarkets.com</div>
+                    <div className="font-semibold text-gray-900 ">FINCRM MARKETS</div>
+                    <div className="text-gray-500  text-xs">admin@portal.fincrmmarkets.com</div>
                   </td>
                   <td className="px-4 py-4 whitespace-nowrap text-sm">
                     <div className="font-semibold text-gray-900 ">Support Team</div>
-                    <div className="text-gray-500  text-xs">admin@portal.oxomarkets.com</div>
+                    <div className="text-gray-500  text-xs">admin@portal.fincrmmarkets.com</div>
                   </td>
                   <td className="px-4 py-4 whitespace-nowrap">
                     <span className="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800  ">

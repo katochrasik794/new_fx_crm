@@ -8,10 +8,18 @@ const IBAdminSidebar = ({ collapsed, isMobile, onClose, onNavItemClick }) => {
 
   const isActive = (path) => location.pathname === path;
 
+  const closeAllDropdowns = () => {
+    setGroupManagementOpen(false);
+    setIbManagementOpen(false);
+  };
+
   const NavItem = ({ to, icon, children, onClick }) => (
     <Link
       to={to}
-      onClick={onClick}
+      onClick={(e) => {
+        closeAllDropdowns();
+        onClick && onClick(e);
+      }}
       className={`flex items-center py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
         isActive(to)
           ? "border-l-4 border-l-rose-600 text-rose-600 bg-rose-50"
@@ -60,7 +68,11 @@ const IBAdminSidebar = ({ collapsed, isMobile, onClose, onNavItemClick }) => {
               {/* Group Management dropdown */}
               <div className="relative">
                 <button
-                  onClick={() => setGroupManagementOpen((s) => !s)}
+                  onClick={() => {
+                    const wasOpen = groupManagementOpen;
+                    closeAllDropdowns();
+                    setGroupManagementOpen(!wasOpen);
+                  }}
                   className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out text-gray-600 hover:bg-gray-100`}
                 >
                   <svg className="h-6 w-6 flex-shrink-0 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -80,7 +92,11 @@ const IBAdminSidebar = ({ collapsed, isMobile, onClose, onNavItemClick }) => {
               {/* IB Management dropdown */}
               <div className="relative">
                 <button
-                  onClick={() => setIbManagementOpen((s) => !s)}
+                  onClick={() => {
+                    const wasOpen = ibManagementOpen;
+                    closeAllDropdowns();
+                    setIbManagementOpen(!wasOpen);
+                  }}
                   className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out text-gray-600 hover:bg-gray-100`}
                 >
                   <svg className="h-6 w-6 flex-shrink-0 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

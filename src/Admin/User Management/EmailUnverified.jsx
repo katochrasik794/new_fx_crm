@@ -11,32 +11,32 @@ const EmailUnverified = () => {
   // Mock data - replace with actual API call
   useEffect(() => {
     const mockUsers = [
-      { id: 1, name: 'Sagar Shinde', email: 'ss12421243@gmail.com', phone: '9975818554', country: 'India', kycStatus: 'Unverified', referral: 'OXO 7234', joined: '09 Nov 2025' },
-      { id: 2, name: 'anku putt', email: 'parteekchawla69@gmail.com', phone: '7529860737', country: 'India', kycStatus: 'Unverified', referral: 'OXO 8346', joined: '07 Nov 2025' },
-      { id: 3, name: 'OXO Trading tw', email: 'trading123@gmail.com', phone: '9191919191', country: 'India', kycStatus: 'Unverified', referral: 'OXO 2569', joined: '07 Nov 2025' },
-      { id: 4, name: 'OXO SUB IB TWO', email: 'oxosubib2@gmail.com', phone: '9191919191', country: 'India', kycStatus: 'Unverified', referral: 'OXO 8082', joined: '07 Nov 2025' },
-      { id: 5, name: 'Rajendra Dudhe', email: 'rushikesh350@gmail.com', phone: '9067078024', country: 'India', kycStatus: 'Unverified', referral: 'OXO 2992', joined: '06 Nov 2025' },
-      { id: 6, name: 'Dayanand Shendarkar', email: 'daya23299@gmail.com', phone: '918605256052', country: 'India', kycStatus: 'Verified', referral: 'OXO271292', joined: '06 Nov 2025' },
-      { id: 7, name: 'ksm init', email: 'ksmin@gmail.com', phone: '7529860734', country: 'India', kycStatus: 'Unverified', referral: 'OXO 1973', joined: '06 Nov 2025' },
-      { id: 8, name: 'OXO MARKET TRADING', email: 'tradings@gmail.com', phone: '9191919191', country: 'India', kycStatus: 'Unverified', referral: 'OXO 9127', joined: '06 Nov 2025' },
-      { id: 9, name: 'OXO MARKET SUB IB', email: 'oxomarketsubib@gmail.com', phone: '9191919191', country: 'India', kycStatus: 'Unverified', referral: 'OXO 3068', joined: '06 Nov 2025' },
-      { id: 10, name: 'Priyjeet Devkar', email: 'priyjeetdevkar@gmail.com', phone: '9960095759r', country: 'India', kycStatus: 'Unverified', referral: 'OXO 1734', joined: '06 Nov 2025' },
-      { id: 11, name: 'Naveed Naveed', email: 'naveed1381381@gmail.com', phone: '3346726021', country: 'Pakistan', kycStatus: 'Unverified', referral: 'OXO 3801', joined: '05 Nov 2025' },
-      { id: 12, name: 'Vishwjit Salunkhe', email: 'vishwjitsalunkhe2000@gmail.com', phone: '9130835434', country: 'India', kycStatus: 'Unverified', referral: 'OXO 5225', joined: '05 Nov 2025' },
-      { id: 13, name: 'Shahbaz Ilyas', email: 'shahbazilyas074@gmail.com', phone: '03204072575', country: 'Pakistan', kycStatus: 'Unverified', referral: 'OXO 8004', joined: '05 Nov 2025' },
-      { id: 14, name: 'Prathamesh MISAL', email: 'misalp737@gmail.com', phone: '8999636263', country: 'India', kycStatus: 'Unverified', referral: 'OXO 9329', joined: '04 Nov 2025' },
-      { id: 15, name: 'Aniket Dhage', email: 'dhagemanju57@gmail.com', phone: '9284829571', country: 'India', kycStatus: 'Unverified', referral: 'OXO 2676', joined: '04 Nov 2025' },
-      { id: 16, name: 'Mandar Kathote', email: 'mandarak16051922@gmail.com', phone: '9766693549', country: 'India', kycStatus: 'Unverified', referral: 'OXO 1047', joined: '04 Nov 2025' },
-      { id: 17, name: 'Akash Jadhav', email: 'akashjadhav9699@gmail.com', phone: '0000000000', country: 'India', kycStatus: 'Unverified', referral: 'OXO 7696', joined: '04 Nov 2025' },
-      { id: 18, name: 'Navnath Salunkhe', email: 'nbs881982@gmail.com', phone: '919370882250', country: 'India', kycStatus: 'Verified', referral: 'OXO738260', joined: '04 Nov 2025' },
-      { id: 19, name: 'Master mas', email: 'master1234@gmail.com', phone: '+971563259949', country: 'United Arab Emirates', kycStatus: 'Unverified', referral: 'OXO 9849', joined: '04 Nov 2025' },
-      { id: 20, name: 'Ramesh Babar', email: 'ib.wtcindia@gmail.com', phone: '918484843188', country: 'India', kycStatus: 'Unverified', referral: 'OXO685829', joined: '03 Nov 2025' },
-      { id: 21, name: 'Pankaj  Matere', email: 'pankajmatere08@gmail.com', phone: '918149605010', country: 'India', kycStatus: 'Unverified', referral: 'OXO758758', joined: '03 Nov 2025' },
-      { id: 22, name: 'Vijay Kamble', email: 'v.vijay137@gmail.com', phone: '7977827358', country: 'India', kycStatus: 'Unverified', referral: 'OXO 1118', joined: '02 Nov 2025' },
-      { id: 23, name: 'Karuna  Dhisal', email: 'arunadhisal@gmail.com', phone: '9190114 45363', country: 'India', kycStatus: 'Unverified', referral: 'OXO822256', joined: '31 Oct 2025' },
-      { id: 24, name: 'Sambhaji Hajare', email: 'sambhajih2255@gmail.com', phone: '7066725559', country: 'India', kycStatus: 'Unverified', referral: 'OXO 2014', joined: '31 Oct 2025' },
-      { id: 25, name: 'Vilas  Jadhav', email: 'rajeshgamare38@gmail.com', phone: '919423292816', country: 'India', kycStatus: 'Unverified', referral: 'OXO944476', joined: '29 Oct 2025' },
-      { id: 26, name: 'ABCD XYZ', email: 'admin@gmail.com', phone: '0000000000', country: 'India', kycStatus: 'Unverified', referral: 'OXO8534', joined: '15 Oct 2025' }
+      { id: 1, name: 'Sagar Shinde', email: 'ss12421243@gmail.com', phone: '9975818554', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 7234', joined: '09 Nov 2025' },
+      { id: 2, name: 'anku putt', email: 'parteekchawla69@gmail.com', phone: '7529860737', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 8346', joined: '07 Nov 2025' },
+      { id: 3, name: 'FINCRM Trading tw', email: 'trading123@gmail.com', phone: '9191919191', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 2569', joined: '07 Nov 2025' },
+      { id: 4, name: 'FINCRM SUB IB TWO', email: 'FINCRMsubib2@gmail.com', phone: '9191919191', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 8082', joined: '07 Nov 2025' },
+      { id: 5, name: 'Rajendra Dudhe', email: 'rushikesh350@gmail.com', phone: '9067078024', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 2992', joined: '06 Nov 2025' },
+      { id: 6, name: 'Dayanand Shendarkar', email: 'daya23299@gmail.com', phone: '918605256052', country: 'India', kycStatus: 'Verified', referral: 'FINCRM271292', joined: '06 Nov 2025' },
+      { id: 7, name: 'ksm init', email: 'ksmin@gmail.com', phone: '7529860734', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 1973', joined: '06 Nov 2025' },
+      { id: 8, name: 'FINCRM MARKET TRADING', email: 'tradings@gmail.com', phone: '9191919191', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 9127', joined: '06 Nov 2025' },
+      { id: 9, name: 'FINCRM MARKET SUB IB', email: 'fincrmmarketsubib@gmail.com', phone: '9191919191', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 3068', joined: '06 Nov 2025' },
+      { id: 10, name: 'Priyjeet Devkar', email: 'priyjeetdevkar@gmail.com', phone: '9960095759r', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 1734', joined: '06 Nov 2025' },
+      { id: 11, name: 'Naveed Naveed', email: 'naveed1381381@gmail.com', phone: '3346726021', country: 'Pakistan', kycStatus: 'Unverified', referral: 'FINCRM 3801', joined: '05 Nov 2025' },
+      { id: 12, name: 'Vishwjit Salunkhe', email: 'vishwjitsalunkhe2000@gmail.com', phone: '9130835434', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 5225', joined: '05 Nov 2025' },
+      { id: 13, name: 'Shahbaz Ilyas', email: 'shahbazilyas074@gmail.com', phone: '03204072575', country: 'Pakistan', kycStatus: 'Unverified', referral: 'FINCRM 8004', joined: '05 Nov 2025' },
+      { id: 14, name: 'Prathamesh MISAL', email: 'misalp737@gmail.com', phone: '8999636263', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 9329', joined: '04 Nov 2025' },
+      { id: 15, name: 'Aniket Dhage', email: 'dhagemanju57@gmail.com', phone: '9284829571', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 2676', joined: '04 Nov 2025' },
+      { id: 16, name: 'Mandar Kathote', email: 'mandarak16051922@gmail.com', phone: '9766693549', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 1047', joined: '04 Nov 2025' },
+      { id: 17, name: 'Akash Jadhav', email: 'akashjadhav9699@gmail.com', phone: '0000000000', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 7696', joined: '04 Nov 2025' },
+      { id: 18, name: 'Navnath Salunkhe', email: 'nbs881982@gmail.com', phone: '919370882250', country: 'India', kycStatus: 'Verified', referral: 'FINCRM738260', joined: '04 Nov 2025' },
+      { id: 19, name: 'Master mas', email: 'master1234@gmail.com', phone: '+971563259949', country: 'United Arab Emirates', kycStatus: 'Unverified', referral: 'FINCRM 9849', joined: '04 Nov 2025' },
+      { id: 20, name: 'Ramesh Babar', email: 'ib.wtcindia@gmail.com', phone: '918484843188', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM685829', joined: '03 Nov 2025' },
+      { id: 21, name: 'Pankaj  Matere', email: 'pankajmatere08@gmail.com', phone: '918149605010', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM758758', joined: '03 Nov 2025' },
+      { id: 22, name: 'Vijay Kamble', email: 'v.vijay137@gmail.com', phone: '7977827358', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 1118', joined: '02 Nov 2025' },
+      { id: 23, name: 'Karuna  Dhisal', email: 'arunadhisal@gmail.com', phone: '9190114 45363', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM822256', joined: '31 Oct 2025' },
+      { id: 24, name: 'Sambhaji Hajare', email: 'sambhajih2255@gmail.com', phone: '7066725559', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM 2014', joined: '31 Oct 2025' },
+      { id: 25, name: 'Vilas  Jadhav', email: 'rajeshgamare38@gmail.com', phone: '919423292816', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM944476', joined: '29 Oct 2025' },
+      { id: 26, name: 'ABCD XYZ', email: 'admin@gmail.com', phone: '0000000000', country: 'India', kycStatus: 'Unverified', referral: 'FINCRM8534', joined: '15 Oct 2025' }
     ];
     setUsers(mockUsers);
     setFilteredUsers(mockUsers);
@@ -93,7 +93,7 @@ const EmailUnverified = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-100 p-4 md:p-6">
+    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">

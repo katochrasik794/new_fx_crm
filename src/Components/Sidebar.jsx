@@ -16,10 +16,26 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
 
   const isActive = (path) => location.pathname === path;
 
+  const closeAllDropdowns = () => {
+    setAccountOpen(false);
+    setFundsOpen(false);
+    setIbOpen(false);
+    setAnalyticsOpen(false);
+    setSettingsOpen(false);
+    setMt5Open(false);
+    setPaymentOpen(false);
+    setCopyTradingOpen(false);
+    setPammOpen(false);
+    setPrizeLotsOpen(false);
+  };
+
   const NavItem = ({ to, icon, children, badge, onClick }) => (
     <Link
       to={to}
-      onClick={onClick}
+      onClick={(e) => {
+        closeAllDropdowns();
+        onClick && onClick(e);
+      }}
       className={`flex items-center py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
         isActive(to)
           ? "border-l-4 border-l-rose-600 text-rose-600 bg-rose-50"
@@ -50,7 +66,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
               {!isMobile && (
                 <img
                   className={`w-auto max-w-full align-middle ${collapsed ? 'h-8' : 'h-12'}`}
-                  src="https://cdn-icons-png.flaticon.com/512/7021/7021246.png"
+                  src="/public/finCRM-logo-dark (1).png"
                   alt="Profile"
                 />
               )}
@@ -68,7 +84,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   {/* User Management dropdown */}
                   <div className="relative">
                     <button
-                      onClick={() => setAccountOpen((s) => !s)}
+                      onClick={() => {
+                        const wasOpen = accountOpen;
+                        closeAllDropdowns();
+                        setAccountOpen(!wasOpen);
+                      }}
                       className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out text-gray-600 hover:bg-gray-100`}
                     >
                       <svg className="h-6 w-6 flex-shrink-0 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -99,7 +119,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   {/* MT5 Management dropdown */}
                   <div className="relative">
                     <button
-                      onClick={() => setMt5Open((s) => !s)}
+                      onClick={() => {
+                        const wasOpen = mt5Open;
+                        closeAllDropdowns();
+                        setMt5Open(!wasOpen);
+                      }}
                       className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out text-gray-600 hover:bg-gray-100`}
                     >
                       <svg className="h-6 w-6 flex-shrink-0 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -120,7 +144,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   {/* Payment Gateways dropdown */}
                   <div className="relative">
                     <button
-                      onClick={() => setPaymentOpen((s) => !s)}
+                      onClick={() => {
+                        const wasOpen = paymentOpen;
+                        closeAllDropdowns();
+                        setPaymentOpen(!wasOpen);
+                      }}
                       className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out text-gray-600 hover:bg-gray-100`}
                     >
                       <img src="/icons/payment.svg" alt="" className="h-6 w-6 flex-shrink-0" style={{ minWidth: 24, minHeight: 24 }} />
@@ -138,7 +166,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   {/* Deposits dropdown */}
                   <div className="relative">
                     <button
-                      onClick={() => setFundsOpen((s) => !s)}
+                      onClick={() => {
+                        const wasOpen = fundsOpen;
+                        closeAllDropdowns();
+                        setFundsOpen(!wasOpen);
+                      }}
                       className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out text-gray-600 hover:bg-gray-100`}
                     >
                       <img src="/icons/funds.svg" alt="" className="h-6 w-6 flex-shrink-0" style={{ minWidth: 24, minHeight: 24 }} />
@@ -158,7 +190,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   {/* Withdrawals dropdown */}
                   <div className="relative">
                     <button
-                      onClick={() => setIbOpen((s) => !s)}
+                      onClick={() => {
+                        const wasOpen = ibOpen;
+                        closeAllDropdowns();
+                        setIbOpen(!wasOpen);
+                      }}
                       className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out text-gray-600 hover:bg-gray-100`}
                     >
                       <svg className="h-6 w-6 flex-shrink-0 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -180,7 +216,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   {/* IB Management dropdown */}
                   <div className="relative">
                     <button
-                      onClick={() => setAnalyticsOpen((s) => !s)}
+                      onClick={() => {
+                        const wasOpen = analyticsOpen;
+                        closeAllDropdowns();
+                        setAnalyticsOpen(!wasOpen);
+                      }}
                       className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out text-gray-600 hover:bg-gray-100`}
                     >
                       <svg className="h-6 w-6 flex-shrink-0 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -200,7 +240,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   {/* PAMM Management dropdown */}
                   <div className="relative">
                     <button
-                      onClick={() => setPammOpen((s) => !s)}
+                      onClick={() => {
+                        const wasOpen = pammOpen;
+                        closeAllDropdowns();
+                        setPammOpen(!wasOpen);
+                      }}
                       className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out text-gray-600 hover:bg-gray-100`}
                     >
                       <svg className="h-6 w-6 flex-shrink-0 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -226,7 +270,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   {/* Copy Trading dropdown */}
                   <div className="relative">
                     <button
-                      onClick={() => setCopyTradingOpen((s) => !s)}
+                      onClick={() => {
+                        const wasOpen = copyTradingOpen;
+                        closeAllDropdowns();
+                        setCopyTradingOpen(!wasOpen);
+                      }}
                       className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out text-gray-600 hover:bg-gray-100`}
                     >
                       <svg className="h-6 w-6 flex-shrink-0 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -247,7 +295,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   {/* Prize Lots dropdown */}
                   <div className="relative">
                     <button
-                      onClick={() => setPrizeLotsOpen((s) => !s)}
+                      onClick={() => {
+                        const wasOpen = prizeLotsOpen;
+                        closeAllDropdowns();
+                        setPrizeLotsOpen(!wasOpen);
+                      }}
                       className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out text-gray-600 hover:bg-gray-100`}
                     >
                       <svg className="h-6 w-6 flex-shrink-0 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -277,7 +329,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
               {/* My Account dropdown */}
               <div className="relative">
                 <button
-                  onClick={() => setAccountOpen((s) => !s)}
+                  onClick={() => {
+                    const wasOpen = accountOpen;
+                    closeAllDropdowns();
+                    setAccountOpen(!wasOpen);
+                  }}
                   aria-expanded={accountOpen}
                   className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
                     isActive('/my-account') ? 'border-l-4 border-l-rose-600 text-rose-600 bg-rose-50' : 'text-gray-600 hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600'
@@ -318,7 +374,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
               {/* Funds dropdown */}
               <div className="relative">
                 <button
-                  onClick={() => setFundsOpen((s) => !s)}
+                  onClick={() => {
+                    const wasOpen = fundsOpen;
+                    closeAllDropdowns();
+                    setFundsOpen(!wasOpen);
+                  }}
                   aria-expanded={fundsOpen}
                   className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
                     isActive('/funds') ? 'border-l-4 border-l-rose-600 text-rose-600 bg-rose-50' : 'text-gray-600 hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600'
@@ -363,7 +423,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
               {/* IB Dashboard dropdown */}
               <div className="relative">
                 <button
-                  onClick={() => setIbOpen((s) => !s)}
+                  onClick={() => {
+                    const wasOpen = ibOpen;
+                    closeAllDropdowns();
+                    setIbOpen(!wasOpen);
+                  }}
                   aria-expanded={ibOpen}
                   className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
                     isActive('/ib-dashboard') ? 'border-l-4 border-l-rose-600 text-rose-600 bg-rose-50' : 'text-gray-600 hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600'
@@ -388,7 +452,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
               {/* Analytics dropdown */}
               <div className="relative">
                 <button
-                  onClick={() => setAnalyticsOpen((s) => !s)}
+                  onClick={() => {
+                    const wasOpen = analyticsOpen;
+                    closeAllDropdowns();
+                    setAnalyticsOpen(!wasOpen);
+                  }}
                   aria-expanded={analyticsOpen}
                   className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
                     isActive('/analytics') ? 'border-l-4 border-l-rose-600 text-rose-600 bg-rose-50' : 'text-gray-600 hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600'
@@ -413,7 +481,11 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
               {/* Settings dropdown */}
               <div className="relative">
                 <button
-                  onClick={() => setSettingsOpen((s) => !s)}
+                  onClick={() => {
+                    const wasOpen = settingsOpen;
+                    closeAllDropdowns();
+                    setSettingsOpen(!wasOpen);
+                  }}
                   aria-expanded={settingsOpen}
                   className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
                     isActive('/settings') ? 'border-l-4 border-l-rose-600 text-rose-600 bg-rose-50' : 'text-gray-600 hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600'

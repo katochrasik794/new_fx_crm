@@ -172,11 +172,11 @@ const IBWithdrawalManagement = () => {
               </div>
 
               <div className="grid grid-cols-2 gap-3 mb-3">
-                <div className="bg-blue-50 p-3 rounded-lg">
+                <div className="bg-violet-100 p-3 rounded-lg">
                   <p className="text-xs text-gray-600 mb-1">Amount</p>
                   <p className="font-bold text-blue-600">${withdrawal.amount.toFixed(2)}</p>
                 </div>
-                <div className="bg-gray-50 p-3 rounded-lg">
+                <div className="bg-violet-100 p-3 rounded-lg">
                   <p className="text-xs text-gray-600 mb-1">Method</p>
                   <p className="font-semibold text-gray-700">{withdrawal.method}</p>
                 </div>

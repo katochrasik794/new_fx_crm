@@ -12,7 +12,7 @@ const SendEmails = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-100 to-purple-100 p-6">
+    <div className="min-h-screen bg-violet-100 p-6">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
         <div className="bg-gradient-to-r from-pink-600 to-purple-600 text-white p-4">
           <h2 className="text-2xl font-bold flex items-center">

@@ -24,8 +24,8 @@ const MyIBStructure = () => {
   const treeData = {
     root: {
       id: 0,
-      name: 'OXO MARKET IB',
-      email: 'OXOMARKETIB@GMAIL.COM',
+      name: 'FINCRM MARKET IB',
+      email: 'FINCRMB@GMAIL.COM',
       level: 0,
       type: 'IB',
       status: 'active',
@@ -48,8 +48,8 @@ const MyIBStructure = () => {
     level1: [
       {
         id: 1,
-        name: 'OXO SUB IB TWO',
-        email: 'oxosubib2@gmail.com',
+        name: 'FINCRM SUB IB TWO',
+        email: 'FINCRMsubib2@gmail.com',
         level: 1,
         type: 'IB',
         status: 'active',
@@ -71,7 +71,7 @@ const MyIBStructure = () => {
         children: [
           {
             id: 2,
-            name: 'OXO Trading tw',
+            name: 'FINCRM Trading tw',
             email: 'trading123@gmail.com',
             level: 2,
             type: 'Client',
@@ -115,8 +115,8 @@ const MyIBStructure = () => {
       },
       {
         id: 4,
-        name: 'OXO MARKET SUB IB',
-        email: 'oxomarketsubib@gmail.com',
+        name: 'FINCRM MARKET SUB IB',
+        email: 'fincrmmarketsubib@gmail.com',
         level: 1,
         type: 'IB',
         status: 'active',
@@ -138,7 +138,7 @@ const MyIBStructure = () => {
         children: [
           {
             id: 5,
-            name: 'OXO MARKET TRADING',
+            name: 'FINCRM MARKET TRADING',
             email: 'tradings@gmail.com',
             level: 2,
             type: 'Client',

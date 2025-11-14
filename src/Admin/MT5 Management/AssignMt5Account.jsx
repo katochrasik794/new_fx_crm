@@ -75,9 +75,9 @@ const AssignMt5Account = () => {
     { id: 372, email: 'nitin3105.shinde@gmail.com' },
     { id: 271, email: 'omkakade0809@gmail.com' },
     { id: 384, email: 'Omom37401@gmail.com' },
-    { id: 338, email: 'OXOMARKETIB@GMAIL.COM' },
-    { id: 339, email: 'oxomarketsubib@gmail.com' },
-    { id: 351, email: 'oxosubib2@gmail.com' },
+    { id: 338, email: 'FINCRMMARKETIB@GMAIL.COM' },
+    { id: 339, email: 'FINCRMmarketsubib@gmail.com' },
+    { id: 351, email: 'FINCRMsubib2@gmail.com' },
     { id: 275, email: 'pankajmatere08@gmail.com' },
     { id: 217, email: 'panshoindia@gmail.com' },
     { id: 360, email: 'parteekchawla69@gmail.com' },
@@ -145,7 +145,7 @@ const AssignMt5Account = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
+    <div className="min-h-screen bg-violet-100 p-6">
       <div className="max-w-6.5xl mx-auto">
         {/* Header */}
         <div className="mb-8">

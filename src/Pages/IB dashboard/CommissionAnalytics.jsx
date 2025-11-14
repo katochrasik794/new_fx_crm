@@ -211,28 +211,28 @@ const CommissionAnalytics = () => {
                 <tbody>
                   <tr className="border-b border-gray-100 hover:bg-amber-50 transition-colors">
                     <td className="py-3 px-4">Nov 7, 2025</td>
-                    <td className="py-3 px-4">OXO Trading tw</td>
+                    <td className="py-3 px-4">FINCRM Trading tw</td>
                     <td className="py-3 px-4 font-semibold text-gray-900">BTCUSD.ffx</td>
                     <td className="py-3 px-4">0.10</td>
                     <td className="py-3 px-4 font-semibold text-green-600">$0.10</td>
                   </tr>
                   <tr className="border-b border-gray-100 hover:bg-amber-50 transition-colors">
                     <td className="py-3 px-4">Nov 7, 2025</td>
-                    <td className="py-3 px-4">OXO Trading tw</td>
+                    <td className="py-3 px-4">FINCRM Trading tw</td>
                     <td className="py-3 px-4 font-semibold text-gray-900">XAUUSD.e</td>
                     <td className="py-3 px-4">0.10</td>
                     <td className="py-3 px-4 font-semibold text-green-600">$1.00</td>
                   </tr>
                   <tr className="border-b border-gray-100 hover:bg-amber-50 transition-colors">
                     <td className="py-3 px-4">Nov 6, 2025</td>
-                    <td className="py-3 px-4">OXO MARKET TRADING</td>
+                    <td className="py-3 px-4">FINCRM MARKET TRADING</td>
                     <td className="py-3 px-4 font-semibold text-gray-900">ETHUSD.ffx</td>
                     <td className="py-3 px-4">0.10</td>
                     <td className="py-3 px-4 font-semibold text-green-600">$0.50</td>
                   </tr>
                   <tr className="hover:bg-amber-50 transition-colors">
                     <td className="py-3 px-4">Nov 6, 2025</td>
-                    <td className="py-3 px-4">OXO MARKET TRADING</td>
+                    <td className="py-3 px-4">FINCRM MARKET TRADING</td>
                     <td className="py-3 px-4 font-semibold text-gray-900">EURUSD.r</td>
                     <td className="py-3 px-4">0.10</td>
                     <td className="py-3 px-4 font-semibold text-green-600">$0.50</td>

@@ -4,8 +4,8 @@ const MyIBClients = () => {
   const level1Clients = [
     {
       id: 351,
-      name: 'OXO SUB IB TWO',
-      email: 'oxosubib2@gmail.com',
+      name: 'FINCRM SUB IB TWO',
+      email: 'FINCRMsubib2@gmail.com',
       joinDate: '2025-11-07',
       accounts: 0,
       balance: 0.00,
@@ -34,8 +34,8 @@ const MyIBClients = () => {
     },
     {
       id: 339,
-      name: 'OXO MARKET SUB IB',
-      email: 'oxomarketsubib@gmail.com',
+      name: 'FINCRM MARKET SUB IB',
+      email: 'fincrmmarketsubib@gmail.com',
       joinDate: '2025-11-06',
       accounts: 0,
       balance: 0.00,
@@ -53,7 +53,7 @@ const MyIBClients = () => {
   const level2Clients = [
     {
       id: 352,
-      name: 'OXO Trading tw',
+      name: 'FINCRM Trading tw',
       email: 'trading123@gmail.com',
       joinDate: '2025-11-07',
       accounts: 1,
@@ -68,7 +68,7 @@ const MyIBClients = () => {
     },
     {
       id: 340,
-      name: 'OXO MARKET TRADING',
+      name: 'FINCRM MARKET TRADING',
       email: 'tradings@gmail.com',
       joinDate: '2025-11-06',
       accounts: 3,

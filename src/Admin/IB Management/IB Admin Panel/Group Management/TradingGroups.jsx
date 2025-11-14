@@ -7,30 +7,30 @@ export default function TradingGroups() {
   const [showModal, setShowModal] = useState(false)
   const [selectedGroup, setSelectedGroup] = useState(null)
   const [groups] = useState([
-    { id: 1, name: 'OXO_A\\Classic', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
-    { id: 13, name: 'OXO_A\\ECN', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '70%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
-    { id: 2, name: 'OXO_A\\ECN+$10Comm', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '15%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
-    { id: 3, name: 'OXO_A\\ECN+$5Comm', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '70%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
-    { id: 4, name: 'OXO_A\\Prime', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
-    { id: 5, name: 'OXO_A\\Pro', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
-    { id: 16, name: 'OXO_A\\Standard', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
-    { id: 12, name: 'OXO_A\\Startup', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
-    { id: 6, name: 'OXO_B\\Classic', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
-    { id: 14, name: 'OXO_B\\ECN', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '70%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
-    { id: 7, name: 'OXO_B\\ECN+$10Comm', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '15%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
-    { id: 8, name: 'OXO_B\\ECN+$5Comm', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '70%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
-    { id: 89, name: 'OXO_B\\Plus', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-31 14:44', type: 'B' },
-    { id: 9, name: 'OXO_B\\Prime', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
-    { id: 10, name: 'OXO_B\\Pro', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
-    { id: 15, name: 'OXO_B\\Standard', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
-    { id: 11, name: 'OXO_B\\Startup', server: 1, company: 'OXO Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' }
+    { id: 1, name: 'FINCRM_A\\Classic', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
+    { id: 13, name: 'FINCRM_A\\ECN', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '70%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
+    { id: 2, name: 'FINCRM_A\\ECN+$10Comm', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '15%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
+    { id: 3, name: 'FINCRM_A\\ECN+$5Comm', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '70%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
+    { id: 4, name: 'FINCRM_A\\Prime', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
+    { id: 5, name: 'FINCRM_A\\Pro', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
+    { id: 16, name: 'FINCRM_A\\Standard', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
+    { id: 12, name: 'FINCRM_A\\Startup', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'A' },
+    { id: 6, name: 'FINCRM_B\\Classic', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
+    { id: 14, name: 'FINCRM_B\\ECN', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '70%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
+    { id: 7, name: 'FINCRM_B\\ECN+$10Comm', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '15%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
+    { id: 8, name: 'FINCRM_B\\ECN+$5Comm', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '70%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
+    { id: 89, name: 'FINCRM_B\\Plus', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-31 14:44', type: 'B' },
+    { id: 9, name: 'FINCRM_B\\Prime', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
+    { id: 10, name: 'FINCRM_B\\Pro', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
+    { id: 15, name: 'FINCRM_B\\Standard', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' },
+    { id: 11, name: 'FINCRM_B\\Startup', server: 1, company: 'FINCRM Markets Limited', currency: 0, marginCall: '100%', stopOut: '50%', tradeFlags: 16, created: '2025-10-15 23:08', type: 'B' }
   ])
 
-  const oxoACount = groups.filter(g => g.type === 'A').length
-  const oxoBCount = groups.filter(g => g.type === 'B').length
+  const fincrmACount = groups.filter(g => g.type === 'A').length
+  const fincrmBCount = groups.filter(g => g.type === 'B').length
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-6 bg-violet-100 min-h-screen">
       <div className="mb-6">
         <div className="flex items-center justify-between">
           <h4 className="text-2xl font-bold text-gray-800">Group Management</h4>
@@ -63,11 +63,11 @@ export default function TradingGroups() {
 
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center justify-between mb-4">
-            <p className="text-sm uppercase text-gray-500 font-medium">OXO_A Groups</p>
+            <p className="text-sm uppercase text-gray-500 font-medium">FINCRM_A Groups</p>
           </div>
           <div className="flex items-end justify-between">
             <div>
-              <h4 className="text-3xl font-bold mb-2">{oxoACount}</h4>
+              <h4 className="text-3xl font-bold mb-2">{fincrmACount}</h4>
               <span className="inline-flex items-center gap-1 px-3 py-1 bg-cyan-100 text-cyan-600 rounded-full text-sm">
                 <HiServer /> Server A
               </span>
@@ -80,11 +80,11 @@ export default function TradingGroups() {
 
         <div className="bg-white rounded-lg shadow p-6">
           <div className="flex items-center justify-between mb-4">
-            <p className="text-sm uppercase text-gray-500 font-medium">OXO_B Groups</p>
+            <p className="text-sm uppercase text-gray-500 font-medium">FINCRM_B Groups</p>
           </div>
           <div className="flex items-end justify-between">
             <div>
-              <h4 className="text-3xl font-bold mb-2">{oxoBCount}</h4>
+              <h4 className="text-3xl font-bold mb-2">{fincrmBCount}</h4>
               <span className="inline-flex items-center gap-1 px-3 py-1 bg-amber-100 text-amber-600 rounded-full text-sm">
                 <HiServer /> Server B
               </span>

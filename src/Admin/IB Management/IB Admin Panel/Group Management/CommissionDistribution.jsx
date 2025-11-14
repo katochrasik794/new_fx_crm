@@ -7,11 +7,11 @@ export default function CommissionDistribution() {
   const [showModal, setShowModal] = useState(false)
   const [selectedCommission, setSelectedCommission] = useState(null)
   const [distributions] = useState([
-    { id: 1, groupName: 'ECN', groupPath: 'OXO_B\\ECN', pipValue: 0.20, availability: 'all_users', status: 0, created: '2025-10-16 01:32', updated: '2025-10-28 19:44' },
-    { id: 6, groupName: 'PLUS', groupPath: 'OXO_B\\Plus', pipValue: 2.00, availability: 'all_users', status: 1, created: '2025-10-31 14:49', updated: '2025-11-01 20:19' },
-    { id: 2, groupName: 'PRO', groupPath: 'OXO_B\\Pro', pipValue: 1.00, availability: 'all_users', status: 1, created: '2025-10-16 01:35', updated: '2025-10-31 16:29' },
-    { id: 3, groupName: 'STANDARD', groupPath: 'OXO_B\\Standard', pipValue: 1.50, availability: 'all_users', status: 1, created: '2025-10-16 01:35', updated: '2025-10-31 16:27' },
-    { id: 4, groupName: 'STARTUP', groupPath: 'OXO_B\\Startup', pipValue: 0.01, availability: 'all_users', status: 0, created: '2025-10-16 01:36', updated: '2025-10-28 19:45' }
+    { id: 1, groupName: 'ECN', groupPath: 'FINCRM_B\\ECN', pipValue: 0.20, availability: 'all_users', status: 0, created: '2025-10-16 01:32', updated: '2025-10-28 19:44' },
+    { id: 6, groupName: 'PLUS', groupPath: 'FINCRM_B\\Plus', pipValue: 2.00, availability: 'all_users', status: 1, created: '2025-10-31 14:49', updated: '2025-11-01 20:19' },
+    { id: 2, groupName: 'PRO', groupPath: 'FINCRM_B\\Pro', pipValue: 1.00, availability: 'all_users', status: 1, created: '2025-10-16 01:35', updated: '2025-10-31 16:29' },
+    { id: 3, groupName: 'STANDARD', groupPath: 'FINCRM_B\\Standard', pipValue: 1.50, availability: 'all_users', status: 1, created: '2025-10-16 01:35', updated: '2025-10-31 16:27' },
+    { id: 4, groupName: 'STARTUP', groupPath: 'FINCRM_B\\Startup', pipValue: 0.01, availability: 'all_users', status: 0, created: '2025-10-16 01:36', updated: '2025-10-28 19:45' }
   ])
 
   const totalDistributions = distributions.length
@@ -19,7 +19,7 @@ export default function CommissionDistribution() {
   const avgPipValue = (distributions.reduce((sum, d) => sum + d.pipValue, 0) / distributions.length).toFixed(2)
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-6 bg-violet-100 min-h-screen">
       <div className="mb-6">
         <div className="flex items-center justify-between">
           <h4 className="text-2xl font-bold text-gray-800">Commission Distribution</h4>

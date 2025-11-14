@@ -12,7 +12,7 @@ const SymbolsPipValues = () => {
   ];
 
   return (
-    <div className="w-full max-w-full p-4 md:p-6 bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen overflow-x-hidden">
+    <div className="w-full max-w-full p-4 md:p-6 bg-violet-100 min-h-screen overflow-x-hidden">
       {/* Title */}
       <div className="mb-6 md:mb-8">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">

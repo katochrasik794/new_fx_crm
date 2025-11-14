@@ -47,7 +47,7 @@ const SendNotification = () => {
   const selectedUserType = userTypes.find(type => type.value === formData.userType);
 
   return (
-    <div className="bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-100 p-4 md:p-6">
+    <div className="bg-violet-100 p-4 md:p-6">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-8">

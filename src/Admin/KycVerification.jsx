@@ -148,7 +148,7 @@ const KycVerification = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="bg-gradient-to-br from-cyan-50 via-blue-50 to-indigo-100 p-4 md:p-6">
+    <div className="bg-violet-100  p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
