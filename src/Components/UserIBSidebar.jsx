@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const UserIBSidebar = ({ collapsed, isMobile, onClose, onNavItemClick }) => {
+const UserIBSidebar = ({ collapsed, isMobile, onClose, onNavItemClick, logo }) => {
   const location = useLocation();
 
   const isActive = (path) => location.pathname === path;
@@ -12,8 +12,8 @@ const UserIBSidebar = ({ collapsed, isMobile, onClose, onNavItemClick }) => {
       onClick={onClick}
       className={`flex items-center py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
         isActive(to)
-          ? "border-l-4 border-l-rose-600 text-rose-600 bg-rose-50"
-          : "text-gray-600 hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600"
+          ? "border-l-4 border-l-[#6942e2] text-[#6942e2] bg-purple-50"
+          : "text-gray-600 hover:border-l-4 hover:border-l-[#6942e2] hover:text-[#6942e2]"
       }`}
     >
       <img src={icon} alt="" className="h-6 w-6 align-middle flex-shrink-0" style={{ minWidth: 24, minHeight: 24 }} />
@@ -30,17 +30,18 @@ const UserIBSidebar = ({ collapsed, isMobile, onClose, onNavItemClick }) => {
               <button onClick={onClose} className="text-gray-500 hover:text-gray-700 text-2xl">×</button>
             </div>
           )}
-          <div className={`flex items-center justify-center px-4 ${collapsed ? 'py-4' : 'py-6'}`}>
-            {!isMobile && (
+          <div className="flex items-center justify-center px-4 h-[60px]">
+            {!isMobile && logo && (
               <img
-                className={`w-auto max-w-full align-middle ${collapsed ? 'h-8' : 'h-12'}`}
-                src="https://cdn-icons-png.flaticon.com/512/7021/7021246.png"
-                alt="Profile"
+                className="w-auto max-w-full align-middle h-10"
+                src={logo}
+                alt="Logo"
               />
             )}
           </div>
 
           <div className="flex flex-1 flex-col">
+            {!collapsed && <div className="px-5 py-3 ml-6 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">IB Menu</div>}
             <nav className="flex-1">
               <NavItem to="/ib-dashboard/advanced" icon="/icons/dashboard.svg" onClick={onNavItemClick}>Advanced IB Dashboard</NavItem>
               <NavItem to="/ib-dashboard/account-overview" icon="/icons/account.svg" onClick={onNavItemClick}>Account Overview</NavItem>

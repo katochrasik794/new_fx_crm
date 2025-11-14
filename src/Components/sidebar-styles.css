@@ -1,0 +1,8 @@
+/* Custom hover color for sidebar navigation */
+.sidebar-nav-item:hover {
+  color: #6942e2 !important;
+}
+
+.sidebar-dropdown-item:hover {
+  color: #6942e2 !important;
+}

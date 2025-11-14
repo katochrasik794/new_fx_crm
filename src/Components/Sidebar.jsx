@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute }) => {
+const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute, logo }) => {
   const [accountOpen, setAccountOpen] = useState(false);
   const [fundsOpen, setFundsOpen] = useState(false);
   const [ibOpen, setIbOpen] = useState(false);
@@ -38,8 +38,8 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
       }}
       className={`flex items-center py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
         isActive(to)
-          ? "border-l-4 border-l-rose-600 text-rose-600 bg-rose-50"
-          : "text-gray-600 hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600"
+          ? "border-l-4 border-l-[#6942e2] text-[#6942e2] bg-purple-50"
+          : "text-gray-600 hover:border-l-4 hover:border-l-[#6942e2] hover:text-[#6942e2]"
       }`}
     >
       <img src={icon} alt="" className="h-6 w-6 align-middle flex-shrink-0" style={{ minWidth: 24, minHeight: 24 }} />
@@ -62,17 +62,18 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                </button>
              </div>
            )}
-           <div className={`flex items-center justify-center px-4 ${collapsed ? 'py-4' : 'py-6'}`}>
-              {!isMobile && (
+           <div className="flex items-center justify-center px-4 h-[60px]">
+              {!isMobile && logo && (
                 <img
-                  className={`w-auto max-w-full align-middle ${collapsed ? 'h-8' : 'h-12'}`}
-                  src="/public/finCRM-logo-dark (1).png"
-                  alt="Profile"
+                  className="w-auto max-w-full h-full object-contain py-2"
+                  src={logo}
+                  alt="Logo"
                 />
               )}
             </div>
 
           <div className="flex flex-1 flex-col">
+            {!collapsed && <div className="px-5 pt-3 ml-6 mb-0 text-xs font-semibold text-gray-500 uppercase tracking-wider">{isAdminRoute ? 'Admin Menu' : 'Menu'}</div>}
             <nav className="flex-1">
               {isAdminRoute ? (
                 // Admin Menu Items
@@ -100,7 +101,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                       </svg>}
                     </button>
                     <ul className={`flex flex-col overflow-hidden transition-all duration-300 ${accountOpen ? 'max-h-[500px]' : 'max-h-0'}`}>
-                      <li><Link to="/admin/users/all" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">All Users</span></>}</Link></li>
+                      <li><Link to="/admin/users/all" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100 hover:text-[#6942e2]">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">All Users</span></>}</Link></li>
                       <li><Link to="/admin/users/active" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Active Users</span></>}</Link></li>
                       <li><Link to="/admin/users/banned" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Banned Users</span></>}</Link></li>
                       <li><Link to="/admin/users/add" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Add User</span></>}</Link></li>
@@ -336,7 +337,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   }}
                   aria-expanded={accountOpen}
                   className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
-                    isActive('/my-account') ? 'border-l-4 border-l-rose-600 text-rose-600 bg-rose-50' : 'text-gray-600 hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600'
+                    isActive('/my-account') ? 'border-l-4 border-l-[#6942e2] text-[#6942e2] bg-purple-50' : 'text-gray-600 hover:border-l-4 hover:border-l-[#6942e2] hover:text-[#6942e2]'
                   }`}
                 >
                   <img src="/icons/account.svg" alt="" className="h-6 w-6" style={{ minWidth: 24, minHeight: 24 }} />
@@ -347,19 +348,19 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                 </button>
                 <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${accountOpen ? 'max-h-60' : 'max-h-0'}`}>
                   <li>
-                    <Link to="/my-account/open-trading-account" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/my-account/open-trading-account" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-[#6942e2]">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Open Trading Account'}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/my-account/accounts" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/my-account/accounts" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-[#6942e2]">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'My Accounts'}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/my-account/overview" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/my-account/overview" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-[#6942e2]">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Account Overview'}
                     </Link>
@@ -381,7 +382,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   }}
                   aria-expanded={fundsOpen}
                   className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
-                    isActive('/funds') ? 'border-l-4 border-l-rose-600 text-rose-600 bg-rose-50' : 'text-gray-600 hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600'
+                    isActive('/funds') ? 'border-l-4 border-l-[#6942e2] text-[#6942e2] bg-purple-50' : 'text-gray-600 hover:border-l-4 hover:border-l-[#6942e2] hover:text-[#6942e2]'
                   }`}
                 >
                   <img src="/icons/funds.svg" alt="" className="h-6 w-6" style={{ minWidth: 24, minHeight: 24 }} />
@@ -392,25 +393,25 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                 </button>
                 <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${fundsOpen ? 'max-h-60' : 'max-h-0'}`}>
                   <li>
-                    <Link to="/funds/deposit" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/funds/deposit" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-[#6942e2]">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Deposit'}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/funds/withdrawal" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/funds/withdrawal" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-[#6942e2]">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Withdrawal'}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/funds/internal-transfer" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/funds/internal-transfer" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-[#6942e2]">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Internal Transfer'}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/funds/transaction-history" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/funds/transaction-history" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-[#6942e2]">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Transaction History'}
                     </Link>
@@ -430,7 +431,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   }}
                   aria-expanded={ibOpen}
                   className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
-                    isActive('/ib-dashboard') ? 'border-l-4 border-l-rose-600 text-rose-600 bg-rose-50' : 'text-gray-600 hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600'
+                    isActive('/ib-dashboard') ? 'border-l-4 border-l-[#6942e2] text-[#6942e2] bg-purple-50' : 'text-gray-600 hover:border-l-4 hover:border-l-[#6942e2] hover:text-[#6942e2]'
                   }`}
                 >
                   <img src="/icons/ib.svg" alt="" className="h-6 w-6" style={{ minWidth: 24, minHeight: 24 }} />
@@ -441,7 +442,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                 </button>
                 <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${ibOpen ? 'max-h-96' : 'max-h-0'}`}>
                   <li>
-                    <Link to="/ib-dashboard/advanced" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/ib-dashboard/advanced" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-[#6942e2]">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Advanced IB Dashboard'}
                     </Link>
@@ -459,7 +460,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   }}
                   aria-expanded={analyticsOpen}
                   className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
-                    isActive('/analytics') ? 'border-l-4 border-l-rose-600 text-rose-600 bg-rose-50' : 'text-gray-600 hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600'
+                    isActive('/analytics') ? 'border-l-4 border-l-[#6942e2] text-[#6942e2] bg-purple-50' : 'text-gray-600 hover:border-l-4 hover:border-l-[#6942e2] hover:text-[#6942e2]'
                   }`}
                 >
                   <img src="/icons/analytics.svg" alt="" className="h-6 w-6" style={{ minWidth: 24, minHeight: 24 }} />
@@ -470,7 +471,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                 </button>
                 <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${analyticsOpen ? 'max-h-60' : 'max-h-0'}`}>
                   <li>
-                    <Link to="/analytics/trading" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/analytics/trading" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-[#6942e2]">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Trading Analysis'}
                     </Link>
@@ -488,7 +489,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                   }}
                   aria-expanded={settingsOpen}
                   className={`flex items-center w-full py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
-                    isActive('/settings') ? 'border-l-4 border-l-rose-600 text-rose-600 bg-rose-50' : 'text-gray-600 hover:border-l-4 hover:border-l-rose-600 hover:text-rose-600'
+                    isActive('/settings') ? 'border-l-4 border-l-[#6942e2] text-[#6942e2] bg-purple-50' : 'text-gray-600 hover:border-l-4 hover:border-l-[#6942e2] hover:text-[#6942e2]'
                   }`}
                 >
                   <img src="/icons/settings.svg" alt="" className="h-6 w-6" style={{ minWidth: 24, minHeight: 24 }} />
@@ -499,7 +500,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute })
                 </button>
                 <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${settingsOpen ? 'max-h-60' : 'max-h-0'}`}>
                   <li>
-                    <Link to="/settings/profile" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-rose-600">
+                    <Link to="/settings/profile" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-[#6942e2]">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Profile'}
                     </Link>

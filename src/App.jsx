@@ -173,6 +173,7 @@ function AppContent() {
                 isMobile={isMobile}
                 onClose={closeSidebar}
                 onNavItemClick={closeSidebar}
+                logo="/finCRM-logo-dark (1).png"
               />
             ) : isUserIBRoute ? (
               <UserIBSidebar
@@ -180,6 +181,7 @@ function AppContent() {
                 isMobile={isMobile}
                 onClose={closeSidebar}
                 onNavItemClick={closeSidebar}
+                logo="/finCRM-logo-dark (1).png"
               />
             ) : (
               <Sidebar
@@ -188,6 +190,7 @@ function AppContent() {
                 onClose={closeSidebar}
                 onNavItemClick={closeSidebar}
                 isAdminRoute={isAdminRoute}
+                logo="/finCRM-logo-dark (1).png"
               />
             )}
           </div>
