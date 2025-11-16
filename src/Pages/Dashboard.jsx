@@ -92,7 +92,7 @@ function Dashboard() {
 
   return (
     <div className="bg-violet-100 p-3 sm:p-4 md:p-6">
-      <div className="w-full max-w-[1800px] mx-auto space-y-8">
+      <div className="w-100 sm:w-full sm:max-w-[1800px] mx-auto space-y-8">
 
         {/* Enhanced Page Header with Global MT5 Selector */}
         <div className="bg-gradient-to-r from-violet-900 via-purple-900 to-indigo-900 text-white p-6 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02] border border-purple-500/20">

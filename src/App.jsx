@@ -14,6 +14,7 @@ import DepositFunds from './Pages/DepositFunds'
 import WithdrawFunds from './Pages/WithdrawFunds'
 import InternalTransfer from './Pages/InternalTransfer'
 import TransactionHistory from './Pages/TransactionHistory'
+import TradingAnalysis from './Pages/TradingAnalysis'
 import KYC from './Pages/KYC'
 import AdvancedIBDashboard from './Pages/IB dashboard/AdvancedIBDashboard'
 import IBAccountOverview from './Pages/IB dashboard/AccountOverview'
@@ -299,7 +300,7 @@ function AppContent() {
               <Route path="/account-analytics" element={<AccountAnalytics />} />
               <Route path="/kyc" element={<KYC />} />
               <Route path="/ib-dashboard/advanced" element={<AdvancedIBDashboard />} />
-              {/* <Route path="/analytics/trading" element={<TradingAnalysis />} /> */}
+              <Route path="/analytics/trading" element={<TradingAnalysis />} />
               <Route path="/settings/profile" element={<Profile />} />
               <Route path="/payment-details" element={<PaymentDetails />} />
               <Route path="/funds/deposit" element={<DepositFunds />} />

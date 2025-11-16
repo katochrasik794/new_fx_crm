@@ -1,9 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const TradingAnalysis = () => {
+  const [selectedPair, setSelectedPair] = useState('EURUSD');
+
+  const analysisData = [
+    { pair: 'EURUSD', trend: 'Bullish', support: '1.0850', resistance: '1.0920', signal: 'Buy', strength: 'Strong' },
+    { pair: 'GBPUSD', trend: 'Bearish', support: '1.2650', resistance: '1.2750', signal: 'Sell', strength: 'Moderate' },
+    { pair: 'USDJPY', trend: 'Bullish', support: '148.20', resistance: '149.80', signal: 'Buy', strength: 'Strong' },
+    { pair: 'AUDUSD', trend: 'Neutral', support: '0.6520', resistance: '0.6580', signal: 'Hold', strength: 'Weak' },
+    { pair: 'USDCAD', trend: 'Bearish', support: '1.3420', resistance: '1.3520', signal: 'Sell', strength: 'Moderate' }
+  ];
+
+  const priceData = [
+    { time: '09:00', price: 1.0865 },
+    { time: '10:00', price: 1.0872 },
+    { time: '11:00', price: 1.0868 },
+    { time: '12:00', price: 1.0885 },
+    { time: '13:00', price: 1.0892 },
+    { time: '14:00', price: 1.0888 },
+    { time: '15:00', price: 1.0905 }
+  ];
+
   return (
     <div className="min-h-screen bg-violet-100 p-4 md:p-6">
-      <div className="w-full max-w-[1800px] mx-auto">
+      <div className="w-100 sm:w-full sm:max-w-[1800px] mx-auto">
         {/* Header */}
         <div className="bg-gradient-to-r from-violet-900 via-purple-900 to-indigo-900 text-white rounded-3xl p-6 md:p-8 mb-6 md:mb-8 shadow-2xl">
           <h1 className="text-3xl md:text-4xl font-bold mb-2 flex items-center">
@@ -15,64 +35,86 @@ const TradingAnalysis = () => {
           <p className="text-gray-300 text-lg">Explore detailed technical and fundamental analysis shared by our team</p>
         </div>
 
-        {/* Analysis Content */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/50 overflow-hidden hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.01]">
-          <div className="p-8 md:p-12">
-            {/* Empty State */}
-            <div className="text-center py-12">
-              <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <svg className="w-10 h-10 md:w-12 md:h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
-                </svg>
-              </div>
-
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">No Analysis Available Yet</h3>
-              <p className="text-gray-600 text-base md:text-lg mb-6 max-w-md mx-auto">
-                Our expert analysts are currently preparing detailed market analysis. Check back soon for valuable insights and trading opportunities.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <div className="flex items-center text-yellow-600 bg-yellow-50 px-4 py-2 rounded-full border border-yellow-200">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
-                  </svg>
-                  Coming Soon
-                </div>
-              </div>
+        {/* Price Chart */}
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/50 overflow-hidden mb-6">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6">
+            <h3 className="text-xl font-semibold">Live Price Chart - {selectedPair}</h3>
+          </div>
+          <div className="p-6">
+            <div className="flex gap-2 mb-4">
+              {['EURUSD', 'GBPUSD', 'USDJPY', 'AUDUSD'].map(pair => (
+                <button key={pair} onClick={() => setSelectedPair(pair)} className={`px-4 py-2 rounded-lg ${selectedPair === pair ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}>
+                  {pair}
+                </button>
+              ))}
             </div>
-
-            {/* Future Content Preview
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Technical Analysis",
-                  description: "Chart patterns, indicators, and price action insights",
-                  icon: "📈",
-                  color: "from-blue-500 to-blue-600"
-                },
-                {
-                  title: "Fundamental Analysis",
-                  description: "Economic data, news impact, and market sentiment",
-                  icon: "📰",
-                  color: "from-green-500 to-green-600"
-                },
-                {
-                  title: "Market Outlook",
-                  description: "Weekly and monthly market forecasts and trends",
-                  icon: "🔮",
-                  color: "from-purple-500 to-purple-600"
-                }
-              ].map((item, index) => (
-                <div key={index} className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 border border-gray-200 opacity-60 hover:opacity-80 transition-all duration-300">
-                  <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-xl flex items-center justify-center mb-4`}>
-                    <span className="text-2xl">{item.icon}</span>
-                  </div>
-                  <h4 className="font-semibold text-gray-900 mb-2">{item.title}</h4>
-                  <p className="text-gray-600 text-sm">{item.description}</p>
+            <div className="h-64 flex items-end justify-around gap-2 border-b border-l border-gray-300 pb-2 pl-2">
+              {priceData.map((data, i) => (
+                <div key={i} className="flex flex-col items-center flex-1">
+                  <div className="w-full bg-gradient-to-t from-blue-500 to-blue-300 rounded-t" style={{height: `${(data.price - 1.086) * 5000}px`}}></div>
+                  <span className="text-xs text-gray-600 mt-2">{data.time}</span>
                 </div>
               ))}
-            </div> */}
+            </div>
           </div>
+        </div>
+
+        {/* Technical Analysis Table */}
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/50 overflow-hidden mb-6">
+          <div className="bg-gradient-to-r from-purple-600 to-purple-800 text-white p-6">
+            <h3 className="text-xl font-semibold">Technical Analysis Overview</h3>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Currency Pair</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Trend</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Support</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Resistance</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Signal</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-700">Strength</th>
+                </tr>
+              </thead>
+              <tbody>
+                {analysisData.map((item, index) => (
+                  <tr key={index} className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-semibold text-gray-900">{item.pair}</td>
+                    <td className="px-6 py-4">
+                      <span className={`px-3 py-1 rounded-full text-sm ${item.trend === 'Bullish' ? 'bg-green-100 text-green-700' : item.trend === 'Bearish' ? 'bg-red-100 text-red-700' : 'bg-gray-100 text-gray-700'}`}>
+                        {item.trend}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4 text-gray-700">{item.support}</td>
+                    <td className="px-6 py-4 text-gray-700">{item.resistance}</td>
+                    <td className="px-6 py-4">
+                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${item.signal === 'Buy' ? 'bg-blue-100 text-blue-700' : item.signal === 'Sell' ? 'bg-orange-100 text-orange-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                        {item.signal}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4 text-gray-700">{item.strength}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Market Insights */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {[
+            { title: "Technical Analysis", description: "Chart patterns, indicators, and price action insights", icon: "📈", color: "from-blue-500 to-blue-600" },
+            { title: "Fundamental Analysis", description: "Economic data, news impact, and market sentiment", icon: "📰", color: "from-green-500 to-green-600" },
+            { title: "Market Outlook", description: "Weekly and monthly market forecasts and trends", icon: "🔮", color: "from-purple-500 to-purple-600" }
+          ].map((item, index) => (
+            <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className={`w-12 h-12 bg-gradient-to-r ${item.color} rounded-xl flex items-center justify-center mb-4`}>
+                <span className="text-2xl">{item.icon}</span>
+              </div>
+              <h4 className="font-semibold text-gray-900 mb-2 text-lg">{item.title}</h4>
+              <p className="text-gray-600 text-sm">{item.description}</p>
+            </div>
+          ))}
         </div>
 
         {/* Newsletter Signup (Optional) */}

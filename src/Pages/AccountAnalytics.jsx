@@ -3,9 +3,33 @@ import React, { useState } from 'react';
 const AccountAnalytics = () => {
   const [activeTab, setActiveTab] = useState('net');
 
+  const symbolData = [
+    { symbol: 'EURUSD', volume: 45, color: 'bg-blue-500' },
+    { symbol: 'GBPUSD', volume: 30, color: 'bg-purple-500' },
+    { symbol: 'USDJPY', volume: 15, color: 'bg-green-500' },
+    { symbol: 'AUDUSD', volume: 10, color: 'bg-yellow-500' }
+  ];
+
+  const performanceData = [
+    { month: 'Jan', gain: 5, drawdown: -2 },
+    { month: 'Feb', gain: 8, drawdown: -3 },
+    { month: 'Mar', gain: 12, drawdown: -1 },
+    { month: 'Apr', gain: 15, drawdown: -4 },
+    { month: 'May', gain: 18, drawdown: -2 },
+    { month: 'Jun', gain: 22, drawdown: -5 }
+  ];
+
+  const closedTrades = [
+    { id: 1, date: '2024-01-15', orderId: 'ORD001', symbol: 'EURUSD', action: 'Buy', volume: '0.5', openPrice: '1.0850', closePrice: '1.0920', profit: '+350.00' },
+    { id: 2, date: '2024-01-14', orderId: 'ORD002', symbol: 'GBPUSD', action: 'Sell', volume: '0.3', openPrice: '1.2750', closePrice: '1.2680', profit: '+210.00' },
+    { id: 3, date: '2024-01-13', orderId: 'ORD003', symbol: 'USDJPY', action: 'Buy', volume: '0.8', openPrice: '148.20', closePrice: '149.50', profit: '+520.00' },
+    { id: 4, date: '2024-01-12', orderId: 'ORD004', symbol: 'AUDUSD', action: 'Sell', volume: '0.4', openPrice: '0.6580', closePrice: '0.6620', profit: '-160.00' },
+    { id: 5, date: '2024-01-11', orderId: 'ORD005', symbol: 'USDCAD', action: 'Buy', volume: '0.6', openPrice: '1.3420', closePrice: '1.3380', profit: '-240.00' }
+  ];
+
   return (
     <div className="min-h-screen bg-violet-100 p-4 md:p-6">
-      <div className="w-full max-w-[1800px] mx-auto">
+      <div className="w-100 sm:w-full sm:max-w-[1800px] mx-auto">
         {/* Enhanced Page Header */}
         <div className="bg-gradient-to-r from-black via-gray-900 to-black text-white rounded-3xl p-6 md:p-8 mb-6 md:mb-8 shadow-2xl">
           <h1 className="text-3xl md:text-4xl font-bold mb-2 flex items-center">
@@ -20,11 +44,11 @@ const AccountAnalytics = () => {
         {/* Enhanced Summary Cards */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-6 md:mb-8">
           {[
-            { icon: 'wallet', label: 'Balance', value: '0.00 USD' },
-            { icon: 'chart-pie', label: 'Equity', value: '0.00 USD' },
-            { icon: 'percentage', label: 'Margin', value: '0.00' },
-            { icon: 'lock-open', label: 'Free Margin', value: '0.00' },
-            { icon: 'currency-dollar', label: 'Total PNL', value: '0.00 USD', success: true }
+            { icon: 'wallet', label: 'Balance', value: '12,450.00 USD' },
+            { icon: 'chart-pie', label: 'Equity', value: '13,130.00 USD' },
+            { icon: 'percentage', label: 'Margin', value: '2,340.00' },
+            { icon: 'lock-open', label: 'Free Margin', value: '10,790.00' },
+            { icon: 'currency-dollar', label: 'Total PNL', value: '+680.00 USD', success: true }
           ].map((card, index) => (
             <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
               <div className="p-4 md:p-6 text-center">
@@ -70,14 +94,35 @@ const AccountAnalytics = () => {
                 </div>
               </div>
               <div className="p-4 md:p-6 flex flex-col min-h-[300px]">
-                <div className="flex-grow-1 flex items-center justify-center py-8">
-                  <div className="text-center">
-                    <svg className="w-12 h-12 md:w-16 md:h-16 text-yellow-500 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
+                <div className="flex-1 flex items-center justify-center">
+                  <div className="relative w-48 h-48">
+                    <svg viewBox="0 0 100 100" className="transform -rotate-90">
+                      {symbolData.map((item, i) => {
+                        const total = symbolData.reduce((sum, d) => sum + d.volume, 0);
+                        const percentage = (item.volume / total) * 100;
+                        const offset = symbolData.slice(0, i).reduce((sum, d) => sum + (d.volume / total) * 100, 0);
+                        return (
+                          <circle key={i} cx="50" cy="50" r="40" fill="none" stroke={item.color.replace('bg-', '#')} strokeWidth="20"
+                            strokeDasharray={`${percentage * 2.51} ${251 - percentage * 2.51}`}
+                            strokeDashoffset={-offset * 2.51} className="transition-all" />
+                        );
+                      })}
                     </svg>
-                    <p className="text-gray-900 font-semibold mb-1">No trading data available</p>
-                    <p className="text-gray-600 text-sm">Try a different time range</p>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center">
+                        <p className="text-2xl font-bold text-gray-900">100</p>
+                        <p className="text-xs text-gray-600">lots</p>
+                      </div>
+                    </div>
                   </div>
+                </div>
+                <div className="grid grid-cols-2 gap-2 mt-4">
+                  {symbolData.map((item, i) => (
+                    <div key={i} className="flex items-center gap-2">
+                      <div className={`w-3 h-3 rounded-full ${item.color}`}></div>
+                      <span className="text-sm text-gray-700">{item.symbol} ({item.volume}%)</span>
+                    </div>
+                  ))}
                 </div>
                 <p className="text-gray-500 text-sm text-center mt-4">Share by traded volume (lots).</p>
               </div>
@@ -104,14 +149,16 @@ const AccountAnalytics = () => {
                     <option value="">All Accounts</option>
                   </select>
                 </div>
-                <div className="min-h-[280px] flex items-center justify-center py-8">
-                  <div className="text-center">
-                    <svg className="w-12 h-12 md:w-16 md:h-16 text-yellow-500 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"/>
-                    </svg>
-                    <p className="text-gray-900 font-semibold mb-1">No performance data available</p>
-                    <p className="text-gray-600 text-sm">Try a different time range</p>
-                  </div>
+                <div className="min-h-[280px] flex items-end justify-around gap-2 border-b border-l border-gray-300 pb-2 pl-2">
+                  {performanceData.map((data, i) => (
+                    <div key={i} className="flex flex-col items-center flex-1 relative">
+                      <div className="w-full flex flex-col items-center gap-1">
+                        <div className="w-full bg-gradient-to-t from-green-500 to-green-300 rounded-t" style={{height: `${data.gain * 8}px`}}></div>
+                        <div className="w-full bg-gradient-to-b from-red-500 to-red-300 rounded-b" style={{height: `${Math.abs(data.drawdown) * 8}px`}}></div>
+                      </div>
+                      <span className="text-xs text-gray-600 mt-2">{data.month}</span>
+                    </div>
+                  ))}
                 </div>
                 <div className="flex gap-3 flex-wrap mt-4">
                   <span className="bg-green-100 text-green-800 border border-green-200 px-3 py-1 rounded-full text-sm font-medium">Gain% (cumulative)</span>
@@ -216,12 +263,20 @@ const AccountAnalytics = () => {
                   ))}
                 </div>
               </div>
-              <div className="min-h-[355px] bg-gray-50 rounded-xl flex items-center justify-center">
-                <div className="text-center py-8">
-                  <svg className="w-12 h-12 md:w-16 md:h-16 text-gray-400 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-                  </svg>
-                  <p className="text-gray-600">Chart data will be displayed here</p>
+              <div className="min-h-[355px] bg-gray-50 rounded-xl p-6">
+                <div className="h-full flex items-end justify-around gap-3 border-b border-l border-gray-300 pb-2 pl-2">
+                  {activeTab === 'net' && [5, 8, 12, 15, 18, 22, 25, 28, 32, 35].map((val, i) => (
+                    <div key={i} className="flex-1 bg-gradient-to-t from-purple-500 to-purple-300 rounded-t" style={{height: `${val * 8}px`}}></div>
+                  ))}
+                  {activeTab === 'orders' && [3, 5, 7, 6, 9, 11, 8, 12, 14, 16].map((val, i) => (
+                    <div key={i} className="flex-1 bg-gradient-to-t from-blue-500 to-blue-300 rounded-t" style={{height: `${val * 15}px`}}></div>
+                  ))}
+                  {activeTab === 'volume' && [10, 15, 20, 18, 25, 30, 28, 35, 40, 45].map((val, i) => (
+                    <div key={i} className="flex-1 bg-gradient-to-t from-green-500 to-green-300 rounded-t" style={{height: `${val * 6}px`}}></div>
+                  ))}
+                  {activeTab === 'equity' && [100, 105, 110, 108, 115, 120, 118, 125, 130, 135].map((val, i) => (
+                    <div key={i} className="flex-1 bg-gradient-to-t from-yellow-500 to-yellow-300 rounded-t" style={{height: `${(val - 95) * 15}px`}}></div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -264,16 +319,32 @@ const AccountAnalytics = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td colSpan="9" className="px-4 py-8 text-center text-gray-500">
-                      No closed trades found
-                    </td>
-                  </tr>
+                  {closedTrades.map((trade) => (
+                    <tr key={trade.id} className="border-b border-gray-100 hover:bg-gray-50">
+                      <td className="px-4 py-3 text-left text-gray-700">{trade.id}</td>
+                      <td className="px-4 py-3 text-left text-gray-700">{trade.date}</td>
+                      <td className="px-4 py-3 text-left text-blue-600 font-medium">{trade.orderId}</td>
+                      <td className="px-4 py-3 text-left font-semibold text-gray-900">{trade.symbol}</td>
+                      <td className="px-4 py-3 text-left">
+                        <span className={`px-2 py-1 rounded text-xs font-medium ${trade.action === 'Buy' ? 'bg-blue-100 text-blue-700' : 'bg-orange-100 text-orange-700'}`}>
+                          {trade.action}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-left text-gray-700">{trade.volume}</td>
+                      <td className="px-4 py-3 text-left text-gray-700">{trade.openPrice}</td>
+                      <td className="px-4 py-3 text-left text-gray-700">{trade.closePrice}</td>
+                      <td className="px-4 py-3 text-left font-semibold">
+                        <span className={trade.profit.startsWith('+') ? 'text-green-600' : 'text-red-600'}>
+                          {trade.profit} USD
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
                 <tfoot>
                   <tr>
                     <th colSpan="9" className="px-4 py-3 text-right text-gray-500 text-sm">
-                      Showing 0 of 0 closed trades
+                      Showing {closedTrades.length} of {closedTrades.length} closed trades
                     </th>
                   </tr>
                 </tfoot>
