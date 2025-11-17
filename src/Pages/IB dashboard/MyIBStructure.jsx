@@ -577,7 +577,7 @@ const MyIBStructure = () => {
     return (
       <div
         key={node.id}
-        className="w-100 max-w-2xs sm:max-w-[1800px] flex flex-col items-center"
+        className="w-90 max-w-2xs sm:max-w-[1800px] flex flex-col items-center"
       >
         {!isRoot && <div className="w-px h-6 bg-gray-300"></div>}
 

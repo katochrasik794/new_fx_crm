@@ -31,7 +31,7 @@ function MyAccounts() {
 
   return (
     <div className="bg-violet-100 p-6">
-      <div className="w-full max-w-[1800px] mx-auto space-y-8">
+      <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto space-y-8">
 
         {/* Page Header */}
         <div className="bg-gradient-to-r from-violet-900 via-purple-900 to-indigo-900 text-white p-8 rounded-3xl shadow-2xl">

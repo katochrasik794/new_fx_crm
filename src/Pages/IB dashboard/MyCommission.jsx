@@ -71,7 +71,7 @@ const MyCommission = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-100 p-4 md:p-6">
-      <div className="max-w-[400px] sm:max-w-7xl mx-auto space-y-6">
+      <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto space-y-6">
 
         {/* Page Header */}
         <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-slate-100 p-4 md:p-6">

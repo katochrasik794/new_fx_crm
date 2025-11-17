@@ -42,7 +42,7 @@ const PaymentDetails = () => {
 
   return (
     <div className="min-h-screen bg-violet-100 p-4 md:p-6">
-      <div className="w-full max-w-[1800px] mx-auto">
+      <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto">
         {/* HERO SECTION */}
         {/* <div className="bg-gradient-to-r from-black via-gray-900 to-black text-white rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-700 transform hover:scale-[1.01] mb-6 md:mb-8">
           <div className="p-4 md:p-6 lg:p-8">

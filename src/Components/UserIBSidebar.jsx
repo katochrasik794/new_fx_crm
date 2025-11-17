@@ -30,10 +30,19 @@ const UserIBSidebar = ({ collapsed, isMobile, onClose, onNavItemClick, logo, sma
               <button onClick={onClose} className="text-gray-500 hover:text-gray-700 text-2xl">×</button>
             </div>
           )}
-          <div className="flex items-center justify-center px-2 h-[60px]">
+          <div className="flex items-center justify-between px-4 h-[60px]">
+            {isMobile && (
+              <div className="flex-1 flex justify-center">
+                <img
+                  className="w-auto max-w-[120px] h-8 object-contain"
+                  src={collapsed ? smallLogo : logo}
+                  alt="Logo"
+                />
+              </div>
+            )}
             {!isMobile && (
               <img
-                className={`${collapsed ? 'w-12 h-12' : 'w-auto max-w-full h-full'} object-contain`}
+                className="w-auto max-w-full h-full object-contain py-2"
                 src={collapsed ? smallLogo : logo}
                 alt="Logo"
               />

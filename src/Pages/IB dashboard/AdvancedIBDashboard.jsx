@@ -43,7 +43,7 @@ const AdvancedIBDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 p-3 sm:p-4 md:p-6">
-      <div className="w-full max-w-[1800px] mx-auto space-y-6">
+      <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto space-y-6">
 
         {/* Page Title */}
         <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-emerald-100 p-4 sm:p-6">
