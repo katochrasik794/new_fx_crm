@@ -34,7 +34,7 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-violet-100 text-gray-900 p-3 sm:p-4 md:p-6">
+    <div className="w-100 sm:w-full sm:max-w-[1800px] min-h-screen bg-violet-100 text-gray-900 p-3 sm:p-4 md:p-6">
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3">
         <div>
@@ -363,7 +363,7 @@ const AdminDashboard = () => {
 
       {/* Activity Table */}
       <div className="bg-white rounded-lg border border-gray-200 shadow-sm">
-        <div className="p-4 sm:p-6 border-b border-gray-200">
+        <div className="p-2 sm:p-6 border-b border-gray-200">
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-4">
             <h3 className="text-xl font-bold">All Activity</h3>
             <form className="flex flex-col sm:flex-row flex-wrap items-start sm:items-end gap-3 sm:gap-4 w-full lg:w-auto">

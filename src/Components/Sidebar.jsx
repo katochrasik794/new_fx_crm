@@ -62,13 +62,36 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute, l
              <div className="flex justify-end p-4">
                <button
                  onClick={onClose}
-                 className="text-gray-500 hover:text-gray-700 text-2xl"
+                 className="text-gray-500 hover:text-gray-700 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                 aria-label="Close sidebar"
                >
-                 ×
+                 <svg
+                   className="w-6 h-6"
+                   fill="none"
+                   stroke="currentColor"
+                   viewBox="0 0 24 24"
+                   xmlns="http://www.w3.org/2000/svg"
+                 >
+                   <path
+                     strokeLinecap="round"
+                     strokeLinejoin="round"
+                     strokeWidth={2}
+                     d="M6 18L18 6M6 6l12 12"
+                   />
+                 </svg>
                </button>
              </div>
            )}
-           <div className="flex items-center justify-center px-4 h-[60px]">
+           <div className="flex items-center justify-between px-4 h-[60px]">
+              {isMobile && (
+                <div className="flex-1 flex justify-center">
+                  <img
+                    className="w-auto max-w-[120px] h-8 object-contain"
+                    src={collapsed ? smallLogo : logo}
+                    alt="Logo"
+                  />
+                </div>
+              )}
               {!isMobile && (
                 <img
                   className="w-auto max-w-full h-full object-contain py-2"
@@ -76,7 +99,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute, l
                   alt="Logo"
                 />
               )}
-            </div>
+           </div>
 
           <div className="flex flex-1 flex-col">
             {!collapsed && <div className="px-5 pt-3 ml-6 mb-0 text-xs font-semibold text-gray-500 uppercase tracking-wider">{isAdminRoute ? 'Admin Menu' : 'Menu'}</div>}

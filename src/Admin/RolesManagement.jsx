@@ -157,7 +157,7 @@ const RolesManagement = () => {
   };
 
   return (
-    <div className="min-h-screen bg-violet-100 text-gray-900 p-6">
+    <div className="w-100 sm:w-full sm:max-w-[1800px] min-h-screen bg-violet-100 text-gray-900 p-6">
       <div className="w-full max-w-[1800px] mx-auto space-y-8">
         {/* Add/Edit Role Form */}
         <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">

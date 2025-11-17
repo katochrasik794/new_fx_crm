@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react'
 import { Line } from 'react-chartjs-2'
 import {
@@ -91,8 +92,9 @@ function Dashboard() {
   };
 
   return (
-    <div className="bg-violet-100 p-3 sm:p-4 md:p-6">
-      <div className="w-100 sm:w-full sm:max-w-[1800px] mx-auto space-y-8">
+    <div className="bg-violet-100 p-3 sm:p-4 md:p-6 flex justify-center">
+      <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto px-1 sm:px-2
+ space-y-8 ">
 
         {/* Enhanced Page Header with Global MT5 Selector */}
         <div className="bg-gradient-to-r from-violet-900 via-purple-900 to-indigo-900 text-white p-6 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02] border border-purple-500/20">
@@ -207,37 +209,6 @@ function Dashboard() {
             Get started with your trading journey.
           </div>
         </div>
-
-        {/* CTA Buttons */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <button
-            onClick={() => window.location.href = '/open-trading-account'}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center"
-          >
-            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd"/>
-            </svg>
-            Open Account
-          </button>
-          <button
-            onClick={() => window.location.href = '/deposit'}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center"
-          >
-            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-            </svg>
-            Deposit Funds
-          </button>
-          <button
-            onClick={() => window.location.href = '/withdrawal'}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center"
-          >
-            <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l1.293-1.293a1 1 0 101.414 1.414L10 15.414l-2.293 2.293a1 1 0 001.414 1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
-            </svg>
-            Withdraw Funds
-          </button>
-        </div> */}
 
         {/* Enhanced Summary Cards */}
         <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 mb-6 sm:mb-8">
