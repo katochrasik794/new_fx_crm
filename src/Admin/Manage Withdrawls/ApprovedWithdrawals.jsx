@@ -214,7 +214,7 @@ const ApprovedWithdrawals = () => {
   );
 
   return (
-    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
+    <div className="min-h-screen bg-violet-100 p-2 md:p-6">
       <div className="w-full max-w-[1800px] mx-auto">
         {/* Header */}
         <div className="mb-8">

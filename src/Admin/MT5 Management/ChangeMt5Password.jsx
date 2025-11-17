@@ -150,7 +150,7 @@ const ChangeMt5Password = () => {
                      formData.confirmPassword && Object.values(passwordRequirements).every(req => req);
 
   return (
-    <div className="min-h-screen bg-violet-100 p-6">
+    <div className="min-h-screen bg-violet-100 p-2">
       <div className="w-full max-w-[1800px] mx-auto space-y-6">
         {/* Header */}
         <div className="text-center">

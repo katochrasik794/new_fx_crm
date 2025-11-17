@@ -2,7 +2,7 @@ import React from 'react';
 
 const MyWallet = () => {
   return (
-    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
+    <div className="min-h-screen bg-violet-100 p-2 md:p-6">
       <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto">
         {/* Header */}
         <div className="mb-6 md:mb-8">

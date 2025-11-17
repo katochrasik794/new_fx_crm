@@ -31,7 +31,7 @@ const AddUser = () => {
   };
 
   return (
-    <div className="bg-violet-100 text-gray-900 p-6">
+    <div className="bg-violet-100 text-gray-900 p-2">
       <div className="w-full max-w-[1800px] mx-auto">
         <div className="bg-white rounded-2xl border border-gray-200 shadow-lg overflow-hidden shadow-2xl">
           {/* Header */}

@@ -79,7 +79,7 @@ const Mt5Accounts = () => {
   const paginate = (num) => setCurrentPage(num);
 
   return (
-    <div className="w-100 sm:w-full sm:max-w-[1800px] bg-violet-100 p-3 sm:p-4 md:p-6">
+    <div className="w-[350px] sm:w-full max-w-[2800px] bg-violet-100 p-2 sm:p-4 md:p-6">
       <div className="max-w-[1600px] mx-auto w-full">
 
         {/* HEADER */}

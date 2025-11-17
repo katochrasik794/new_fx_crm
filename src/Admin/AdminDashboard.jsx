@@ -34,7 +34,7 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div className="w-100 sm:w-full sm:max-w-[1800px] min-h-screen bg-violet-100 text-gray-900 p-3 sm:p-4 md:p-6">
+    <div className="w-[350px] sm:w-full max-w-[2800px] min-h-screen bg-violet-100 text-gray-900 p-3 sm:p-4 md:p-6">
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-3">
         <div>
@@ -407,8 +407,8 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        <div className="overflow-x-auto -mx-4 sm:-mx-6 px-4 sm:px-6">
-          <table className="w-full min-w-[800px]">
+        <div className="overflow-x-auto sm:-mx-6 px-2 sm:px-6">
+          <table className="w-[350px] sm:w-full max-w-[2800px]">
             <thead className="bg-gray-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Time</th>

@@ -142,8 +142,8 @@ const Withdrawals = () => {
   );
 
   return (
-    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
-      <div className="w-full max-w-[1800px] mx-auto">
+    <div className="min-h-screen bg-violet-100 p-0 md:p-6">
+      <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-center mb-4">
@@ -153,7 +153,7 @@ const Withdrawals = () => {
               </svg>
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900">PAMM Withdrawals Management</h1>
+              <h1 className="text-xl md:text-4xl font-bold text-gray-900">PAMM Withdrawals Management</h1>
               <p className="text-lg text-gray-600 mt-1">Manage commission and investment withdrawals</p>
             </div>
           </div>

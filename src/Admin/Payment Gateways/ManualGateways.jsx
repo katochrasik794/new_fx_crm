@@ -157,8 +157,8 @@ const ManualGateways = () => {
   };
 
   return (
-    <div className="min-h-screen bg-violet-100 p-6">
-      <div className="w-full max-w-[1800px] mx-auto space-y-8">
+    <div className="min-h-screen bg-violet-100 p-2">
+      <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto space-y-8">
         {/* Header */}
         <div className="text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-600 rounded-full mb-4">

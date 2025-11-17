@@ -27,6 +27,8 @@ import IBWithdrawals from './Pages/IB dashboard/IBWithdrawals'
 import Profile from './Pages/Profile'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { AnimatePresence } from 'framer-motion'
+import PageTransition from './Components/PageTransition'
 
 // Admin imports
 import AdminDashboard from './Admin/AdminDashboard'
@@ -204,118 +206,120 @@ function AppContent() {
             <Navbar toggleSidebar={toggleSidebar} isAdminRoute={isAdminRoute} />
           </div>
           <div className="flex-1 overflow-y-auto bg-violet-100" style={{ marginTop: '60px' }}>
-            <Routes>
+            <AnimatePresence mode="wait">
+              <Routes location={location} key={location.pathname}>
               {/* Admin Routes */}
-              <Route path="/admin/" element={<AdminDashboard />} />
-              <Route path="/admin/kyc-verification" element={<KycVerification />} />
-              <Route path="/admin/roles-management" element={<RolesManagement />} />
-              <Route path="/admin/send-analysis" element={<SendAnalysis />} />
-              <Route path="/admin/send-emails" element={<SendEmails />} />
-              <Route path="/admin/system-settings" element={<SystemSettings />} />
+              <Route path="/admin/" element={<PageTransition><AdminDashboard /></PageTransition>} />
+              <Route path="/admin/kyc-verification" element={<PageTransition><KycVerification /></PageTransition>} />
+              <Route path="/admin/roles-management" element={<PageTransition><RolesManagement /></PageTransition>} />
+              <Route path="/admin/send-analysis" element={<PageTransition><SendAnalysis /></PageTransition>} />
+              <Route path="/admin/send-emails" element={<PageTransition><SendEmails /></PageTransition>} />
+              <Route path="/admin/system-settings" element={<PageTransition><SystemSettings /></PageTransition>} />
               
               {/* User Management */}
-              <Route path="/admin/users/all" element={<AllUsers />} />
-              <Route path="/admin/users/active" element={<ActiveUsers />} />
-              <Route path="/admin/users/banned" element={<BannedUsers />} />
-              <Route path="/admin/users/add" element={<AddUser />} />
-              <Route path="/admin/users/email-unverified" element={<EmailUnverified />} />
-              <Route path="/admin/users/kyc-pending" element={<KycPending />} />
-              <Route path="/admin/users/kyc-unverified" element={<KycUnverified />} />
-              <Route path="/admin/users/manage-finance" element={<ManageFinance />} />
-              <Route path="/admin/users/mt5-accounts" element={<Mt5Accounts />} />
-              <Route path="/admin/users/profit-loss" element={<ProfitLossReport />} />
-              <Route path="/admin/users/send-notification" element={<SendNotification />} />
+              <Route path="/admin/users/all" element={<PageTransition><AllUsers /></PageTransition>} />
+              <Route path="/admin/users/active" element={<PageTransition><ActiveUsers /></PageTransition>} />
+              <Route path="/admin/users/banned" element={<PageTransition><BannedUsers /></PageTransition>} />
+              <Route path="/admin/users/add" element={<PageTransition><AddUser /></PageTransition>} />
+              <Route path="/admin/users/email-unverified" element={<PageTransition><EmailUnverified /></PageTransition>} />
+              <Route path="/admin/users/kyc-pending" element={<PageTransition><KycPending /></PageTransition>} />
+              <Route path="/admin/users/kyc-unverified" element={<PageTransition><KycUnverified /></PageTransition>} />
+              <Route path="/admin/users/manage-finance" element={<PageTransition><ManageFinance /></PageTransition>} />
+              <Route path="/admin/users/mt5-accounts" element={<PageTransition><Mt5Accounts /></PageTransition>} />
+              <Route path="/admin/users/profit-loss" element={<PageTransition><ProfitLossReport /></PageTransition>} />
+              <Route path="/admin/users/send-notification" element={<PageTransition><SendNotification /></PageTransition>} />
               
               {/* Deposits */}
-              <Route path="/admin/deposits/all" element={<AllDeposits />} />
-              <Route path="/admin/deposits/pending" element={<PendingDeposits />} />
-              <Route path="/admin/deposits/approved" element={<ApprovedDeposits />} />
-              <Route path="/admin/deposits/rejected" element={<RejectedDeposits />} />
+              <Route path="/admin/deposits/all" element={<PageTransition><AllDeposits /></PageTransition>} />
+              <Route path="/admin/deposits/pending" element={<PageTransition><PendingDeposits /></PageTransition>} />
+              <Route path="/admin/deposits/approved" element={<PageTransition><ApprovedDeposits /></PageTransition>} />
+              <Route path="/admin/deposits/rejected" element={<PageTransition><RejectedDeposits /></PageTransition>} />
               
               {/* Withdrawals */}
-              <Route path="/admin/withdrawals/all" element={<AllWithdrawals />} />
-              <Route path="/admin/withdrawals/pending" element={<PendingWithdrawals />} />
-              <Route path="/admin/withdrawals/approved" element={<ApprovedWithdrawals />} />
-              <Route path="/admin/withdrawals/rejected" element={<RejectedWithdrawals />} />
+              <Route path="/admin/withdrawals/all" element={<PageTransition><AllWithdrawals /></PageTransition>} />
+              <Route path="/admin/withdrawals/pending" element={<PageTransition><PendingWithdrawals /></PageTransition>} />
+              <Route path="/admin/withdrawals/approved" element={<PageTransition><ApprovedWithdrawals /></PageTransition>} />
+              <Route path="/admin/withdrawals/rejected" element={<PageTransition><RejectedWithdrawals /></PageTransition>} />
               
               {/* MT5 Management */}
-              <Route path="/admin/mt5/users" element={<Mt5Users />} />
-              <Route path="/admin/mt5/assign-account" element={<AssignMt5Account />} />
-              <Route path="/admin/mt5/change-password" element={<ChangeMt5Password />} />
+              <Route path="/admin/mt5/users" element={<PageTransition><Mt5Users /></PageTransition>} />
+              <Route path="/admin/mt5/assign-account" element={<PageTransition><AssignMt5Account /></PageTransition>} />
+              <Route path="/admin/mt5/change-password" element={<PageTransition><ChangeMt5Password /></PageTransition>} />
               
               {/* Payment Gateways */}
-              <Route path="/admin/payment-gateways/automatic" element={<AutomaticGateways />} />
-              <Route path="/admin/payment-gateways/manual" element={<ManualGateways />} />
+              <Route path="/admin/payment-gateways/automatic" element={<PageTransition><AutomaticGateways /></PageTransition>} />
+              <Route path="/admin/payment-gateways/manual" element={<PageTransition><ManualGateways /></PageTransition>} />
               
               {/* IB Management */}
-              <Route path="/admin/ib/distribution-management" element={<IBDistributionManagement />} />
+              <Route path="/admin/ib/distribution-management" element={<PageTransition><IBDistributionManagement /></PageTransition>} />
               
               {/* IB Admin Portal Routes */}
-              <Route path="/ib-admin/dashboard" element={<IbAdminDashboard />} />
-              <Route path="/ib-admin/overview" element={<IbOverview />} />
-              <Route path="/ib-admin/requests" element={<IbRequests />} />
-              <Route path="/ib-admin/profile" element={<IBProfile />} />
-              <Route path="/ib-admin/commission-distribution" element={<IBCommissionDistribution />} />
-              <Route path="/ib-admin/portal-settings" element={<PortalSettings />} />
-              <Route path="/ib-admin/symbols-pip-values" element={<SymbolsPipValues />} />
-              <Route path="/ib-admin/trading-groups" element={<TradingGroups />} />
-              <Route path="/ib-admin/group-commission" element={<CommissionDistribution />} />
-              <Route path="/ib-admin/client-linking" element={<ClientLinking />} />
-              <Route path="/ib-admin/move-user" element={<MoveUser />} />
-              <Route path="/ib-admin/withdrawal-management" element={<IBWithdrawalManagement />} />
+              <Route path="/ib-admin/dashboard" element={<PageTransition><IbAdminDashboard /></PageTransition>} />
+              <Route path="/ib-admin/overview" element={<PageTransition><IbOverview /></PageTransition>} />
+              <Route path="/ib-admin/requests" element={<PageTransition><IbRequests /></PageTransition>} />
+              <Route path="/ib-admin/profile" element={<PageTransition><IBProfile /></PageTransition>} />
+              <Route path="/ib-admin/commission-distribution" element={<PageTransition><IBCommissionDistribution /></PageTransition>} />
+              <Route path="/ib-admin/portal-settings" element={<PageTransition><PortalSettings /></PageTransition>} />
+              <Route path="/ib-admin/symbols-pip-values" element={<PageTransition><SymbolsPipValues /></PageTransition>} />
+              <Route path="/ib-admin/trading-groups" element={<PageTransition><TradingGroups /></PageTransition>} />
+              <Route path="/ib-admin/group-commission" element={<PageTransition><CommissionDistribution /></PageTransition>} />
+              <Route path="/ib-admin/client-linking" element={<PageTransition><ClientLinking /></PageTransition>} />
+              <Route path="/ib-admin/move-user" element={<PageTransition><MoveUser /></PageTransition>} />
+              <Route path="/ib-admin/withdrawal-management" element={<PageTransition><IBWithdrawalManagement /></PageTransition>} />
               
               {/* Copy Trading */}
-              <Route path="/admin/copy-trading/master" element={<MasterArea />} />
-              <Route path="/admin/copy-trading/copier" element={<CopierArea />} />
-              <Route path="/admin/copy-trading/map" element={<MapCopierMaster />} />
+              <Route path="/admin/copy-trading/master" element={<PageTransition><MasterArea /></PageTransition>} />
+              <Route path="/admin/copy-trading/copier" element={<PageTransition><CopierArea /></PageTransition>} />
+              <Route path="/admin/copy-trading/map" element={<PageTransition><MapCopierMaster /></PageTransition>} />
               
               {/* PAMM Management */}
-              <Route path="/admin/pamm/managers" element={<ManageManagers />} />
-              <Route path="/admin/pamm/users" element={<PammUsers />} />
-              <Route path="/admin/pamm/deposits" element={<PammDeposits />} />
-              <Route path="/admin/pamm/withdrawals" element={<PammWithdrawals />} />
-              <Route path="/admin/pamm/investments" element={<Investments />} />
-              <Route path="/admin/pamm/requests" element={<RequestsApplications />} />
-              <Route path="/admin/pamm/performance" element={<PerformanceReports />} />
-              <Route path="/admin/pamm/settings" element={<PammSettings />} />
+              <Route path="/admin/pamm/managers" element={<PageTransition><ManageManagers /></PageTransition>} />
+              <Route path="/admin/pamm/users" element={<PageTransition><PammUsers /></PageTransition>} />
+              <Route path="/admin/pamm/deposits" element={<PageTransition><PammDeposits /></PageTransition>} />
+              <Route path="/admin/pamm/withdrawals" element={<PageTransition><PammWithdrawals /></PageTransition>} />
+              <Route path="/admin/pamm/investments" element={<PageTransition><Investments /></PageTransition>} />
+              <Route path="/admin/pamm/requests" element={<PageTransition><RequestsApplications /></PageTransition>} />
+              <Route path="/admin/pamm/performance" element={<PageTransition><PerformanceReports /></PageTransition>} />
+              <Route path="/admin/pamm/settings" element={<PageTransition><PammSettings /></PageTransition>} />
               
               {/* Prize Lots */}
-              <Route path="/admin/prize-lots/manage" element={<ManagePrizeLots />} />
-              <Route path="/admin/prize-lots/pricing" element={<SetLotPricing />} />
-              <Route path="/admin/prize-lots/history" element={<PrizeDistributionHistory />} />
+              <Route path="/admin/prize-lots/manage" element={<PageTransition><ManagePrizeLots /></PageTransition>} />
+              <Route path="/admin/prize-lots/pricing" element={<PageTransition><SetLotPricing /></PageTransition>} />
+              <Route path="/admin/prize-lots/history" element={<PageTransition><PrizeDistributionHistory /></PageTransition>} />
               
               {/* User Routes */}
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/my-account/open-trading-account" element={<OpenTradingAccount />} />
-              <Route path="/my-account/accounts" element={<MyAccounts />} />
-              <Route path="/my-account/overview" element={<AccountOverview />} />
-              <Route path="/ib-dashboard/account-overview" element={<IBAccountOverview />} />
-              <Route path="/ib-dashboard/commission-analytics" element={<CommissionAnalytics />} />
-              <Route path="/ib-dashboard/pip-calculator" element={<PipCalculator />} />
-              <Route path="/ib-dashboard/my-clients" element={<MyIBClients />} />
-              <Route path="/ib-dashboard/my-structure" element={<MyIBStructure />} />
-              <Route path="/ib-dashboard/my-commission" element={<MyCommission />} />
-              <Route path="/ib-dashboard/withdrawals" element={<IBWithdrawals />} />
-              <Route path="/my-wallet" element={<MyWallet />} />
-              <Route path="/account-analytics" element={<AccountAnalytics />} />
-              <Route path="/kyc" element={<KYC />} />
-              <Route path="/ib-dashboard/advanced" element={<AdvancedIBDashboard />} />
-              <Route path="/analytics/trading" element={<TradingAnalysis />} />
-              <Route path="/settings/profile" element={<Profile />} />
-              <Route path="/payment-details" element={<PaymentDetails />} />
-              <Route path="/funds/deposit" element={<DepositFunds />} />
-              <Route path="/funds/withdrawal" element={<WithdrawFunds />} />
-              <Route path="/funds/internal-transfer" element={<InternalTransfer />} />
-              <Route path="/funds/transaction-history" element={<TransactionHistory />} />
-              <Route path="/messages" element={<Placeholder title="Messages" />} />
-              <Route path="/analytics/revenue" element={<Placeholder title="Revenue" />} />
-              <Route path="/analytics/refunds" element={<Placeholder title="Refunds" />} />
-              <Route path="/products" element={<Placeholder title="Products" />} />
-              <Route path="/orders" element={<Placeholder title="Orders" />} />
-              <Route path="/suppliers" element={<Placeholder title="Suppliers" />} />
-              <Route path="/blogs" element={<Placeholder title="Blogs" />} />
-              <Route path="/" element={<Dashboard />} />
-            </Routes>
+              <Route path="/dashboard" element={<PageTransition><Dashboard /></PageTransition>} />
+              <Route path="/my-account/open-trading-account" element={<PageTransition><OpenTradingAccount /></PageTransition>} />
+              <Route path="/my-account/accounts" element={<PageTransition><MyAccounts /></PageTransition>} />
+              <Route path="/my-account/overview" element={<PageTransition><AccountOverview /></PageTransition>} />
+              <Route path="/ib-dashboard/account-overview" element={<PageTransition><IBAccountOverview /></PageTransition>} />
+              <Route path="/ib-dashboard/commission-analytics" element={<PageTransition><CommissionAnalytics /></PageTransition>} />
+              <Route path="/ib-dashboard/pip-calculator" element={<PageTransition><PipCalculator /></PageTransition>} />
+              <Route path="/ib-dashboard/my-clients" element={<PageTransition><MyIBClients /></PageTransition>} />
+              <Route path="/ib-dashboard/my-structure" element={<PageTransition><MyIBStructure /></PageTransition>} />
+              <Route path="/ib-dashboard/my-commission" element={<PageTransition><MyCommission /></PageTransition>} />
+              <Route path="/ib-dashboard/withdrawals" element={<PageTransition><IBWithdrawals /></PageTransition>} />
+              <Route path="/my-wallet" element={<PageTransition><MyWallet /></PageTransition>} />
+              <Route path="/account-analytics" element={<PageTransition><AccountAnalytics /></PageTransition>} />
+              <Route path="/kyc" element={<PageTransition><KYC /></PageTransition>} />
+              <Route path="/ib-dashboard/advanced" element={<PageTransition><AdvancedIBDashboard /></PageTransition>} />
+              <Route path="/analytics/trading" element={<PageTransition><TradingAnalysis /></PageTransition>} />
+              <Route path="/settings/profile" element={<PageTransition><Profile /></PageTransition>} />
+              <Route path="/payment-details" element={<PageTransition><PaymentDetails /></PageTransition>} />
+              <Route path="/funds/deposit" element={<PageTransition><DepositFunds /></PageTransition>} />
+              <Route path="/funds/withdrawal" element={<PageTransition><WithdrawFunds /></PageTransition>} />
+              <Route path="/funds/internal-transfer" element={<PageTransition><InternalTransfer /></PageTransition>} />
+              <Route path="/funds/transaction-history" element={<PageTransition><TransactionHistory /></PageTransition>} />
+              <Route path="/messages" element={<PageTransition><Placeholder title="Messages" /></PageTransition>} />
+              <Route path="/analytics/revenue" element={<PageTransition><Placeholder title="Revenue" /></PageTransition>} />
+              <Route path="/analytics/refunds" element={<PageTransition><Placeholder title="Refunds" /></PageTransition>} />
+              <Route path="/products" element={<PageTransition><Placeholder title="Products" /></PageTransition>} />
+              <Route path="/orders" element={<PageTransition><Placeholder title="Orders" /></PageTransition>} />
+              <Route path="/suppliers" element={<PageTransition><Placeholder title="Suppliers" /></PageTransition>} />
+              <Route path="/blogs" element={<PageTransition><Placeholder title="Blogs" /></PageTransition>} />
+              <Route path="/" element={<PageTransition><Dashboard /></PageTransition>} />
+              </Routes>
+            </AnimatePresence>
           </div>
         </div>
       </div>

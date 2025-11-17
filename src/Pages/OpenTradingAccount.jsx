@@ -25,7 +25,7 @@ function OpenTradingAccount() {
   }
 
   return (
-    <div className="bg-violet-100 p-6">
+    <div className="bg-violet-100 p-2 md:p-4 min-h-screen">
       <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto space-y-8">
 
         {/* Page Header */}

@@ -39,7 +39,7 @@ const Mt5Users = () => {
   };
 
   return (
-    <div className="min-h-screen bg-violet-100 text-gray-900 p-6">
+    <div className="w-[350px] sm:w-full max-w-[2800px] min-h-screen bg-violet-100 text-gray-900 p-2 sm:p-6">
       {/* Header */}
       <div className="mb-6">
         <h4 className="text-2xl font-bold flex items-center mb-2">

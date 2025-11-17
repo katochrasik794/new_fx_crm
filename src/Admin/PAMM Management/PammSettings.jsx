@@ -127,8 +127,8 @@ const PammSettings = () => {
   );
 
   return (
-    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
-      <div className="w-full max-w-[1800px] mx-auto">
+    <div className="min-h-screen bg-violet-100 p-2 md:p-6">
+      <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
           <div className="mb-4 md:mb-0">
@@ -220,7 +220,7 @@ const PammSettings = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-6 py-4 font-medium text-sm transition-all duration-200 whitespace-nowrap flex items-center space-x-2 ${
+                  className={`px-4 py-4 font-medium text-sm transition-all duration-200 whitespace-nowrap flex items-center space-x-2 ${
                     activeTab === tab.id
                       ? 'text-slate-900 bg-slate-100 border-b-2 border-slate-600'
                       : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'

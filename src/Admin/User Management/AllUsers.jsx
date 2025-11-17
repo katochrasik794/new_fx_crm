@@ -148,7 +148,7 @@ const AllUsers = () => {
 
   return (
     <div className="bg-violet-100 p-3 sm:p-4 md:p-6">
-      <div className="w-100 sm:w-full sm:max-w-[1800px] mx-auto">
+      <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto">
         {/* Header */}
         <div className="mb-6 sm:mb-8">
           <div className="flex items-center gap-3 mb-2">

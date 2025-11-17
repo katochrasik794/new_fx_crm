@@ -19,7 +19,7 @@ export default function CommissionDistribution() {
   const avgPipValue = (distributions.reduce((sum, d) => sum + d.pipValue, 0) / distributions.length).toFixed(2)
 
   return (
-    <div className="p-6 bg-violet-100 min-h-screen">
+    <div className="w-[350px] sm:w-full max-w-[2800px] p-6 bg-violet-100 min-h-screen">
       <div className="mb-6">
         <div className="flex items-center justify-between">
           <h4 className="text-2xl font-bold text-gray-800">Commission Distribution</h4>

@@ -76,29 +76,43 @@ const CopierArea = () => {
   };
 
   return (
-    <div className="min-h-screen bg-violet-100 p-4 md:p-6">
-      <div className="w-full max-w-[1800px] mx-auto">
+    <div className="min-h-screen bg-violet-100 p-2 md:p-6">
+      <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto">
         {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-900">Copy Trading (Copier → Master)</h1>
-              <p className="text-gray-600 mt-1">Manage copier-master relationships and trading synchronization</p>
-            </div>
-            <div className="flex items-center space-x-3">
-              <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-200">
-                <div className="text-sm text-gray-600">Total Relationships</div>
-                <div className="text-2xl font-bold text-purple-600">{copierRelationships.length}</div>
-              </div>
-              <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-200">
-                <div className="text-sm text-gray-600">Active</div>
-                <div className="text-2xl font-bold text-green-600">
-                  {copierRelationships.filter(r => r.status === 'active').length}
-                </div>
-              </div>
-            </div>
-          </div>
+       <div className="mb-8">
+  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+
+    {/* Left Title */}
+    <div>
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+        Copy Trading (Copier → Master)
+      </h1>
+      <p className="text-gray-600 mt-1 text-sm sm:text-base">
+        Manage copier-master relationships and trading synchronization
+      </p>
+    </div>
+
+    {/* Stats Section */}
+    <div className="grid grid-cols-2 sm:flex sm:items-center sm:space-x-3 gap-3 w-full md:w-auto">
+
+      <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-200">
+        <div className="text-xs sm:text-sm text-gray-600">Total Relationships</div>
+        <div className="text-xl sm:text-2xl font-bold text-purple-600">
+          {copierRelationships.length}
         </div>
+      </div>
+
+      <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-200">
+        <div className="text-xs sm:text-sm text-gray-600">Active</div>
+        <div className="text-xl sm:text-2xl font-bold text-green-600">
+          {copierRelationships.filter(r => r.status === 'active').length}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
         {/* Main Content */}
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">

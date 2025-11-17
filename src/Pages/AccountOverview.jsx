@@ -2,7 +2,7 @@ import React from 'react'
 
 function AccountOverview() {
   return (
-    <div className="bg-violet-100 p-4 md:p-6">
+    <div className="bg-violet-100 p-2 md:p-6">
       <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto space-y-6 md:space-y-8">
 
         {/* Page Header */}

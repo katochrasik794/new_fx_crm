@@ -30,7 +30,7 @@ export default function TradingGroups() {
   const fincrmBCount = groups.filter(g => g.type === 'B').length
 
   return (
-    <div className="p-6 bg-violet-100 min-h-screen">
+    <div className="w-[350px] sm:w-full max-w-[2800px] p-6 bg-violet-100 min-h-screen">
       <div className="mb-6">
         <div className="flex items-center justify-between">
           <h4 className="text-2xl font-bold text-gray-800">Group Management</h4>
