@@ -151,11 +151,11 @@ const DepositFunds = () => {
                 </div>
                 <div className="bg-gray-50 rounded-xl p-6 text-center mb-6">
                   <div className="flex justify-center items-center gap-2 mb-3">
-                    <img src="https://portal.fincrmmarkets.com/client/assets/images/icons/visa-dark-icon.svg" alt="Visa" className="h-5" />
-                    <img src="https://portal.fincrmmarkets.com/client/assets/images/icons/mastercard-dark-icon.svg" alt="Mastercard" className="h-5" />
+                    <img src="/public/usdt.png" alt="Visa" className="h-5" />
+                    <img src="/public/master-card.png" alt="Mastercard" className="h-5" />
                     {/* <img src="https://portal.fincrmmarkets.com/client/assets/images/icons/mastercard-dark-icon.svg" alt="Skrill" className="h-5" /> */}
-                    <img src="https://portal.fincrmmarkets.com/client/assets/images/icons/skrill-dark-icon.svg" alt="Neteller" className="h-5" />
-                    <img src="https://portal.fincrmmarkets.com/client/assets/images/icons/neteller-dark-icon.svg" alt="Bank Wire" className="h-5" />
+                    <img src="/public/neteller.png" alt="Neteller" className="h-5" />
+                    <img src="/public/wire.png" alt="Bank Wire" className="h-5" />
                   </div>
                   <p className="text-gray-600 text-sm mb-0">and many more...</p>
                 </div>
@@ -249,8 +249,8 @@ const DepositFunds = () => {
 
         {/* Modals */}
         {showUpiModal && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+          <div className="fixed inset-0 backdrop-blur-md flex items-center justify-center p-4 z-50">
+            <div className="bg-white rounded-3xl border-2 border-black shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
               <div className="p-6">
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="text-lg font-semibold text-gray-900">UPI Payment</h3>

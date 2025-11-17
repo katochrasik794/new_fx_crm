@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MyWallet = () => {
+const MyWallet = ({ paymentOptions }) => {
   return (
     <div className="min-h-screen bg-violet-100 p-2 md:p-6">
       <div className="w-[350px] sm:w-full max-w-[2800px] mx-auto">
@@ -197,15 +197,7 @@ const MyWallet = () => {
           <div className="p-6">
             <h3 className="text-xl font-bold text-gray-700 mb-6 text-center">Several Deposit and Withdrawal Options</h3>
             <div className="flex flex-wrap justify-center gap-4">
-              {[
-                { name: 'Neteller', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/neteller.png' },
-                { name: 'USDT', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/usdt.png' },
-                { name: 'Master Card', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/master-card.png' },
-                { name: 'Skrill', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/skrill.png' },
-                { name: 'Litecoin', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/litecoin.png' },
-                { name: 'Bitcoin', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/bitcoin.png' },
-                { name: 'Wire Transfer', src: 'https://portal.fincrmmarkets.com/client/assets/images/payments/wire.png' }
-              ].map((payment, index) => (
+              {paymentOptions.map((payment, index) => (
                 <div key={index} className="bg-white border-2 border-gray-200 rounded-xl p-4 hover:border-blue-400 transition-all duration-300 transform hover:scale-110 cursor-pointer shadow-lg hover:shadow-xl group">
                   <div className="flex justify-center">
                     <img

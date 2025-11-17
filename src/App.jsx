@@ -164,6 +164,16 @@ function AppContent() {
     }
   }
 
+  const paymentOptions = [
+    { name: 'Neteller', src: '/neteller.png' },
+    { name: 'USDT', src: '/usdt.png' },
+    { name: 'Master Card', src: '/master-card.png' },
+    { name: 'Skrill', src: '/skrill.png' },
+    { name: 'Litecoin', src: '/litecoin.png' },
+    { name: 'Bitcoin', src: '/bitcoin.png' },
+    { name: 'Wire Transfer', src: '/wire.png' }
+  ];
+
   return (
     <>
       <ScrollToTop />
@@ -299,7 +309,7 @@ function AppContent() {
               <Route path="/ib-dashboard/my-structure" element={<PageTransition><MyIBStructure /></PageTransition>} />
               <Route path="/ib-dashboard/my-commission" element={<PageTransition><MyCommission /></PageTransition>} />
               <Route path="/ib-dashboard/withdrawals" element={<PageTransition><IBWithdrawals /></PageTransition>} />
-              <Route path="/my-wallet" element={<PageTransition><MyWallet /></PageTransition>} />
+              <Route path="/my-wallet" element={<PageTransition><MyWallet paymentOptions={paymentOptions} /></PageTransition>} />
               <Route path="/account-analytics" element={<PageTransition><AccountAnalytics /></PageTransition>} />
               <Route path="/kyc" element={<PageTransition><KYC /></PageTransition>} />
               <Route path="/ib-dashboard/advanced" element={<PageTransition><AdvancedIBDashboard /></PageTransition>} />
