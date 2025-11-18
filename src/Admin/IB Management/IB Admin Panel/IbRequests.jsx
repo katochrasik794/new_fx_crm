@@ -27,7 +27,7 @@ const IbRequests = () => {
   ];
 
   return (
-    <div className="w-[350px] sm:w-full max-w-[2800px] p-4 md:p-6 bg-violet-100 min-h-screen overflow-x-hidden">
+    <div className="w-[360px] sm:w-full max-w-[2800px] mx-auto p-4 md:p-6 bg-violet-100 min-h-screen overflow-x-hidden">
       {/* Title */}
       <div className="mb-6 md:mb-8">
         <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">👤 IB Requests</h1>

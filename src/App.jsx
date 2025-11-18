@@ -146,6 +146,7 @@ function AppContent() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [isTablet, setIsTablet] = useState(false)
   const location = useLocation()
   const isAdminRoute = location.pathname.startsWith('/admin')
   const isIBAdminRoute = location.pathname.startsWith('/ib-admin')
@@ -154,11 +155,16 @@ function AppContent() {
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-      if (window.innerWidth < 768) {
+      const width = window.innerWidth
+      setIsMobile(width < 768)
+      setIsTablet(width >= 768 && width <= 1024)
+      
+      if (width < 768) {
         setSidebarOpen(false)
       } else {
         setSidebarOpen(true)
+        // Set sidebar to collapsed on tablet screens (768px - 1024px)
+        setSidebarCollapsed(width >= 768 && width <= 1024)
       }
     }
 
@@ -166,6 +172,13 @@ function AppContent() {
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
+
+  // Auto-collapse sidebar on navigation for tablet screens
+  useEffect(() => {
+    if (isTablet && !sidebarCollapsed) {
+      setSidebarCollapsed(true)
+    }
+  }, [location.pathname, isTablet])
 
   const toggleSidebar = () => {
     if (isMobile) {

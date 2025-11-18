@@ -85,46 +85,65 @@ const IBProfile = () => {
   const displayedIBs = entriesPerPage === -1 ? filteredIBs : filteredIBs.slice((currentPage - 1) * entriesPerPage, currentPage * entriesPerPage)
 
   return (
-    <div className="w-[370px] sm:w-full max-w-[2800px] min-h-screen bg-violet-100  p-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+    <div className="w-[370px] sm:w-full max-w-6xl mx-auto min-h-screen bg-violet-100 sm:p-4 lg:pt-2 lg:px-0">
+
+      {/* === RESPONSIVE STATS CARDS === */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 lg:mb-8">
         {stats.map((stat, idx) => (
-          <div key={idx} className={`relative overflow-hidden rounded-2xl p-8 text-center shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-3xl ${
-            idx === 0 ? 'bg-gradient-to-br from-purple-500 to-purple-700' :
-            idx === 1 ? 'bg-gradient-to-br from-pink-500 to-red-500' :
-            idx === 2 ? 'bg-gradient-to-br from-cyan-400 to-cyan-600' :
-            'bg-gradient-to-br from-green-400 to-teal-500'
-          }`}>
-            <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-radial from-white/10 to-transparent rounded-full"></div>
-            <i className={`ti ${stat.icon} text-6xl text-white mb-3 drop-shadow-lg`}></i>
-            <h5 className="text-4xl font-bold text-white mb-1 drop-shadow-md">{stat.value}</h5>
-            <small className="text-white/90 text-sm font-semibold uppercase tracking-wider">{stat.label}</small>
+          <div
+            key={idx}
+            className={`relative overflow-hidden rounded-xl lg:rounded-2xl p-4 sm:p-6 lg:p-8 text-center shadow-lg lg:shadow-xl
+              transition-transform hover:-translate-y-1 lg:hover:-translate-y-2 hover:shadow-xl lg:hover:shadow-2xl 
+              ${
+                idx === 0 ? 'bg-gradient-to-br from-purple-500 to-purple-700' :
+                idx === 1 ? 'bg-gradient-to-br from-pink-500 to-red-500' :
+                idx === 2 ? 'bg-gradient-to-br from-cyan-400 to-cyan-600' :
+                'bg-gradient-to-br from-green-400 to-teal-500'
+              }
+            `}
+          >
+            <i className={`ti ${stat.icon} text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-white mb-2 lg:mb-3`}></i>
+            <h5 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{stat.value}</h5>
+            <p className="text-white/90 text-xs sm:text-sm">{stat.label}</p>
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+
+      {/* === RESPONSIVE GROUP SECTIONS === */}
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-6 lg:mb-8">
         {groups.map((group, idx) => (
-          <div key={idx} className="bg-white rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-3xl">
-            <div className={`p-5 flex justify-between items-center ${
-              idx === 0 ? 'bg-gradient-to-r from-purple-500 to-purple-700' :
-              idx === 1 ? 'bg-gradient-to-r from-pink-500 to-red-500' :
-              'bg-gradient-to-r from-cyan-400 to-cyan-600'
-            }`}>
-              <h6 className="text-lg font-bold text-white drop-shadow-md">{group.name}</h6>
-              <span className="px-4 py-1 bg-white/20 backdrop-blur-sm text-white font-bold rounded-full text-sm">{group.count}</span>
+          <div
+            key={idx}
+            className="bg-white rounded-xl lg:rounded-2xl shadow-lg lg:shadow-xl overflow-hidden hover:-translate-y-1 transition-all"
+          >
+            <div
+              className={`p-3 sm:p-4 lg:p-5 flex justify-between items-center text-white
+                ${
+                  idx === 0 ? 'bg-gradient-to-r from-purple-500 to-purple-700' :
+                  idx === 1 ? 'bg-gradient-to-r from-pink-500 to-red-500' :
+                  'bg-gradient-to-r from-cyan-400 to-cyan-600'
+                }
+              `}
+            >
+              <h6 className="text-base sm:text-lg font-bold">{group.name}</h6>
+              <span className="px-2 sm:px-3 py-1 bg-white/20 rounded-full text-sm">{group.count}</span>
             </div>
-            <div className="p-4 max-h-96 overflow-y-auto">
+
+            <div className="p-3 sm:p-4 max-h-64 sm:max-h-80 overflow-y-auto">
               {group.ibs.map((ib) => (
-                <div key={ib.id} className="flex justify-between items-center p-4 mb-2 rounded-xl bg-gradient-to-r from-gray-50 to-gray-100 border border-transparent transition-all duration-300 hover:border-purple-500 hover:translate-x-2 hover:shadow-lg">
-                  <div className="flex-1 min-w-0">
-                    <div className="font-semibold text-gray-800 mb-1">{ib.name}</div>
-                    <div className="text-sm text-gray-500 truncate">{ib.email}</div>
+                <div
+                  key={ib.id}
+                  className="flex justify-between items-center bg-gray-50 rounded-lg lg:rounded-xl p-2 sm:p-3 mb-2 hover:shadow-md"
+                >
+                  <div className="flex-1 min-w-0 pr-2">
+                    <p className="font-semibold text-sm sm:text-base truncate">{ib.name}</p>
+                    <p className="text-xs text-gray-500 truncate">{ib.email}</p>
                   </div>
-                  <div className="flex flex-col items-end ml-4">
-                    <span className="px-3 py-1 bg-gradient-to-r from-green-400 to-emerald-500 text-green-900 font-bold rounded-full text-xs mb-2 shadow-md">{ib.pip.toFixed(2)} pip</span>
-                    <a href="#" className="text-cyan-500 hover:text-cyan-600 hover:bg-cyan-50 p-2 rounded-lg transition-all duration-300 hover:scale-110" title="Edit Pip Rates">
-                      <i className="ti ti-edit text-lg"></i>
-                    </a>
+                  <div className="flex-shrink-0">
+                    <span className="px-2 sm:px-3 py-1 bg-green-200 text-green-800 font-bold rounded-full text-xs whitespace-nowrap">
+                      {ib.pip.toFixed(2)} pip
+                    </span>
                   </div>
                 </div>
               ))}
@@ -133,111 +152,143 @@ const IBProfile = () => {
         ))}
       </div>
 
-      <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-        <div className="bg-gradient-to-r from-purple-500 to-purple-700 p-6">
-          <h5 className="text-2xl font-bold text-white drop-shadow-md">IB Profiles</h5>
+
+      {/* === MAIN TABLE SECTION === */}
+      <div className="bg-white rounded-xl lg:rounded-2xl shadow-lg lg:shadow-xl overflow-hidden">
+        <div className="bg-gradient-to-r from-purple-500 to-purple-700 p-4 lg:p-5">
+          <h5 className="text-lg sm:text-xl lg:text-2xl font-bold text-white">IB Profiles</h5>
         </div>
-        <div className="p-6">
-          <div className="flex flex-wrap justify-between items-center gap-4 mb-6">
+
+        <div className="p-3 sm:p-4 lg:p-6">
+
+          {/* === RESPONSIVE SEARCH + ENTRIES === */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-4 lg:mb-6">
             <div className="flex items-center gap-2">
-              <label className="flex items-center gap-2 text-sm text-gray-700">
-                Show
-                <select value={entriesPerPage} onChange={(e) => { setEntriesPerPage(Number(e.target.value)); setCurrentPage(1); }} className="px-4 py-2 border-2 border-gray-200 rounded-full text-sm focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-100 transition-all">
-                  <option value={10}>10</option>
-                  <option value={25}>25</option>
-                  <option value={50}>50</option>
-                  <option value={100}>100</option>
-                  <option value={-1}>All</option>
-                </select>
-                entries
-              </label>
+              <label className="text-sm whitespace-nowrap">Show</label>
+              <select
+                value={entriesPerPage}
+                onChange={(e) => { setEntriesPerPage(Number(e.target.value)); setCurrentPage(1); }}
+                className="px-2 sm:px-3 py-2 border rounded-lg text-sm min-w-[80px]"
+              >
+                <option value={10}>10</option>
+                <option value={25}>25</option>
+                <option value={50}>50</option>
+                <option value={100}>100</option>
+                <option value={-1}>All</option>
+              </select>
             </div>
-            <div className="flex items-center gap-2">
-              <label className="flex items-center gap-2 text-sm text-gray-700">
-                Search:
-                <input type="search" placeholder="Search IBs..." value={searchTerm} onChange={(e) => { setSearchTerm(e.target.value); setCurrentPage(1); }} className="px-6 py-2 border-2 border-gray-200 rounded-full text-sm bg-gradient-to-r from-white to-gray-50 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-100 transition-all min-w-[250px]" />
-              </label>
+
+            <div className="w-full sm:w-auto">
+              <input
+                type="search"
+                placeholder="Search IBs..."
+                value={searchTerm}
+                onChange={(e) => { setSearchTerm(e.target.value); setCurrentPage(1); }}
+                className="w-full sm:w-64 lg:w-80 px-3 sm:px-4 py-2 border rounded-lg text-sm"
+              />
             </div>
           </div>
 
-          <div className="overflow-x-auto rounded-xl mb-6">
-            <table className="w-full border-separate border-spacing-0">
+
+          {/* === RESPONSIVE TABLE === */}
+          <div className="overflow-x-auto rounded-lg lg:rounded-xl">
+            <table className="min-w-[800px] lg:min-w-[900px] w-full border-collapse">
               <thead>
-                <tr className="bg-gradient-to-r from-purple-500 to-purple-700">
-                  <th className="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider">IB Name</th>
-                  <th className="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider">Email</th>
-                  <th className="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider">Referred By</th>
-                  <th className="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider">Type</th>
-                  <th className="px-4 py-4 text-left text-xs font-bold text-white uppercase tracking-wider">Pip Rate</th>
-                  <th className="px-4 py-4 text-center text-xs font-bold text-white uppercase tracking-wider">Referrals</th>
-                  <th className="px-4 py-4 text-right text-xs font-bold text-white uppercase tracking-wider">Total Commission</th>
-                  <th className="px-4 py-4 text-center text-xs font-bold text-white uppercase tracking-wider">Status</th>
-                  <th className="px-4 py-4 text-center text-xs font-bold text-white uppercase tracking-wider">Actions</th>
+                <tr className="bg-gradient-to-r from-purple-500 to-purple-700 text-white text-xs">
+                  {["IB Name","Email","Referred By","Type","Pip Rate","Referrals","Commission","Status","Actions"]
+                    .map((h) => (
+                      <th key={h} className="px-2 sm:px-3 lg:px-4 py-2 sm:py-3 text-left uppercase tracking-wider whitespace-nowrap">{h}</th>
+                    ))}
                 </tr>
               </thead>
+
               <tbody>
                 {displayedIBs.map((ib) => (
-                  <tr key={ib.id} className="transition-all duration-300 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 hover:scale-[1.01] hover:shadow-lg">
-                    <td className="px-4 py-4 border-b border-gray-100">{ib.name}</td>
-                    <td className="px-4 py-4 border-b border-gray-100">{ib.email}</td>
-                    <td className="px-4 py-4 border-b border-gray-100">
+                  <tr key={ib.id} className="border-b hover:bg-gray-50">
+                    <td className="px-2 sm:px-3 lg:px-4 py-2 sm:py-3 whitespace-nowrap">{ib.name}</td>
+                    <td className="px-2 sm:px-3 lg:px-4 py-2 sm:py-3">
+                      <div className="max-w-[150px] sm:max-w-[200px] lg:max-w-none truncate">{ib.email}</div>
+                    </td>
+
+                    <td className="px-2 sm:px-3 lg:px-4 py-2 sm:py-3">
                       {ib.referredBy ? (
-                        <div className="flex flex-col">
-                          <span className="font-semibold text-gray-800">{ib.referredBy.name}</span>
-                          <small className="text-gray-500 text-xs">{ib.referredBy.email}</small>
+                        <div className="max-w-[120px] sm:max-w-[150px] lg:max-w-none">
+                          <p className="font-semibold text-sm truncate">{ib.referredBy.name}</p>
+                          <p className="text-xs text-gray-500 truncate">{ib.referredBy.email}</p>
                         </div>
                       ) : (
                         <span className="text-gray-400">—</span>
                       )}
                     </td>
-                    <td className="px-4 py-4 border-b border-gray-100">
-                      <span className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-purple-700 font-bold rounded-full text-xs uppercase tracking-wide shadow-sm">{ib.type}</span>
+
+                    <td className="px-2 sm:px-3 lg:px-4 py-2 sm:py-3">
+                      <span className="px-2 sm:px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs whitespace-nowrap">{ib.type}</span>
                     </td>
-                    <td className="px-4 py-4 border-b border-gray-100">
-                      <div>{ib.pip.toFixed(2)} pip</div>
-                      <small className="text-gray-500 text-xs">(avg, group-based)</small>
+
+                    <td className="px-2 sm:px-3 lg:px-4 py-2 sm:py-3 whitespace-nowrap">{ib.pip.toFixed(2)} pip</td>
+                    <td className="px-2 sm:px-3 lg:px-4 py-2 sm:py-3 text-center">{ib.referrals}</td>
+                    <td className="px-2 sm:px-3 lg:px-4 py-2 sm:py-3 text-right whitespace-nowrap">${ib.commission.toFixed(2)}</td>
+
+                    <td className="px-2 sm:px-3 lg:px-4 py-2 sm:py-3 text-center">
+                      <span className="px-2 sm:px-3 py-1 bg-green-500 text-white rounded-full text-xs whitespace-nowrap">
+                        {ib.status}
+                      </span>
                     </td>
-                    <td className="px-4 py-4 border-b border-gray-100 text-center font-semibold">{ib.referrals}</td>
-                    <td className="px-4 py-4 border-b border-gray-100 text-right font-semibold">${ib.commission.toFixed(2)}</td>
-                    <td className="px-4 py-4 border-b border-gray-100 text-center">
-                      <span className={`px-3 py-1 font-bold rounded-full text-xs uppercase tracking-wide shadow-md ${
-                        ib.status === 'Active' ? 'bg-gradient-to-r from-green-400 to-emerald-500 text-white' : 'bg-gray-400 text-white'
-                      }`}>{ib.status}</span>
-                    </td>
-                    <td className="px-4 py-4 border-b border-gray-100 text-center">
-                      <div className="flex gap-2 justify-center">
-                        <button className="px-3 py-2 bg-gradient-to-r from-cyan-50 to-cyan-100 text-cyan-600 border-2 border-cyan-400 rounded-lg text-xs font-semibold flex items-center gap-1 transition-all duration-300 hover:from-cyan-400 hover:to-cyan-500 hover:text-white hover:-translate-y-1 hover:shadow-lg" title="View Details">
-                          <i className="ti ti-eye"></i> View
-                        </button>
-                        <button className="px-3 py-2 bg-gradient-to-r from-purple-50 to-purple-100 text-purple-600 border-2 border-purple-400 rounded-lg text-xs font-semibold flex items-center gap-1 transition-all duration-300 hover:from-purple-500 hover:to-purple-700 hover:text-white hover:-translate-y-1 hover:shadow-lg" title="Edit Pip Rate">
-                          <i className="ti ti-edit"></i>
-                        </button>
+
+                    <td className="px-2 sm:px-3 lg:px-4 py-2 sm:py-3 text-center">
+                      <div className="flex gap-1 sm:gap-2 justify-center">
+                        <button className="px-2 sm:px-3 py-1 bg-blue-100 text-blue-600 rounded-lg text-xs whitespace-nowrap">View</button>
+                        <button className="px-2 sm:px-3 py-1 bg-purple-100 text-purple-700 rounded-lg text-xs whitespace-nowrap">Edit</button>
                       </div>
                     </td>
+
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <div className="flex flex-wrap justify-between items-center gap-4 pt-4">
-            <div className="text-sm text-gray-600">
-              Showing {displayedIBs.length > 0 ? (currentPage - 1) * entriesPerPage + 1 : 0} to {Math.min(currentPage * entriesPerPage, filteredIBs.length)} of {filteredIBs.length} entries
-            </div>
-            <div className="flex gap-2">
-              <button className="px-4 py-2 border-2 border-gray-200 rounded-lg bg-white text-sm font-semibold transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white hover:border-purple-500 hover:-translate-y-1 hover:shadow-lg disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-gray-800 disabled:hover:translate-y-0" disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
+
+          {/* === RESPONSIVE PAGINATION === */}
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 mt-4 lg:mt-6">
+            <p className="text-xs sm:text-sm text-gray-600 text-center sm:text-left">
+              Showing {filteredIBs.length === 0 ? 0 : (currentPage - 1) * entriesPerPage + 1} –
+              {Math.min(currentPage * entriesPerPage, filteredIBs.length)} of {filteredIBs.length}
+            </p>
+
+            <div className="flex flex-wrap gap-1 sm:gap-2 justify-center">
+              <button
+                disabled={currentPage === 1}
+                onClick={() => setCurrentPage(currentPage - 1)}
+                className="px-3 sm:px-4 py-2 border rounded-lg disabled:opacity-40 text-sm"
+              >
+                Previous
+              </button>
+
               {[...Array(totalPages)].map((_, i) => (
-                <button key={i} className={`px-4 py-2 border-2 rounded-lg text-sm font-semibold transition-all duration-300 ${
-                  currentPage === i + 1 
-                    ? 'bg-gradient-to-r from-purple-500 to-purple-700 text-white border-purple-500 shadow-lg' 
-                    : 'bg-white border-gray-200 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white hover:border-purple-500 hover:-translate-y-1 hover:shadow-lg'
-                }`} onClick={() => setCurrentPage(i + 1)}>{i + 1}</button>
+                <button
+                  key={i}
+                  onClick={() => setCurrentPage(i + 1)}
+                  className={`px-3 sm:px-4 py-2 border rounded-lg text-sm
+                    ${currentPage === i + 1 ? 'bg-purple-600 text-white' : ''}`}
+                >
+                  {i + 1}
+                </button>
               ))}
-              <button className="px-4 py-2 border-2 border-gray-200 rounded-lg bg-white text-sm font-semibold transition-all duration-300 hover:bg-gradient-to-r hover:from-purple-500 hover:to-purple-700 hover:text-white hover:border-purple-500 hover:-translate-y-1 hover:shadow-lg disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-gray-800 disabled:hover:translate-y-0" disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
+
+              <button
+                disabled={currentPage === totalPages}
+                onClick={() => setCurrentPage(currentPage + 1)}
+                className="px-3 sm:px-4 py-2 border rounded-lg disabled:opacity-40 text-sm"
+              >
+                Next
+              </button>
             </div>
           </div>
+
         </div>
       </div>
+
     </div>
   )
 }
