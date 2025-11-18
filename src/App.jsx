@@ -3,6 +3,7 @@ import Navbar from './Components/Navbar'
 import Sidebar from './Components/Sidebar'
 import IBAdminSidebar from './Components/IBAdminSidebar'
 import UserIBSidebar from './Components/UserIBSidebar'
+import SuperAdminSidebar from './Components/SuperAdminSidebar'
 import Dashboard from './Pages/Dashboard'
 import OpenTradingAccount from './Pages/OpenTradingAccount'
 import MyAccounts from './Pages/MyAccounts'
@@ -107,6 +108,14 @@ import ManagePrizeLots from './Admin/Set Prize Lots/ManagePrizeLots'
 import SetLotPricing from './Admin/Set Prize Lots/SetLotPricing'
 import PrizeDistributionHistory from './Admin/Set Prize Lots/PrizeDistributionHistory'
 
+// Super Admin
+import SuperAdminDashboard from './Pages/super-admin/Dashboard'
+import SuperAdminTenants from './Pages/super-admin/Tenants'
+import SuperAdminTenantDetails from './Pages/super-admin/TenantDetails'
+import SuperAdminPlans from './Pages/super-admin/Plans'
+import SuperAdminBilling from './Pages/super-admin/Billing'
+import SuperAdminSettings from './Pages/super-admin/Settings'
+
 function Placeholder({ title }) {
   return (
     <div className="p-6">
@@ -120,7 +129,14 @@ function ScrollToTop() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    // Scroll to top immediately
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    
+    // Also scroll the main content area to top
+    const mainContent = document.querySelector('.flex-1.overflow-y-auto')
+    if (mainContent) {
+      mainContent.scrollTop = 0
+    }
   }, [pathname])
 
   return null
@@ -134,6 +150,7 @@ function AppContent() {
   const isAdminRoute = location.pathname.startsWith('/admin')
   const isIBAdminRoute = location.pathname.startsWith('/ib-admin')
   const isUserIBRoute = location.pathname.startsWith('/ib-dashboard')
+  const isSuperAdminRoute = location.pathname.startsWith('/super-admin')
 
   useEffect(() => {
     const checkMobile = () => {
@@ -180,7 +197,16 @@ function AppContent() {
       <div className="h-screen flex relative overflow-hidden">
         {(sidebarOpen || !isMobile) && (
           <div className="fixed left-0 top-0 h-full z-40">
-            {isIBAdminRoute ? (
+            {isSuperAdminRoute ? (
+              <SuperAdminSidebar
+                collapsed={sidebarCollapsed && !isMobile}
+                isMobile={isMobile}
+                onClose={closeSidebar}
+                onNavItemClick={closeSidebar}
+                logo="/finCRM-logo-dark (1).png"
+                smallLogo="/finCRM-logo-small.png"
+              />
+            ) : isIBAdminRoute ? (
               <IBAdminSidebar
                 collapsed={sidebarCollapsed && !isMobile}
                 isMobile={isMobile}
@@ -213,7 +239,7 @@ function AppContent() {
         )}
         <div className={`flex-1 flex flex-col transition-all duration-300 ${!isMobile ? (sidebarCollapsed ? 'ml-20' : 'ml-76') : ''}`}>
           <div className={`fixed top-0 z-50 transition-all duration-300 ${!isMobile ? (sidebarCollapsed ? 'left-20' : 'left-76') : 'left-0'} right-0`}>
-            <Navbar toggleSidebar={toggleSidebar} isAdminRoute={isAdminRoute} />
+            <Navbar toggleSidebar={toggleSidebar} isAdminRoute={isAdminRoute} isSuperAdminRoute={isSuperAdminRoute} />
           </div>
           <div className="flex-1 overflow-y-auto bg-violet-100" style={{ marginTop: '60px' }}>
             <AnimatePresence mode="wait">
@@ -296,6 +322,14 @@ function AppContent() {
               <Route path="/admin/prize-lots/manage" element={<PageTransition><ManagePrizeLots /></PageTransition>} />
               <Route path="/admin/prize-lots/pricing" element={<PageTransition><SetLotPricing /></PageTransition>} />
               <Route path="/admin/prize-lots/history" element={<PageTransition><PrizeDistributionHistory /></PageTransition>} />
+              
+              {/* Super Admin */}
+              <Route path="/super-admin/dashboard" element={<PageTransition><SuperAdminDashboard /></PageTransition>} />
+              <Route path="/super-admin/tenants" element={<PageTransition><SuperAdminTenants /></PageTransition>} />
+              <Route path="/super-admin/tenant-details" element={<PageTransition><SuperAdminTenantDetails /></PageTransition>} />
+              <Route path="/super-admin/plans" element={<PageTransition><SuperAdminPlans /></PageTransition>} />
+              <Route path="/super-admin/billing" element={<PageTransition><SuperAdminBilling /></PageTransition>} />
+              <Route path="/super-admin/settings" element={<PageTransition><SuperAdminSettings /></PageTransition>} />
               
               {/* User Routes */}
               <Route path="/dashboard" element={<PageTransition><Dashboard /></PageTransition>} />

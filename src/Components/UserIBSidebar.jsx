@@ -9,7 +9,15 @@ const UserIBSidebar = ({ collapsed, isMobile, onClose, onNavItemClick, logo, sma
   const NavItem = ({ to, icon, children, onClick }) => (
     <Link
       to={to}
-      onClick={onClick}
+      onClick={(e) => {
+        // Scroll to top immediately
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        const mainContent = document.querySelector('.flex-1.overflow-y-auto');
+        if (mainContent) {
+          mainContent.scrollTop = 0;
+        }
+        onClick && onClick(e);
+      }}
       className={`flex items-center py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
         isActive(to)
           ? "border-l-4 border-l-[#6942e2] text-[#6942e2] bg-purple-50"

@@ -4,7 +4,7 @@ import { HiOutlineWallet } from "react-icons/hi2";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { FaUser, FaCog, FaSignOutAlt } from "react-icons/fa";
 
-export default function Navbar({ toggleSidebar, isAdminRoute }) {
+export default function Navbar({ toggleSidebar, isAdminRoute, isSuperAdminRoute }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -30,32 +30,40 @@ export default function Navbar({ toggleSidebar, isAdminRoute }) {
           className="text-[22px] cursor-pointer text-gray-600 hover:text-black transition"
           onClick={toggleSidebar}
         />
-        {isAdminRoute && (
+        {isAdminRoute && !isSuperAdminRoute && (
           <span className="text-lg font-semibold text-gray-800">Admin Panel</span>
+        )}
+        {isSuperAdminRoute && (
+          <span className="text-lg font-semibold text-gray-800">Super Admin</span>
         )}
       </div>
 
       {/* RIGHT SECTION - All Other Content */}
       <div className="flex items-center gap-6">
 
-        {/* Badges */}
-        <div className="hidden sm:flex items-center gap-3">
-          <span className="bg-red-100 text-red-600 border border-red-300 text-xs font-medium px-3 py-[6px] rounded-full flex items-center gap-1">
-            <span className="w-[7px] h-[7px] bg-red-600 rounded-full"></span>
-            KYC Not Submitted
-          </span>
+        {/* Show badges and wallet only if NOT in Super Admin */}
+        {!isSuperAdminRoute && (
+          <>
+            {/* Badges */}
+            <div className="hidden sm:flex items-center gap-3">
+              <span className="bg-red-100 text-red-600 border border-red-300 text-xs font-medium px-3 py-[6px] rounded-full flex items-center gap-1">
+                <span className="w-[7px] h-[7px] bg-red-600 rounded-full"></span>
+                KYC Not Submitted
+              </span>
 
-          <span className="bg-green-100 text-green-600 border border-green-300 text-xs font-medium px-3 py-[6px] rounded-full flex items-center gap-1">
-            <span className="w-[7px] h-[7px] bg-green-600 rounded-full"></span>
-            Email Verified
-          </span>
-        </div>
+              <span className="bg-green-100 text-green-600 border border-green-300 text-xs font-medium px-3 py-[6px] rounded-full flex items-center gap-1">
+                <span className="w-[7px] h-[7px] bg-green-600 rounded-full"></span>
+                Email Verified
+              </span>
+            </div>
 
-        {/* Wallet */}
-        <div className="flex items-center gap-2">
-          <HiOutlineWallet className="text-[20px] text-blue-500" />
-          <span className="text-[16px] font-semibold text-gray-700">$0.00</span>
-        </div>
+            {/* Wallet */}
+            <div className="flex items-center gap-2">
+              <HiOutlineWallet className="text-[20px] text-blue-500" />
+              <span className="text-[16px] font-semibold text-gray-700">$0.00</span>
+            </div>
+          </>
+        )}
 
         {/* User Profile */}
         <div className="relative" ref={dropdownRef}>

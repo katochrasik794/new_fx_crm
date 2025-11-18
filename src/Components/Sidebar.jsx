@@ -40,6 +40,12 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute, l
       to={to}
       onClick={(e) => {
         closeAllDropdowns();
+        // Scroll to top immediately
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        const mainContent = document.querySelector('.flex-1.overflow-y-auto');
+        if (mainContent) {
+          mainContent.scrollTop = 0;
+        }
         onClick && onClick(e);
       }}
       className={`flex items-center py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
@@ -130,7 +136,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute, l
                       </svg>}
                     </button>
                     <ul className={`flex flex-col overflow-hidden transition-all duration-300 ${accountOpen ? 'max-h-[500px]' : 'max-h-0'}`}>
-                      <li><Link to="/admin/users/all" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100 hover:text-[#6942e2]">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">All Users</span></>}</Link></li>
+                      <li><Link to="/admin/users/all" onClick={(e) => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); const mainContent = document.querySelector('.flex-1.overflow-y-auto'); if (mainContent) mainContent.scrollTop = 0; onNavItemClick(e); }} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100 hover:text-[#6942e2]">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">All Users</span></>}</Link></li>
                       <li><Link to="/admin/users/active" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100 hover:text-[#6942e2]">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Active Users</span></>}</Link></li>
                       <li><Link to="/admin/users/banned" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100 hover:text-[#6942e2]">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Banned Users</span></>}</Link></li>
                       <li><Link to="/admin/users/add" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100 hover:text-[#6942e2]">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Add User</span></>}</Link></li>
@@ -377,7 +383,7 @@ const Sidebar = ({ collapsed, isMobile, onClose, onNavItemClick, isAdminRoute, l
                 </button>
                 <ul className={`flex flex-col overflow-hidden rounded-xl bg-gray-100 font-medium transition-all duration-300 ${accountOpen ? 'max-h-60' : 'max-h-0'}`}>
                   <li>
-                    <Link to="/my-account/open-trading-account" onClick={onNavItemClick} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-[#6942e2]">
+                    <Link to="/my-account/open-trading-account" onClick={(e) => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); const mainContent = document.querySelector('.flex-1.overflow-y-auto'); if (mainContent) mainContent.scrollTop = 0; onNavItemClick(e); }} className="flex items-center py-2 px-4 ml-6 text-sm text-gray-600 hover:text-[#6942e2]">
                       <div className="w-2 h-2 bg-gray-400 rounded-full mr-4"></div>
                       {!collapsed && 'Open Trading Account'}
                     </Link>

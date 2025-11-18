@@ -24,6 +24,12 @@ const IBAdminSidebar = ({ collapsed, isMobile, onClose, onNavItemClick, logo, sm
       to={to}
       onClick={(e) => {
         closeAllDropdowns();
+        // Scroll to top immediately
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+        const mainContent = document.querySelector('.flex-1.overflow-y-auto');
+        if (mainContent) {
+          mainContent.scrollTop = 0;
+        }
         onClick && onClick(e);
       }}
       className={`flex items-center py-3 px-5 gap-4 text-base font-medium outline-none transition-all duration-100 ease-in-out ${
@@ -100,7 +106,7 @@ const IBAdminSidebar = ({ collapsed, isMobile, onClose, onNavItemClick, logo, sm
                   </svg>}
                 </button>
                 <ul className={`flex flex-col overflow-hidden transition-all duration-300 ${groupManagementOpen ? 'max-h-60' : 'max-h-0'}`}>
-                  <li><Link to="/ib-admin/trading-groups" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Trading Groups</span></>}</Link></li>
+                  <li><Link to="/ib-admin/trading-groups" onClick={(e) => { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); const mainContent = document.querySelector('.flex-1.overflow-y-auto'); if (mainContent) mainContent.scrollTop = 0; onNavItemClick(e); }} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Trading Groups</span></>}</Link></li>
                   <li><Link to="/ib-admin/group-commission" onClick={onNavItemClick} className="flex items-center gap-3 py-2 px-5 pl-14 text-sm text-gray-600 hover:bg-gray-100">{!collapsed && <><span className="w-1.5 h-1.5 bg-gray-400 rounded-full flex-shrink-0"></span><span className="whitespace-nowrap">Commission Distribution</span></>}</Link></li>
                 </ul>
               </div>
