@@ -337,7 +337,7 @@ function AppContent() {
               <Route path="/admin/prize-lots/history" element={<PageTransition><PrizeDistributionHistory /></PageTransition>} />
               
               {/* Super Admin */}
-              <Route path="/super-admin/dashboard" element={<PageTransition><SuperAdminDashboard /></PageTransition>} />
+              <Route path="/super-admin/" element={<PageTransition><SuperAdminDashboard /></PageTransition>} />
               <Route path="/super-admin/tenants" element={<PageTransition><SuperAdminTenants /></PageTransition>} />
               <Route path="/super-admin/tenant-details" element={<PageTransition><SuperAdminTenantDetails /></PageTransition>} />
               <Route path="/super-admin/plans" element={<PageTransition><SuperAdminPlans /></PageTransition>} />
