@@ -167,8 +167,8 @@ const IBCommissionDistribution = () => {
                     </div>
                   </td>
                   <td className="px-6 py-4 text-center">
-                    <span className="px-3 py-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold rounded-full text-xs shadow-md">
-                      PIP {ib.rate.toFixed(2)}
+                    <span className="inline-block px-3 py-1 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold rounded-full text-xs whitespace-nowrap">
+                      {ib.rate.toFixed(2)} PIP
                     </span>
                   </td>
                   <td className="px-6 py-4 text-center">

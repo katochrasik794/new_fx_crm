@@ -1,5 +1,150 @@
+import { useState, useMemo } from 'react';
+import DataTable from 'react-data-table-component';
+
 const Billing = () => {
+  const [filterText, setFilterText] = useState('');
+  const [statusFilter, setStatusFilter] = useState('All Status');
+  const [planFilter, setPlanFilter] = useState('All Plans');
   const invoices = [
+    { id: "INV-001", tenant: "Forex Pro Ltd", plan: "Enterprise", amount: "$299.00", date: "2024-02-15", dueDate: "2024-03-15", status: "Paid", paymentMethod: "Credit Card" },
+    { id: "INV-002", tenant: "Trade Masters", plan: "Pro", amount: "$199.00", date: "2024-02-14", dueDate: "2024-03-14", status: "Paid", paymentMethod: "Bank Transfer" },
+    { id: "INV-003", tenant: "Capital FX", plan: "Basic", amount: "$99.00", date: "2024-02-13", dueDate: "2024-03-13", status: "Pending", paymentMethod: "Credit Card" },
+    { id: "INV-004", tenant: "Global Trading", plan: "Pro", amount: "$199.00", date: "2024-02-12", dueDate: "2024-03-12", status: "Paid", paymentMethod: "PayPal" },
+    { id: "INV-005", tenant: "FX Solutions", plan: "Enterprise", amount: "$299.00", date: "2024-02-11", dueDate: "2024-03-11", status: "Overdue", paymentMethod: "Credit Card" },
+    { id: "INV-006", tenant: "Prime Brokers", plan: "Pro", amount: "$199.00", date: "2024-02-10", dueDate: "2024-03-10", status: "Paid", paymentMethod: "Stripe" },
+    { id: "INV-007", tenant: "Apex Trading", plan: "Basic", amount: "$99.00", date: "2024-02-09", dueDate: "2024-03-09", status: "Processing", paymentMethod: "Bank Transfer" },
+    { id: "INV-008", tenant: "Elite FX", plan: "Enterprise", amount: "$299.00", date: "2024-02-08", dueDate: "2024-03-08", status: "Paid", paymentMethod: "Credit Card" }
+  ];
+
+  const columns = useMemo(() => [
+    {
+      name: 'Invoice',
+      selector: row => row.id,
+      sortable: true,
+      cell: row => (
+        <div>
+          <p className="font-medium">{row.id}</p>
+          <p className="text-gray-500 text-xs">{row.date}</p>
+        </div>
+      ),
+      width: '130px'
+    },
+    {
+      name: 'Tenant',
+      selector: row => row.tenant,
+      sortable: true,
+      width: '180px'
+    },
+    {
+      name: 'Plan',
+      selector: row => row.plan,
+      sortable: true,
+      cell: row => (
+        <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
+          row.plan === "Enterprise" ? "bg-purple-100 text-purple-800" :
+          row.plan === "Pro" ? "bg-blue-100 text-blue-800" :
+          "bg-gray-100 text-gray-800"
+        }`}>
+          {row.plan}
+        </span>
+      ),
+      width: '120px'
+    },
+    {
+      name: 'Amount',
+      selector: row => row.amount,
+      sortable: true,
+      cell: row => <span className="font-bold">{row.amount}</span>,
+      width: '110px'
+    },
+    {
+      name: 'Due Date',
+      selector: row => row.dueDate,
+      sortable: true,
+      cell: row => <span className="text-gray-500">{row.dueDate}</span>,
+      width: '120px'
+    },
+    {
+      name: 'Status',
+      selector: row => row.status,
+      sortable: true,
+      cell: row => (
+        <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
+          row.status === "Paid" ? "bg-green-100 text-green-800" :
+          row.status === "Pending" ? "bg-yellow-100 text-yellow-800" :
+          row.status === "Processing" ? "bg-blue-100 text-blue-800" :
+          "bg-red-100 text-red-800"
+        }`}>
+          {row.status}
+        </span>
+      ),
+      width: '120px'
+    },
+    {
+      name: 'Payment Method',
+      selector: row => row.paymentMethod,
+      sortable: true,
+      cell: row => <span className="text-gray-500">{row.paymentMethod}</span>,
+      width: '150px'
+    },
+    {
+      name: 'Actions',
+      cell: row => (
+        <div className="flex gap-2">
+          <button className="text-blue-600">View</button>
+          <button className="text-green-600">Download</button>
+          {row.status === "Overdue" && <button className="text-red-600">Remind</button>}
+          {row.status === "Pending" && <button className="text-yellow-600">Follow Up</button>}
+        </div>
+      ),
+      width: '200px'
+    }
+  ], []);
+
+  const filteredItems = invoices.filter(item => {
+    const matchesSearch = item.id.toLowerCase().includes(filterText.toLowerCase()) ||
+                          item.tenant.toLowerCase().includes(filterText.toLowerCase());
+    const matchesStatus = statusFilter === 'All Status' || item.status === statusFilter;
+    const matchesPlan = planFilter === 'All Plans' || item.plan === planFilter;
+    return matchesSearch && matchesStatus && matchesPlan;
+  });
+
+  const customStyles = {
+    headRow: {
+      style: {
+        backgroundColor: '#f9fafb',
+        borderBottom: '1px solid #e5e7eb',
+        minHeight: '48px'
+      }
+    },
+    headCells: {
+      style: {
+        fontSize: '12px',
+        fontWeight: '600',
+        textTransform: 'uppercase',
+        color: '#6b7280',
+        paddingLeft: '16px',
+        paddingRight: '16px'
+      }
+    },
+    cells: {
+      style: {
+        paddingLeft: '16px',
+        paddingRight: '16px',
+        paddingTop: '12px',
+        paddingBottom: '12px'
+      }
+    },
+    rows: {
+      style: {
+        '&:hover': {
+          backgroundColor: '#f9fafb'
+        }
+      }
+    }
+  };
+
+  const originalInvoices = [
     { id: "INV-001", tenant: "Forex Pro Ltd", plan: "Enterprise", amount: "$299.00", date: "2024-02-15", dueDate: "2024-03-15", status: "Paid", paymentMethod: "Credit Card" },
     { id: "INV-002", tenant: "Trade Masters", plan: "Pro", amount: "$199.00", date: "2024-02-14", dueDate: "2024-03-14", status: "Paid", paymentMethod: "Bank Transfer" },
     { id: "INV-003", tenant: "Capital FX", plan: "Basic", amount: "$99.00", date: "2024-02-13", dueDate: "2024-03-13", status: "Pending", paymentMethod: "Credit Card" },
@@ -122,42 +267,8 @@ const Billing = () => {
 
       </div>
 
-      {/* Filters */}
-      <div className="bg-white rounded-xl shadow p-4">
-        <div className="flex flex-wrap gap-3">
-          <select className="border rounded-lg px-3 py-2 w-full sm:w-auto">
-            <option>All Status</option>
-            <option>Paid</option>
-            <option>Pending</option>
-            <option>Overdue</option>
-            <option>Processing</option>
-          </select>
-
-          <select className="border rounded-lg px-3 py-2 w-full sm:w-auto">
-            <option>All Plans</option>
-            <option>Basic</option>
-            <option>Pro</option>
-            <option>Enterprise</option>
-          </select>
-
-          <input type="date" className="border rounded-lg px-3 py-2 w-full sm:w-auto" />
-
-          <input
-            type="text"
-            placeholder="Search invoices..."
-            className="border rounded-lg px-3 py-2 flex-1 min-w-[200px]"
-          />
-
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg w-full sm:w-auto">
-            Filter
-          </button>
-        </div>
-      </div>
-
-      {/* Recent Invoices */}
+      {/* Recent Invoices with DataTable */}
       <div className="bg-white rounded-xl shadow overflow-hidden">
-        
-        {/* Table Header */}
         <div className="p-4 border-b flex flex-wrap justify-between items-center gap-3">
           <h3 className="text-lg font-semibold">Recent Invoices</h3>
           <div className="flex gap-2">
@@ -166,99 +277,51 @@ const Billing = () => {
           </div>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="min-w-[800px] w-full divide-y divide-gray-200 text-sm">
-            <thead className="bg-gray-50">
-              <tr>
-                <th className="px-4 py-3 text-left">Invoice</th>
-                <th className="px-4 py-3 text-left">Tenant</th>
-                <th className="px-4 py-3 text-left">Plan</th>
-                <th className="px-4 py-3 text-left">Amount</th>
-                <th className="px-4 py-3 text-left">Due Date</th>
-                <th className="px-4 py-3 text-left">Status</th>
-                <th className="px-4 py-3 text-left">Payment Method</th>
-                <th className="px-4 py-3 text-left">Actions</th>
-              </tr>
-            </thead>
+        <div className="p-4 border-b">
+          <div className="flex flex-col sm:flex-row gap-3">
+            <select 
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value)}
+              className="border rounded-lg px-3 py-2 w-full sm:w-auto"
+            >
+              <option>All Status</option>
+              <option>Paid</option>
+              <option>Pending</option>
+              <option>Overdue</option>
+              <option>Processing</option>
+            </select>
 
-            <tbody className="divide-y">
-              {invoices.map((invoice) => (
-                <tr key={invoice.id} className="hover:bg-gray-50">
-                  <td className="px-4 py-3">
-                    <p className="font-medium">{invoice.id}</p>
-                    <p className="text-gray-500 text-xs">{invoice.date}</p>
-                  </td>
+            <select 
+              value={planFilter}
+              onChange={(e) => setPlanFilter(e.target.value)}
+              className="border rounded-lg px-3 py-2 w-full sm:w-auto"
+            >
+              <option>All Plans</option>
+              <option>Basic</option>
+              <option>Pro</option>
+              <option>Enterprise</option>
+            </select>
 
-                  <td className="px-4 py-3">{invoice.tenant}</td>
-
-                  <td className="px-4 py-3">
-                    <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                      invoice.plan === "Enterprise"
-                        ? "bg-purple-100 text-purple-800"
-                        : invoice.plan === "Pro"
-                        ? "bg-blue-100 text-blue-800"
-                        : "bg-gray-100 text-gray-800"
-                    }`}>
-                      {invoice.plan}
-                    </span>
-                  </td>
-
-                  <td className="px-4 py-3 font-bold">{invoice.amount}</td>
-
-                  <td className="px-4 py-3 text-gray-500">{invoice.dueDate}</td>
-
-                  <td className="px-4 py-3">
-                    <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                      invoice.status === "Paid"
-                        ? "bg-green-100 text-green-800"
-                        : invoice.status === "Pending"
-                        ? "bg-yellow-100 text-yellow-800"
-                        : invoice.status === "Processing"
-                        ? "bg-blue-100 text-blue-800"
-                        : "bg-red-100 text-red-800"
-                    }`}>
-                      {invoice.status}
-                    </span>
-                  </td>
-
-                  <td className="px-4 py-3 text-gray-500">{invoice.paymentMethod}</td>
-
-                  <td className="px-4 py-3">
-                    <div className="flex gap-2">
-                      <button className="text-blue-600">View</button>
-                      <button className="text-green-600">Download</button>
-
-                      {invoice.status === "Overdue" && (
-                        <button className="text-red-600">Remind</button>
-                      )}
-
-                      {invoice.status === "Pending" && (
-                        <button className="text-yellow-600">Follow Up</button>
-                      )}
-                    </div>
-                  </td>
-
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* Pagination */}
-        <div className="p-4 border-t flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-gray-600">
-            Showing <span className="font-semibold">1</span> – <span className="font-semibold">8</span> of <span className="font-semibold">45</span>
-          </p>
-
-          <div className="flex gap-1">
-            <button className="px-3 py-2 border rounded-md bg-white">Prev</button>
-            <button className="px-3 py-2 border rounded-md bg-blue-50 text-blue-600">1</button>
-            <button className="px-3 py-2 border rounded-md bg-white">2</button>
-            <button className="px-3 py-2 border rounded-md bg-white">3</button>
-            <button className="px-3 py-2 border rounded-md bg-white">Next</button>
+            <input
+              type="text"
+              placeholder="Search invoices..."
+              value={filterText}
+              onChange={(e) => setFilterText(e.target.value)}
+              className="border rounded-lg px-3 py-2 flex-1 min-w-[200px]"
+            />
           </div>
         </div>
 
+        <DataTable
+          columns={columns}
+          data={filteredItems}
+          pagination
+          paginationPerPage={10}
+          paginationRowsPerPageOptions={[5, 10, 15, 20]}
+          highlightOnHover
+          responsive
+          customStyles={customStyles}
+        />
       </div>
     </div>
   );

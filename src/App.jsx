@@ -116,6 +116,15 @@ import SuperAdminPlans from './Pages/super-admin/Plans'
 import SuperAdminBilling from './Pages/super-admin/Billing'
 import SuperAdminSettings from './Pages/super-admin/Settings'
 
+// Import payment gateway images
+import netellerImg from '/neteller.png'
+import usdtImg from '/usdt.png'
+import masterCardImg from '/master-card.png'
+import skrillImg from '/skrill.png'
+import litecoinImg from '/litecoin.png'
+import bitcoinImg from '/bitcoin.png'
+import wireImg from '/wire.png'
+
 function Placeholder({ title }) {
   return (
     <div className="p-6">
@@ -195,13 +204,13 @@ function AppContent() {
   }
 
   const paymentOptions = [
-    { name: 'Neteller', src: '/neteller.png' },
-    { name: 'USDT', src: '/usdt.png' },
-    { name: 'Master Card', src: '/master-card.png' },
-    { name: 'Skrill', src: '/skrill.png' },
-    { name: 'Litecoin', src: '/litecoin.png' },
-    { name: 'Bitcoin', src: '/bitcoin.png' },
-    { name: 'Wire Transfer', src: '/wire.png' }
+    { name: 'Neteller', src: netellerImg },
+    { name: 'USDT', src: usdtImg },
+    { name: 'Master Card', src: masterCardImg },
+    { name: 'Skrill', src: skrillImg },
+    { name: 'Litecoin', src: litecoinImg },
+    { name: 'Bitcoin', src: bitcoinImg },
+    { name: 'Wire Transfer', src: wireImg }
   ];
 
   return (
@@ -338,6 +347,7 @@ function AppContent() {
               
               {/* Super Admin */}
               <Route path="/super-admin/" element={<PageTransition><SuperAdminDashboard /></PageTransition>} />
+              <Route path="/super-admin/dashboard" element={<PageTransition><SuperAdminDashboard /></PageTransition>} />
               <Route path="/super-admin/tenants" element={<PageTransition><SuperAdminTenants /></PageTransition>} />
               <Route path="/super-admin/tenant-details" element={<PageTransition><SuperAdminTenantDetails /></PageTransition>} />
               <Route path="/super-admin/plans" element={<PageTransition><SuperAdminPlans /></PageTransition>} />
